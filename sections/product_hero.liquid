@@ -1,0 +1,364 @@
+<div class="padding-global padding-section-small">
+   <div class="container-large">
+      <div class="product-header_component">
+         <script src="{{ 'liquify_custom.js' | asset_url }}" type="text/javascript"></script>
+         <div li-element="product-variant-container" class="w-layout-grid product-header_layout" x-data="handleVariant({{ product | json | escape }}, {{ product.options_by_name | json | escape }}, {{ product.selected_or_first_available_variant | json | escape }})" x-init="$nextTick(() => { activateVariants() })" @setbundleitem.window="updateBundleItem($event.detail.product, $event.detail.quantity)">
+            <div id="w-node-_8c5d1479-95bf-e109-66bc-bdcd43749157-5c6875be" class="swiper-container is-product-gallery">
+               <div class="swiper is-product-gallery">
+                  <div id="my-gallery" class="swiper-wrapper is-product-gallery">
+                     <div class="swiper-slide is-product-gallery">
+                        <div data-pswp-height="{{image.width}}" data-pswp-width="{{image.height}}" class="product_gallery-lightbox"><img loading="lazy" x-bind:src="variantImage ? variantImage : product.featured_image" li-object:alt="image.alt" src="../images/image.svg" alt="{{ image.alt }}" class="product_gallery-image"></div>
+                     </div>
+                     {% for image in product.images offset:1 %}    
+                     <div li-for="image in product.images offset:1" class="swiper-slide is-product-gallery">
+                        <div data-pswp-height="{{image.width}}" data-pswp-width="{{image.height}}" class="product_gallery-lightbox"><img loading="lazy" li-object:src="image.src | product_img_url: 'master'" li-object:alt="image.alt" src="{{ image.src | product_img_url: 'master' }}" alt="{{ image.alt }}" class="product_gallery-image"></div>
+                     </div>
+                     {% endfor %}
+                  </div>
+               </div>
+               <div class="swiper-slide is-product-thumbnail is-active hide"></div>
+               <div class="product-info">
+                  <div class="product-icons">
+                     <div class="icon-item">
+                        <img src="https://cdn.shopify.com/s/files/1/0746/7768/2449/files/PDP_Check_Point-_Printed_in_Aus_icon_033a8e21-33a3-4866-a058-b18e24579c80.png?v=1761706928" alt="Printed in Australia">
+                        <p>Printed in Australia</p>
+                     </div>
+                     <div class="icon-item">
+                        <img src="https://cdn.shopify.com/s/files/1/0746/7768/2449/files/PDP_Check_Point-_Eco_Friendly_Inks_icon_a8981aa4-897c-4e78-b250-40036c9c925e.png?v=1761706928" alt="Fast Turnarounds">
+                        <p>Fast Turn<br>Arounds</p>
+                     </div>
+                     <div class="icon-item">
+                        <img src="https://cdn.shopify.com/s/files/1/0746/7768/2449/files/PDP_Check_Point-_Fast_Turnaround_icon_711422cd-fb9a-4943-8725-0e889b25c0d1.png?v=1761706928" alt="Eco Friendly Inks">
+                        <p>Eco Friendly<br>Inks</p>
+                     </div>
+                     <div class="icon-item">
+                        <img src="https://cdn.shopify.com/s/files/1/0746/7768/2449/files/PDP_Check_Point-_Satisfaction_icon_eaed0247-eb46-49a7-a1c7-d85d24d11229.png?v=1761706928" alt="Satisfaction Guarantee">
+                        <p>Satisfaction<br>Guarantee</p>
+                     </div>
+                  </div>
+                    <!-- Accordion: Description -->
+                    <div class="accordion">
+                        <button class="accordion-header heading-style-h3">
+                        {{ section.settings.text_product_description_heading }}
+                        <span class="accordion-icon">+</span>
+                        </button>
+                        <div class="accordion-content">
+                            <div li-object="product.description" class="text-rich-text max-width-large w-richtext">{{ product.description }}</div>
+                        </div>
+                    </div>
+
+                    <!-- Accordion: Details -->
+                    <div class="accordion">
+                        <button class="accordion-header heading-style-h3">
+                        DETAILS
+                        <span class="accordion-icon">+</span>
+                        </button>
+                        <div class="accordion-content">
+                        <p><strong>Fit:</strong> Regular</p>
+                        <p><strong>Fabric:</strong> Mid weight, 180 GSM, 28-singles, 100% combed cotton (marles 15% viscose)</p>
+                        <p><strong>Construction:</strong> Neck ribbing, side seamed, shoulder to shoulder tape, double needle hems, preshrunk to minimise shrinkage</p>
+                        <p><strong>Embellishment:</strong> Suited for screen printing, DTG and embroidery</p>
+                        </div>
+                    </div>
+                </div>
+
+                                     
+
+            </div>
+            <div id="w-node-_8c5d1479-95bf-e109-66bc-bdcd43749168-5c6875be" class="product-header_product-details">
+               <div class="hide w-embed">{% assign show_default_images = true %}
+                  {% for image in product.images %}
+                  {% if image.alt contains product.selected_or_first_available_variant.title %}
+                  {% assign show_default_images = false %}
+                  {% endif %}
+                  {% endfor %}
+               </div>
+               <div li-object="product.vendor" class="text-size-regular">{{ product.vendor }}</div>
+               <h1 li-object:text="product.title" class="heading-style-h2">
+                  {{ product.title }}
+               </h1>
+               <div class="spacer-small"></div>
+               <div class="product-header-price-deliverytime">
+                    <div class="product-header-price-description">
+                        <div class="product-header_price-wrapper">
+                           <div li-js-price="price" class="text-size-large text-weight-bold" x-text="LiquifyHelper.moneyFormat(price, true, 'From {{ shop.money_with_currency_format }}')">$55</div>
+                           <template x-if="selected_or_first_available_variant.compare_at_price > selected_or_first_available_variant.price">
+                              <div li-js-if="selected_or_first_available_variant.compare_at_price > selected_or_first_available_variant.price">
+                                 <div li-object="product.compare_at_price | money" class="text-size-regular text-style-strikethrough text-align-right text-style-muted">from {{ product.compare_at_price | money }}</div>
+                              </div>
+                           </template>
+                           <div class="product-header_tag-list">
+                              <template x-if="selected_or_first_available_variant.available != true">
+                                 <div li-js-if="selected_or_first_available_variant.available != true" class="product-item_tag">
+                                    Not in Stock        
+                                 </div>
+                              </template>
+                              <template x-if="selected_or_first_available_variant.compare_at_price > selected_or_first_available_variant.price">
+                                 <div li-js-if="selected_or_first_available_variant.compare_at_price > selected_or_first_available_variant.price" class="product-item_tag is-yellow">
+                                    Sale        
+                                 </div>
+                              </template>
+                           </div>
+                        </div>
+                        <div class="text-size-small">plus decoration, incl. GST</div>
+                    </div>
+                    <div class="product-header_delivery-time-wrapper">
+                       <template x-if="selected_or_first_available_variant.available == true">
+                          <div li-js-if="selected_or_first_available_variant.available == true" class="product-header_delivery-time">
+                             <div class="product-header_delivery-icon w-embed">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 23 22" fill="none" preserveaspectratio="xMidYMid meet" aria-hidden="true" role="img">
+                                   <mask id="mask0_1611_6356" style="mask-type:alpha" maskunits="userSpaceOnUse" x="0" y="0" width="23" height="22">
+                                      <rect x="0.223633" width="22" height="22" fill="#D9D9D9"></rect>
+                                   </mask>
+                                   <g mask="url(#mask0_1611_6356)">
+                                      <path d="M13.9736 18.3334C11.9264 18.3334 10.1923 17.623 8.77151 16.2022C7.35068 14.7813 6.64026 13.0473 6.64026 11.0001C6.64026 8.96814 7.35068 7.23793 8.77151 5.80946C10.1923 4.38098 11.9264 3.66675 13.9736 3.66675C16.0055 3.66675 17.7357 4.38098 19.1642 5.80946C20.5927 7.23793 21.3069 8.96814 21.3069 11.0001C21.3069 13.0473 20.5927 14.7813 19.1642 16.2022C17.7357 17.623 16.0055 18.3334 13.9736 18.3334ZM13.9736 16.5001C15.5014 16.5001 16.8 15.9654 17.8694 14.8959C18.9389 13.8265 19.4736 12.5279 19.4736 11.0001C19.4736 9.4723 18.9389 8.17369 17.8694 7.10425C16.8 6.0348 15.5014 5.50008 13.9736 5.50008C12.4458 5.50008 11.1472 6.0348 10.0778 7.10425C9.00831 8.17369 8.47359 9.4723 8.47359 11.0001C8.47359 12.5279 9.00831 13.8265 10.0778 14.8959C11.1472 15.9654 12.4458 16.5001 13.9736 16.5001ZM16.059 14.4147L17.3653 13.1084L14.8903 10.6334V7.33341H13.0569V11.3897L16.059 14.4147ZM2.05693 8.25008V6.41675H5.72359V8.25008H2.05693ZM1.14026 11.9167V10.0834H5.72359V11.9167H1.14026ZM2.05693 15.5834V13.7501H5.72359V15.5834H2.05693Z" fill="#323232"></path>
+                                   </g>
+                                </svg>
+                             </div>
+                             <div>Delivery: <span>
+                                {{ section.settings.text_delivery_time }}
+                                </span>
+                             </div>
+                          </div>
+                       </template>
+                       <div class="spacer-xxsmall"></div>
+                       <div class="product-header_delivery-time">
+                          <div class="product-header_delivery-icon w-embed">
+                             <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 23 22" fill="none" preserveaspectratio="xMidYMid meet" aria-hidden="true" role="img">
+                                <mask id="mask0_1612_6254" style="mask-type:alpha" maskunits="userSpaceOnUse" x="0" y="0" width="23" height="22">
+                                   <rect x="0.223633" width="22" height="22" fill="#D9D9D9"></rect>
+                                </mask>
+                                <g mask="url(#mask0_1612_6254)">
+                                   <path d="M11.223 10.9999C11.7271 10.9999 12.1587 10.8204 12.5178 10.4614C12.8768 10.1023 13.0563 9.67075 13.0563 9.16659C13.0563 8.66242 12.8768 8.23082 12.5178 7.87179C12.1587 7.51277 11.7271 7.33325 11.223 7.33325C10.7188 7.33325 10.2872 7.51277 9.92819 7.87179C9.56916 8.23082 9.38965 8.66242 9.38965 9.16659C9.38965 9.67075 9.56916 10.1023 9.92819 10.4614C10.2872 10.8204 10.7188 10.9999 11.223 10.9999ZM11.223 17.7374C13.0869 16.0263 14.4695 14.4718 15.3709 13.0739C16.2723 11.676 16.723 10.4346 16.723 9.34992C16.723 7.68464 16.1921 6.3211 15.1303 5.25929C14.0685 4.19749 12.766 3.66659 11.223 3.66659C9.67993 3.66659 8.3775 4.19749 7.31569 5.25929C6.25388 6.3211 5.72298 7.68464 5.72298 9.34992C5.72298 10.4346 6.17368 11.676 7.07507 13.0739C7.97645 14.4718 9.35909 16.0263 11.223 17.7374ZM11.223 20.1666C8.76326 18.0735 6.92611 16.1294 5.71152 14.3343C4.49694 12.5392 3.88965 10.8777 3.88965 9.34992C3.88965 7.05825 4.6268 5.23256 6.10111 3.87284C7.57541 2.51311 9.2827 1.83325 11.223 1.83325C13.1633 1.83325 14.8706 2.51311 16.3449 3.87284C17.8192 5.23256 18.5563 7.05825 18.5563 9.34992C18.5563 10.8777 17.949 12.5392 16.7344 14.3343C15.5199 16.1294 13.6827 18.0735 11.223 20.1666Z" fill="#323232"></path>
+                                </g>
+                             </svg>
+                          </div>
+                          <div>
+                             Availability: 
+                             <template x-if="selected_or_first_available_variant.available == true">
+                                <span li-js-if="selected_or_first_available_variant.available == true" class="text-color-green">
+                                available        </span>
+                             </template>
+                             <template x-if="selected_or_first_available_variant.available == false">
+                                <span li-js-if="selected_or_first_available_variant.available == false" class="text-color-red">
+                                not available        </span>
+                             </template>
+                          </div>
+                       </div>
+                       <div class="spacer-small"></div>
+                    </div>
+               </div>
+               {% comment %} <div class="spacer-small"></div> {% endcomment %}
+               <div class="product-header_add-to-cart w-form">
+                  {% form 'product', product, class: 'product-header_default-state' %}
+                  {% if product.has_only_default_variant != true %}    
+                  <div li-if="product.has_only_default_variant != true" class="product-header_option-list">
+                     <template x-for="(option, optionKey) in product.options" :key="optionKey">
+                        <div li-element="product-options-loop" class="product-header_option-list" data-ProductVariantsLoop="true">
+                           <template x-if="option == 'Color' || option == 'custom-Color'">
+                              <div li-js-if="option == 'Color' || option == 'custom-Color'" class="product_variant">
+                                 <div li-element="" class="product-header_option">
+                                    <div class="text-size-small"><span li-element="product-options-name" x-text="option">Variant</span>: <span x-text="selected_or_first_available_variant.options[optionKey]" class="text-color-primary text-weight-semibold">Option</span></div>
+                                    <div class="product-header_radio-list">
+                                       <template x-for="(variantName, variantKey) in options_by_name[option].option.values" :key="variantName">
+                                          <label x-init="optionValue = selected_or_first_available_variant.options.includes(variantName) ? variantName : optionValue" li-element="product-option-loop" class="product-header_radio w-radio">
+                                             <div class="w-form-formradioinput w-form-formradioinput--inputType-custom product-header_radio-button w-radio-input"></div>
+                                             <input li-element="product-option-input" x-model="optionValue" type="radio" style="opacity:0;position:absolute;z-index:-1" x-on:click="setVariant" :name="option" :data-name="option" :value="variantName" :id="variantName.toString().normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim().replace(/\s+/g, '-').replace(/[^\w-]+/g, '').replace(/--+/g, '-')" :checked="selected_or_first_available_variant?.options.includes(variantName)" data-selectorType="radio" :class="firstOptionHasAvailableChildren[variantName] ? '' : 'data-disabled'">
+                                             <img src="https://d3e54v103j8qbb.cloudfront.net/plugins/Basic/assets/placeholder.60f9b1840c.svg" loading="lazy" x-bind:src="variants.find(variant => variant.options.includes(variantName))?.featured_image.src" x-bind:class="firstOptionHasAvailableChildren[variantName] ? '' : 'disabled'" alt="" class="product_variant-img">
+                                             <span li-element="product-option-name" class="text-size-regular z-index-2 hide w-form-label" for="radio-6" x-text="variantName" :for="variantName"></span>
+                                          </label>
+                                       </template>
+                                    </div>
+                                 </div>
+                              </div>
+                           </template>
+                           <template x-if="option == 'Size' || option == 'custom-Size'">
+                              <div li-js-if="option == 'Size' || option == 'custom-Size'" class="product_variant w-hidden">
+                                 <div class="product-header_option">
+                                    <div class="text-size-small"><span li-element="product-options-name" x-text="option">Variant</span>: <span x-text="selected_or_first_available_variant.options[optionKey]" class="text-color-primary text-weight-semibold">Option</span></div>
+                                    <div class="product-header_radio-list">
+                                       <template x-for="(variantName, variantKey) in options_by_name[option].option.values" :key="variantName">
+                                          <label x-init="optionValue = selected_or_first_available_variant.options.includes(variantName) ? variantName : optionValue" li-element="product-option-loop" class="product-header_radio w-radio">
+                                             <div class="w-form-formradioinput w-form-formradioinput--inputType-custom product-header_radio-button w-radio-input"></div>
+                                             <input li-element="product-option-input" x-model="optionValue" type="radio" style="opacity:0;position:absolute;z-index:-1" x-on:click="setVariant" :name="option" :data-name="option" :value="variantName" :id="variantName.toString().normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim().replace(/\s+/g, '-').replace(/[^\w-]+/g, '').replace(/--+/g, '-')" :checked="selected_or_first_available_variant?.options.includes(variantName)" data-selectorType="radio" :class="firstOptionHasAvailableChildren[variantName] ? '' : 'data-disabled'">
+                                             <span li-element="product-option-name" class="text-size-regular z-index-2 w-form-label" for="radio-3" x-text="variantName" :for="variantName">XS</span>
+                                          </label>
+                                       </template>
+                                    </div>
+                                 </div>
+                              </div>
+                           </template>
+                        </div>
+                     </template>
+                     <div class="spacer-small"></div>
+                  </div>
+                  {% endif %}
+                  <div class="product-header_add-to-cart-wrapper">
+                     <template x-if="selected_or_first_available_variant.available">
+                        <div li-js-if="selected_or_first_available_variant.available" class="product-header_quantity">
+                           <div class="text-size-small">Quantity:</div>
+                           <input class="form_input is-quantity w-input" maxlength="256" name="quantity-2" li-element="add-to-cart-quantity" data-name="Quantity 2" placeholder="1" type="number" id="quantity-2" required="" x-model="quantity">
+                           {% include 'customizeButton' %}        
+                        </div>
+                     </template>
+                     <template x-if="!selected_or_first_available_variant.available">
+                        <div li-js-if="!selected_or_first_available_variant.available">
+                           <a href="#" class="button is-secondary max-width-full pointer-events-off w-button">Not in Stock</a>        
+                        </div>
+                     </template>
+                  </div>
+                  {% endform %}
+                  <div class="out-of-stock-state w-form-done">
+                     <div>Thank you! Your submission has been received!</div>
+                  </div>
+                  <div class="error-state w-form-fail">
+                     <div>Oops! Something went wrong while submitting the form.</div>
+                  </div>
+               </div>
+               <div class="spacer-medium"></div>
+               <h2 class="heading-style-h3">
+                  {{ section.settings.text_product_description_heading }}
+               </h2>
+               <div class="spacer-medium"></div>
+               <div li-object="product.description" class="text-rich-text max-width-large w-richtext">{{ product.description }}</div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+{% include 'xe_script' %} 
+{% schema %} 
+{
+  "tag": "div",
+  "name": "Product-Hero",
+  "class": "section_product-header",
+  "settings": [
+    {
+      "id": "text_delivery_time",
+      "type": "text",
+      "label": "Delivery Time",
+      "default": "1–3 Days"
+    },
+    {
+      "id": "text_product_description_heading",
+      "type": "text",
+      "label": "Product Description Heading",
+      "default": "Description"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product-Hero",
+      "category": "Liquify",
+      "blocks": []
+    }
+  ]
+}
+{% endschema %}
+
+<style>
+    .product-info {
+    max-width: 800px;
+    margin: 0 auto;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    color: #000;
+    line-height: 1.6;
+    margin-top: 45px;
+    }
+    /* Icons Row */
+   .product-icons {
+   display: flex;
+   justify-content: space-between;
+   flex-wrap: wrap;
+   {% comment %} border-bottom: 1px solid #ccc; {% endcomment %}
+   padding-bottom: 15px;
+   margin-bottom: 25px;
+   }
+
+   .icon-item {
+   text-align: center;
+   flex: 1;
+   min-width: 120px;
+   }
+
+   .icon-item img {
+   width: 45px;
+   height: 45px;
+   margin-bottom: 5px;
+   background: transparent;
+   }
+
+   .icon-item p {
+   font-size: 13px;
+   font-weight: 500;
+   margin: 0;
+   }
+
+
+    /* Accordion styling */
+    .accordion {
+    border-top: 1px solid #000;
+    }
+
+    .accordion-header {
+    background: none;
+    border: none;
+    width: 100%;
+    text-align: left;
+    padding: 15px 0;
+    {% comment %} font-size: 16px; {% endcomment %}
+    {% comment %} font-weight: 600; {% endcomment %}
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    }
+
+    .accordion-icon {
+    font-size: 20px;
+    font-weight: 500;
+    width: 20px;
+    text-align: center;
+    transition: transform 0.2s ease;
+    }
+
+    .accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.25s ease-out;
+    font-size: 14px;
+    padding-right: 10px;
+    }
+
+    .accordion-content.open {
+    max-height: 500px;
+    transition: max-height 0.25s ease-in;
+    }
+
+    .accordion-content p {
+    margin: 5px 0;
+    }
+    </style>
+
+    <script>
+    document.querySelectorAll(".accordion-header").forEach(header => {
+    header.addEventListener("click", () => {
+        const accordion = header.parentElement;
+        const content = accordion.querySelector(".accordion-content");
+        const icon = header.querySelector(".accordion-icon");
+        const isOpen = content.classList.contains("open");
+
+        // Close all accordions
+        document.querySelectorAll(".accordion-content").forEach(c => c.classList.remove("open"));
+        document.querySelectorAll(".accordion-icon").forEach(i => i.textContent = "+");
+
+        // Open the clicked one if not already open
+        if (!isOpen) {
+        content.classList.add("open");
+        icon.textContent = "–";
+        }
+    });
+    });
+    </script>

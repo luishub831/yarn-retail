@@ -1,0 +1,57 @@
+<div id="testimonials" class="padding-global"><div class="container-large"><div class="padding-section-large"><div class="testimonial24_component"><div class="margin-bottom margin-xhuge"><div class="text-align-center"><div class="max-width-medium align-center"><div class="settings-schema w-embed"></div>
+<div class="margin-bottom margin-small"><h2 li-object="section.settings.testimonials_heading_text" class="heading-style-h2">{{ section.settings.testimonials_heading_text }}</h2></div><div class="richtext-wrapper is-center text-size-medium w-richtext"><p li-object="section.settings.testimonials_paragraph_text">{{ section.settings.testimonials_paragraph_text }}</p></div></div></div></div><div data-delay="4000" data-animation="slide" class="testimonial24_slider w-slider" data-autoplay="false" data-easing="ease" data-hide-arrows="false" data-disable-swipe="false" data-autoplay-limit="0" data-nav-spacing="3" data-duration="500" data-infinite="true"><div class="w-embed"><style>/* Card Background Color */
+.testimonial24_slide:nth-child(3n+1) .testimonial24_card {
+  background-color: var(--background-color--background-secondary);
+  top: 0rem;
+}
+.testimonial24_slide:nth-child(3n+2) .testimonial24_card {
+  background-color: var(--background-color--background-tertiary);
+  top: -4rem;
+}
+.testimonial24_slide:nth-child(3n+3) .testimonial24_card {
+  background-color: var(--background-color--background-quaternary);
+  top: -2rem;
+}
+/* Client Image Wrapper Flex Direction and Alignment */
+.testimonial24_slide:nth-child(3n+1) .testimonial24_client-image-wrapper {
+	flex-flow: row-reverse;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+.testimonial24_slide:nth-child(3n+2) .testimonial24_client-image-wrapper {
+  flex-flow: row;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+.testimonial24_slide:nth-child(3n+3) .testimonial24_client-image-wrapper {
+  flex-flow: row-reverse;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+/* Customer Image & Name Rotations */
+.testimonial24_slide:nth-child(3n+1) .testimonial24_customer-image, .testimonial24_slide:nth-child(3n+1) .testimonial24_client-info {
+  transform: rotate(9deg);
+}
+.testimonial24_slide:nth-child(3n+2) .testimonial24_customer-image, .testimonial24_slide:nth-child(3n+2) .testimonial24_client-info {
+  transform: rotate(-9deg);
+}
+.testimonial24_slide:nth-child(3n+3) .testimonial24_customer-image, .testimonial24_slide:nth-child(3n+3) .testimonial24_client-info {
+  transform: rotate(9deg);
+}
+/* Client Name Flex Direction */
+.testimonial24_slide:nth-child(3n+1) .testimonial24_client {
+	flex-flow: row;
+}
+.testimonial24_slide:nth-child(3n+2) .testimonial24_client {
+	flex-flow: row-reverse;
+}
+.testimonial24_slide:nth-child(3n+3) .testimonial24_client {
+	flex-flow: row;
+}
+</style></div><div class="testimonial24_mask w-slider-mask">{% for testimonials in metaobjects.testimonials.values %}    <div li-for="testimonials in metaobjects.testimonials.values" class="testimonial24_slide w-slide">
+                                    
+                            <div class="testimonial24_card"><div class="testimonial24_content-top"><div class="margin-bottom margin-large"><div class="testimonial24_client-image-wrapper"><img li-object:src="testimonials.image.value | image_url: width: 180" loading="lazy" alt="" src="{{ testimonials.image.value | image_url: width: 180 }}" class="testimonial24_customer-image">
+</div></div><div class="richtext-wrapper text-weight-medium w-richtext"><p li-object="testimonials.testimonial.value">{{ testimonials.testimonial.value }}</p></div><div class="margin-top margin-small"><div class="testimonial24_client"><div class="testimonial24_client-info"><div li-object="testimonials.name.value" class="text-size-tiny text-weight-semibold">{{ testimonials.name.value }}</div></div></div></div></div></div>
+                            
+                        </div>
+{% endfor %}</div><div class="slider_arrow is-left w-slider-arrow-left"><div class="testimonial24_arrow-icon w-embed"><svg width="100%" height="100%" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.31066 8.75001L9.03033 14.4697L7.96967 15.5303L0.439339 8.00001L7.96967 0.469676L9.03033 1.53034L3.31066 7.25001L15.5 7.25L15.5 8.75L3.31066 8.75001Z" fill="currentColor"></path></svg></div></div><div class="slider_arrow w-slider-arrow-right"><div class="testimonial24_arrow-icon w-embed"><svg width="100%" height="100%" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.6893 7.25L6.96967 1.53033L8.03033 0.469666L15.5607 8L8.03033 15.5303L6.96967 14.4697L12.6893 8.75H0.5V7.25H12.6893Z" fill="currentColor"></path></svg></div></div><div class="slider-nav w-slider-nav w-slider-nav-invert w-round"></div></div></div></div></div></div> {% schema %} {"tag":"section","name":"TestimonialSlider","class":"section_testimonial24","settings":[{"type":"header","content":"Testimonials Content Settings"},{"type":"textarea","id":"testimonials_heading_text","label":"Testimonials Heading Text","default":"Medium length section heading goes here"},{"type":"richtext","id":"testimonials_paragraph_text","label":"Testimonials Paragraph Text","default":"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.<\/p>"}],"presets":[{"name":"TestimonialSlider","category":"Liquify","blocks":[]}]} {% endschema %}

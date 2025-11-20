@@ -1,0 +1,115 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "pageheadersplit_z8HezP": {
+      "type": "pageheadersplit",
+      "settings": {
+        "pageheader_heading_text": "Corporate Services Heading Text",
+        "pageheader_paragraph_text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>"
+      }
+    },
+    "imagetabs_TAHDTY": {
+      "type": "imagetabs",
+      "settings": {
+        "tabs_heading_text": "Short heading goes here",
+        "tabs_button1_text": "Tab Button 1",
+        "tabs_button2_text": "Tab Button 2",
+        "tabs_button3_text": "Tab Button 3",
+        "tabs_image1": "shopify://shop_images/WO_HEAVY.jpg",
+        "tabs_image2": "shopify://shop_images/5166_FLATLAY_GROUP3.jpg",
+        "tabs_image3": "shopify://shop_images/5146_STACK.jpg"
+      }
+    },
+    "contenttextimagespli_tR8YmG": {
+      "type": "contenttextimagespli",
+      "blocks": {
+        "button_AzwiTd": {
+          "type": "button",
+          "settings": {
+            "btn_layout": "btn_layout_both",
+            "btn_style": "is-primary",
+            "btn_size": "is-default",
+            "btn_icon_size": "icon-1x1-small",
+            "btn_url": "",
+            "btn_text": "Button Text",
+            "btn_icon_viewbox": "",
+            "btn_icon_path": ""
+          }
+        }
+      },
+      "block_order": [
+        "button_AzwiTd"
+      ],
+      "settings": {
+        "content_layout": "is-horizontal",
+        "content_tagline_text": "Short tagline here",
+        "content_heading_text": "Medium length section heading goes here",
+        "content_paragraph_text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>",
+        "content_image": "shopify://shop_images/4080_WOS_HEAVY_TEE_MAIN.jpg"
+      }
+    },
+    "contenttextimagespli_qgq7BX": {
+      "type": "contenttextimagespli",
+      "blocks": {
+        "button_TweMrG": {
+          "type": "button",
+          "settings": {
+            "btn_layout": "btn_layout_both",
+            "btn_style": "is-primary",
+            "btn_size": "is-default",
+            "btn_icon_size": "icon-1x1-small",
+            "btn_url": "",
+            "btn_text": "Button Text",
+            "btn_icon_viewbox": "",
+            "btn_icon_path": ""
+          }
+        }
+      },
+      "block_order": [
+        "button_TweMrG"
+      ],
+      "settings": {
+        "content_layout": "is-reversed",
+        "content_tagline_text": "Short tagline here",
+        "content_heading_text": "Medium length section heading goes here",
+        "content_paragraph_text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>",
+        "content_image": "shopify://shop_images/5161_RELAX_HOOD_MAIN.jpg"
+      }
+    },
+    "featuredarticles_DM7qtP": {
+      "type": "featuredarticles",
+      "settings": {
+        "blog_heading_text": "Short heading goes here",
+        "blog_paragraph_text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>",
+        "article_select_article_1": "printing-methods-explained/is-dtf-printing-taking-over",
+        "article_select_article_2": "printing-methods-explained/example",
+        "article_select_article_3": "design-tips-tricks/tips-tricks"
+      }
+    },
+    "contactcta_EL3D4p": {
+      "type": "contactcta",
+      "settings": {
+        "contact_heading_text": "Medium length section heading goes here",
+        "contact_paragraph_text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>"
+      }
+    }
+  },
+  "layout": "theme",
+  "wrapper": "main.main-wrapper",
+  "order": [
+    "pageheadersplit_z8HezP",
+    "imagetabs_TAHDTY",
+    "contenttextimagespli_tR8YmG",
+    "contenttextimagespli_qgq7BX",
+    "featuredarticles_DM7qtP",
+    "contactcta_EL3D4p"
+  ]
+}

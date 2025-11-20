@@ -1,0 +1,55 @@
+<div id="intro" class="padding-global"><div class="header80_component"><div class="header80_content-wrapper max-width-xxlarge align-center"><div class="header80_images-wrapper"><div class="header80_image-list"><div class="header80_image-wrapper is-image-1">{% for block in section.blocks %}
+    {% if block.type == "scroll-animate-image-1" %}
+                    <div li-block="Scroll Animate Image 1" class="block-wrapper">
+                                    
+                                    <div class="settings-schema w-embed"></div>
+
+                                    <img li-object:src="block.settings.scroll_animate_image | image_url: width: 360" loading="lazy" alt="" src="{{ block.settings.scroll_animate_image | image_url: width: 360 }}" class="header80_image">
+
+                                    
+                            </div>
+            {% endif %}
+{% endfor %}
+</div></div><div class="header80_image-list image-list-right"><div class="header80_image-wrapper is-image-5">{% for block in section.blocks %}
+    {% if block.type == "scroll-animate-image-2" %}
+                    <div li-block="Scroll Animate Image 2" class="block-wrapper">
+                                    
+                                    <div class="settings-schema w-embed"></div>
+
+                                    <img li-object:src="block.settings.scroll_animate_image | image_url: width: 360" loading="lazy" alt="" src="{{ block.settings.scroll_animate_image | image_url: width: 360 }}" class="header80_image">
+
+                                    
+                            </div>
+            {% endif %}
+{% endfor %}
+</div></div></div><div class="header80_content"><div class="settings-schema w-embed"></div>
+<div class="max-width-large"><div class="richtext-wrapper w-richtext"><h2 li-object="section.settings.scroll_animate_text" class="layout484_text">{{ section.settings.scroll_animate_text }}</h2></div><div class="margin-top margin-small"><div class="button-group">{% render 'button' %}
+</div></div></div></div></div><div class="layout484_split-text w-embed w-script"><!--  Include GSAP library, ScrollTrigger plugin, Split-Type library  -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script><script src="https://unpkg.com/split-type"></script><script>document.addEventListener('DOMContentLoaded', function() {
+// Function to check if the viewport width is 767px or less
+function isMobile() {
+  return window.innerWidth <= 767;
+}
+// Split text into individual words
+const layoutText = new SplitType(".layout484_text", { types: "words" });
+const layoutTL = gsap.timeline();
+// Define different start and end values for mobile devices
+let startValue = isMobile() ? "top 35%" : "top center";
+let endValue = isMobile() ? "bottom 90%" : "50% center";
+layoutTL.from(layoutText.words,{
+  // Initial opacity for each word
+  opacity: 0.25,
+  // Stagger animation of each word
+  stagger: 0.1,
+  scrollTrigger: { 
+    trigger: ".section_layout484",
+    // Trigger animation when .section_layout484 reaches certain part of the viewport
+    start: startValue,
+    // End animation when .section_layout484 reaches certain part of the viewport
+    end: endValue,
+    // Smooth transition based on scroll position
+    scrub: 2 
+  }
+});
+});
+</script></div></div></div> {% schema %} {"tag":"section","name":"ScrollAnimateContent","class":"section_layout484","blocks":[{"name":"Scroll Animate Image 1","type":"scroll-animate-image-1","settings":[{"type":"header","content":"Scroll Animate Image Settings"},{"type":"image_picker","id":"scroll_animate_image","label":"Scroll Animate Image"}]},{"name":"Scroll Animate Image 2","type":"scroll-animate-image-2","settings":[{"type":"header","content":"Scroll Animate Image Settings"},{"type":"image_picker","id":"scroll_animate_image","label":"Scroll Animate Image"}]},{"name":"Button","type":"button","settings":[{"type":"header","content":"Button Settings"},{"type":"select","id":"btn_layout","label":"Button Layout","options":[{"value":"btn_layout_text","label":"Text Only"},{"value":"btn_layout_icon","label":"Icon Only"},{"value":"btn_layout_both","label":"Both"}],"default":"btn_layout_both"},{"type":"select","id":"btn_style","label":"Button Style","options":[{"value":"is-primary","label":"Primary"},{"value":"is-secondary","label":"Secondary"},{"value":"is-tertiary","label":"Tertiary"},{"value":"is-alternate","label":"Alternate"},{"value":"is-link","label":"Link"}],"default":"is-primary"},{"type":"select","id":"btn_size","label":"Button Size","options":[{"value":"is-xsmall","label":"xSmall"},{"value":"is-small","label":"Small"},{"value":"is-default","label":"Default"},{"value":"is-large","label":"Large"}],"default":"is-default"},{"type":"select","id":"btn_icon_size","label":"Button Icon Size","options":[{"value":"icon-1x1-xsmall","label":"xSmall"},{"value":"icon-1x1-small","label":"Small"},{"value":"icon-1x1-medium","label":"Medium"},{"value":"icon-1x1-large","label":"Large"}],"default":"icon-1x1-small"},{"type":"url","id":"btn_url","label":"Button Link"},{"type":"text","id":"btn_text","label":"Button Text","placeholder":"Button Text","default":"Button Text"},{"type":"text","id":"btn_icon_viewbox","label":"Button Icon SVG viewBox","placeholder":"0 0 384 512"},{"type":"textarea","id":"btn_icon_path","label":"Button Icon SVG Path","placeholder":"M328 96c13.3 0 24 10.7 24 24l0 240c0 13.3-10.7 24-24 24s-24-10.7-24-24l0-182.1L73 409c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l231-231L88 144c-13.3 0-24-10.7-24-24s10.7-24 24-24l240 0z"}]}],"settings":[{"type":"header","content":"Scrolling Animated Content Settings"},{"type":"textarea","id":"scroll_animate_text","label":"Scroll Animate Text","default":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat troy."}],"presets":[{"name":"ScrollAnimateContent","category":"Liquify","blocks":[{"type":"scroll-animate-image-1"},{"type":"scroll-animate-image-2"},{"type":"button"}]}]} {% endschema %}

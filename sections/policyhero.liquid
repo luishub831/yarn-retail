@@ -1,0 +1,39 @@
+<!-- sections/PolicyHero.liquid -->
+
+{% assign current_policy = '' %}
+{% for policy in shop.policies %}
+  {% assign policy_path = policy.url | remove: shop.url %}
+  {% if policy_path == request.path %}
+    {% assign current_policy = policy %}
+    {% break %}
+  {% endif %}
+{% endfor %}
+
+<div class="header_background-image-wrapper">
+  <div class="header_overlay-layer"></div>
+</div>
+<div class="padding-global padding-section-medium">
+  <div class="margin-top margin-xhuge">
+    <div class="container-medium">
+      {% if current_policy != '' %}
+        <h1 class="heading-style-display text-color-alternate">{{ current_policy.title }}</h1>
+      {% else %}
+        <h1 class="heading-style-display text-color-alternate">{{ page.title }}</h1>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "tag": "header",
+  "name": "PolicyHero",
+  "class": "section_content-header",
+  "presets": [
+    {
+      "name": "PolicyHero",
+      "category": "Liquify"
+    }
+  ]
+}
+{% endschema %}

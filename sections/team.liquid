@@ -1,0 +1,12 @@
+<div class="padding-global"><div class="container-large"><div class="padding-section-large"><div class="team4_component"><div class="settings-schema w-embed"></div>
+<div class="margin-bottom margin-xlarge"><div class="max-width-large"><div class="margin-bottom margin-xsmall"><div li-object="section.settings.team_tagline_text" class="text-style-tagline">{{ section.settings.team_tagline_text }}</div></div><div class="margin-bottom margin-small"><h2 li-object="section.settings.team_heading_text" class="heading-style-h2">{{ section.settings.team_heading_text }}</h2></div><div class="richtext-wrapper text-size-medium w-richtext"><p li-object="section.settings.team_paragraph_text">{{ section.settings.team_paragraph_text }}</p></div></div></div><div class="team4_list-wrapper"><div class="w-layout-grid team4_list">{% for team in metaobjects.team.values %}    <div li-for="team in metaobjects.team.values" class="team4_item">
+                                    
+                            <div class="margin-bottom margin-small"><div class="team4_image-wrapper"><img li-object:src="team.image | image_url: width: 720" loading="lazy" alt="" src="{{ team.image | image_url: width: 720 }}" class="team4_image">
+</div></div>
+                            
+                            <div class="margin-bottom margin-xsmall"><div class="team4_title-wrapper"><div li-object="team.name" class="text-size-large text-weight-semibold">{{ team.name }}</div><div li-object="team.title" class="text-size-medium">{{ team.title }}</div></div></div>
+                            
+                            <div class="richtext-wrapper text-size-regular w-richtext"><p li-object="team.bio">{{ team.bio }}</p></div>
+                            
+                        </div>
+{% endfor %}</div></div></div></div></div></div> {% schema %} {"tag":"section","name":"Team","class":"section_team4","settings":[{"type":"header","content":"Team Content Settings"},{"type":"textarea","id":"team_tagline_text","label":"Team Tagline Text","default":"Short length heading"},{"type":"textarea","id":"team_heading_text","label":"Team Heading Text","default":"Medium length heading goes here"},{"type":"richtext","id":"team_paragraph_text","label":"Team Paragraph Text","default":"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla.<\/p>"}],"presets":[{"name":"Team","category":"Liquify","blocks":[]}]} {% endschema %}

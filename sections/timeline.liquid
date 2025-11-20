@@ -1,0 +1,32 @@
+<div class="padding-global"><div class="container-large"><div class="padding-section-large"><div class="timeline12_component"><div class="settings-schema w-embed"></div>
+<div class="margin-bottom margin-xxlarge"><div class="max-width-large align-center z-index-1"><div class="text-align-center"><div class="margin-bottom margin-xsmall"><div li-object="section.settings.timeline_tagline_text" class="text-style-tagline">{{ section.settings.timeline_tagline_text }}</div></div><div class="margin-bottom margin-small"><h2 li-object="section.settings.timeline_heading_text" class="heading-style-h2">{{ section.settings.timeline_heading_text }}</h2></div><div class="richtext-wrapper is-center text-size-medium w-richtext"><p li-object="section.settings.timeline_paragraph_text">{{ section.settings.timeline_paragraph_text }}</p></div><div class="margin-top margin-small"><div class="button-group is-center">{% render 'button' %}
+</div></div></div></div></div><div class="timeline12_content"><div class="w-embed"><style>@media only screen and (min-width: 767px) {
+  .timeline12_content .timeline12_row:nth-child(even)	{
+    flex-direction: row-reverse;
+  }
+}
+</style></div><div id="w-node-a02c1338-9527-c8a4-666a-4fae90001329-9000130d" class="timeline12_progress"><div class="timeline12_fade-overlay-top"></div><div class="timeline12_progress-line"></div><div class="timeline12_line"></div><div class="timeline12_fade-overlay-bottom"></div><div class="timeline12_progress-line-cover"></div></div><div li-content-for-blocks="" id="w-node-a02c1338-9527-c8a4-666a-4fae9000132f-9000130d" class="timeline12_list">
+{% for block in section.blocks %}
+    {% case block.type %}
+        {% when '@app' %}
+            {% render block %}
+    {% when 'timeline-item' %}
+            <div li-block="Timeline Item" class="timeline12_row">
+                    
+                    <div class="settings-schema w-embed"></div>
+
+                    
+                    <div class="timeline12_empty-space"></div>
+                    
+                    <div class="timeline12_circle-wrapper"><div class="timeline12_circle"></div></div>
+                    
+                    <div class="timeline12_item"><div class="timeline12_item-content"><div class="margin-bottom margin-xsmall"><h3 li-object="block.settings.timeline_item_date" class="heading-style-h3">{{ block.settings.timeline_item_date }}</h3></div><div class="margin-bottom margin-xsmall"><h4 li-object="block.settings.timeline_item_heading_text" class="heading-style-h5">{{ block.settings.timeline_item_heading_text }}</h4></div><div class="richtext-wrapper text-size-regular w-richtext"><p li-object="block.settings.timeline_item_paragraph_text">{{ block.settings.timeline_item_paragraph_text }}</p></div></div><div class="timeline12_image-wrapper"><img li-object:src="block.settings.timeline_item_image | image_url: width: 720" loading="lazy" alt="" src="{{ block.settings.timeline_item_image | image_url: width: 720 }}" class="timeline12_image">
+</div></div>
+                    
+                </div>
+        {% endcase %}
+{% endfor %}
+
+</div>
+
+</div></div></div></div></div> {% schema %} {"tag":"div","name":"Timeline","class":"section_timeline12","blocks":[{"name":"Button","type":"button","settings":[{"type":"header","content":"Button Settings"},{"type":"select","id":"btn_layout","label":"Button Layout","options":[{"value":"btn_layout_text","label":"Text Only"},{"value":"btn_layout_icon","label":"Icon Only"},{"value":"btn_layout_both","label":"Both"}],"default":"btn_layout_both"},{"type":"select","id":"btn_style","label":"Button Style","options":[{"value":"is-primary","label":"Primary"},{"value":"is-secondary","label":"Secondary"},{"value":"is-tertiary","label":"Tertiary"},{"value":"is-alternate","label":"Alternate"},{"value":"is-link","label":"Link"}],"default":"is-primary"},{"type":"select","id":"btn_size","label":"Button Size","options":[{"value":"is-xsmall","label":"xSmall"},{"value":"is-small","label":"Small"},{"value":"is-default","label":"Default"},{"value":"is-large","label":"Large"}],"default":"is-default"},{"type":"select","id":"btn_icon_size","label":"Button Icon Size","options":[{"value":"icon-1x1-xsmall","label":"xSmall"},{"value":"icon-1x1-small","label":"Small"},{"value":"icon-1x1-medium","label":"Medium"},{"value":"icon-1x1-large","label":"Large"}],"default":"icon-1x1-small"},{"type":"url","id":"btn_url","label":"Button Link"},{"type":"text","id":"btn_text","label":"Button Text","placeholder":"Button Text","default":"Button Text"},{"type":"text","id":"btn_icon_viewbox","label":"Button Icon SVG viewBox","placeholder":"0 0 384 512"},{"type":"textarea","id":"btn_icon_path","label":"Button Icon SVG Path","placeholder":"M328 96c13.3 0 24 10.7 24 24l0 240c0 13.3-10.7 24-24 24s-24-10.7-24-24l0-182.1L73 409c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l231-231L88 144c-13.3 0-24-10.7-24-24s10.7-24 24-24l240 0z"}]},{"name":"Timeline Item","type":"timeline-item","settings":[{"type":"header","content":"Timeline Item Settings"},{"type":"text","id":"timeline_item_date","label":"Timeline Item Date","default":"Date here"},{"type":"text","id":"timeline_item_heading_text","label":"Timeline Item Heading Text","default":"Short heading here"},{"type":"richtext","id":"timeline_item_paragraph_text","label":"Timeline Item Paragraph Text","default":"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.<\/p>"},{"type":"image_picker","id":"timeline_item_image","label":"Timeline Item Image"}]}],"settings":[{"type":"header","content":"Timeline Content Settings"},{"type":"textarea","id":"timeline_tagline_text","label":"Timeline Tagline Text","default":"Short length heading"},{"type":"textarea","id":"timeline_heading_text","label":"Timeline Heading Text","default":"Medium length heading goes here"},{"type":"richtext","id":"timeline_paragraph_text","label":"Timeline Paragraph Text","default":"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla.<\/p>"}],"presets":[{"name":"Timeline","category":"Liquify","blocks":[{"type":"button"},{"type":"timeline-item"}]}]} {% endschema %}

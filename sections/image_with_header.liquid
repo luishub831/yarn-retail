@@ -1,0 +1,75 @@
+{% comment %}
+  Custom Content with Image Section
+{% endcomment %}
+
+<section class="custom-content-section">
+  <div class="container max-width-large margin-auto">
+    {% if section.settings.heading != blank %}
+      <h2 class="heading-style-h2">{{ section.settings.heading }}</h2>
+    {% endif %}
+
+    {% if section.settings.description != blank %}
+      <div class="custom-content-description  text-size-medium w-richtext">
+        {{ section.settings.description }}
+      </div>
+    {% endif %}
+
+    {% if section.settings.image != blank %}
+      <div class="custom-content-image">
+        <img src="{{ section.settings.image | image_url: width: 1600 }}" alt="{{ section.settings.heading | escape }}">
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+<style>
+.custom-content-section {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+
+.custom-content-description {
+  max-width: 600px;
+  margin: 0 auto 30px;
+  line-height: 1.6;
+  color: #333;
+}
+
+.custom-content-image img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+</style>
+
+{% schema %}
+{
+  "name": "Custom Content with Image",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Your Heading Here"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description",
+      "default": "<p>Your description goes here. Add styled text or links as needed.</p>"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom Content with Image"
+    }
+  ]
+}
+{% endschema %}

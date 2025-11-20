@@ -1,0 +1,38 @@
+<!-- sections/PolicyContent.liquid -->
+
+{% assign current_policy = '' %}
+{% for policy in shop.policies %}
+  {% assign policy_path = policy.url | remove: shop.url %}
+  {% if policy_path == request.path %}
+    {% assign current_policy = policy %}
+    {% break %}
+  {% endif %}
+{% endfor %}
+
+<div class="padding-global padding-section-medium">
+  <div class="container-large">
+    <div class="default_wrapper">
+      <div class="text-rich-text w-richtext">
+        {% if current_policy != '' %}
+          {{ current_policy.body }}
+        {% else %}
+          {{ page.content }}
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "tag": "section",
+  "name": "PolicyContent",
+  "class": "section_policy",
+  "presets": [
+    {
+      "name": "PolicyContent",
+      "category": "Liquify"
+    }
+  ]
+}
+{% endschema %}

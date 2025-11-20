@@ -1,0 +1,25 @@
+<div id="gallery" class="padding-global"><div class="container-large"><div class="padding-section-large"><div class="gallery22_component"><div class="margin-bottom margin-xxlarge"><div class="max-width-large"><div class="settings-schema w-embed"></div>
+<div class="margin-bottom margin-small"><h2 li-object="section.settings.gallery_heading_text" class="heading-style-h1">{{ section.settings.gallery_heading_text }}</h2></div><div class="richtext-wrapper text-size-medium w-richtext"><p li-object="section.settings.gallery_paragraph_text">{{ section.settings.gallery_paragraph_text }}</p></div></div></div><div data-delay="4000" data-animation="slide" class="gallery22_slider w-slider" data-autoplay="false" data-easing="ease" data-hide-arrows="false" data-disable-swipe="false" data-autoplay-limit="0" data-nav-spacing="3" data-duration="500" data-infinite="false" id="gallery13_slider"><div li-content-for-blocks="" class="gallery22_mask w-slider-mask">
+{% for block in section.blocks %}
+    {% case block.type %}
+        {% when '@app' %}
+            {% render block %}
+    {% when 'gallery-image' %}
+            <div li-block="Gallery Image" class="gallery22_slide w-slide">
+                    
+                    <div class="settings-schema w-embed"></div>
+
+                    
+                    <a href="#" class="gallery22_lightbox-link w-inline-block w-lightbox"><div class="gallery22_image-wrapper"><img li-object:src="block.settings.gallery_image | image_url: width: 720" loading="lazy" alt="" src="{{ block.settings.gallery_image | image_url: width: 720 }}" class="gallery22_image">
+</div><script type="application/json" class="w-json">{
+  "items": [],
+  "group": ""
+}</script></a>
+                    
+                </div>
+        {% endcase %}
+{% endfor %}
+
+</div>
+
+<div class="slider_arrow is-left w-slider-arrow-left"><div class="slider-arrow-icon w-embed"><svg width="100%" height="100%" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.31066 8.75001L9.03033 14.4697L7.96967 15.5303L0.439339 8.00001L7.96967 0.469676L9.03033 1.53034L3.31066 7.25001L15.5 7.25L15.5 8.75L3.31066 8.75001Z" fill="currentColor"></path></svg></div></div><div class="slider_arrow w-slider-arrow-right"><div class="slider-arrow-icon w-embed"><svg width="100%" height="100%" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.6893 7.25L6.96967 1.53033L8.03033 0.469666L15.5607 8L8.03033 15.5303L6.96967 14.4697L12.6893 8.75H0.5V7.25H12.6893Z" fill="currentColor"></path></svg></div></div><div class="slider-nav w-slider-nav w-slider-nav-invert w-round"></div></div></div></div></div></div> {% schema %} {"tag":"section","name":"ProductGallery","class":"section_gallery22","blocks":[{"name":"Gallery Image","type":"gallery-image","settings":[{"type":"header","content":"Gallery Image Settings"},{"type":"image_picker","id":"gallery_image","label":"Gallery Image"}]}],"settings":[{"type":"header","content":"Gallery Content Settings"},{"type":"textarea","id":"gallery_heading_text","label":"Gallery Heading Text","default":"Medium length section heading goes here"},{"type":"richtext","id":"gallery_paragraph_text","label":"Gallery Paragraph Text","default":"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.<\/p>"}],"presets":[{"name":"ProductGallery","category":"Liquify","blocks":[{"type":"gallery-image"}]}]} {% endschema %}

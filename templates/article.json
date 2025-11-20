@@ -1,0 +1,27 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "articlehero_mXMXk9": {
+      "type": "articlehero",
+      "settings": {}
+    },
+    "articlecontent_9MP8fV": {
+      "type": "articlecontent",
+      "settings": {}
+    }
+  },
+  "layout": "theme",
+  "wrapper": "main.main-wrapper",
+  "order": [
+    "articlehero_mXMXk9",
+    "articlecontent_9MP8fV"
+  ]
+}

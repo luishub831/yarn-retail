@@ -1,0 +1,115 @@
+<div class="collection-layout container-large">
+  <!-- Left Sidebar Filters -->
+  <aside class="collection-filters">
+    <div class="background-color-grey">
+      <div class="filter_filters-wrapper">
+        <form action="{{ routes.search_url }}" method="get" role="search" class="filter_form_component">
+          <div class="filter_form">
+            <div class="filter_scroll-wrapper">
+              <div class="filter_filter-group-list">
+                {% for filter in collection.filters %}
+                  <div class="filter_filter-group">
+                    <h4 class="filter-title">{{ filter.label }}</h4>
+                    <div class="filter_list">
+                      {% for filter_value in filter.values %}
+                        <div class="filter_item">
+                          <a href="{% if filter_value.active %}{{ filter_value.url_to_remove }}{% else %}{{ filter_value.url_to_add }}{% endif %}" 
+                             class="{% if filter_value.count == 0 and filter_value.active == false %}filter_form_checkbox is-disabled{% else %}filter_form_checkbox{% endif %}">
+                            <div class="{% if filter_value.active %}filter_form_checkbox-icon is-checked{% else %}filter_form_checkbox-icon{% endif %}"></div>
+                            <div class="filter_form_checkbox-label">
+                              {{ filter_value.label }} ({{ filter_value.count }})
+                            </div>
+                          </a>
+                        </div>
+                      {% endfor %}
+                    </div>
+                  </div>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Right Product Grid -->
+  <main class="collection-products">
+    <div class="filter_feed">
+      <div class="filter_feed-header">
+        <div class="filter_tags-wrapper">
+          {% for filters in collection.filters %}
+            {% for filter_value in filters.active_values %}
+              <div class="filter_tag">
+                {{ filter_value.label }}
+                <a href="{{ filter_value.url_to_remove }}" class="filter_close">✕</a>
+              </div>
+            {% endfor %}
+          {% endfor %}
+        </div>
+
+        <select id="sort-by" class="sort_select">
+          {% for option in collection.sort_options %}
+            <option value="{{ option.value }}" {% if option.value == collection.sort_by %}selected{% endif %}>{{ option.name }}</option>
+          {% endfor %}
+        </select>
+      </div>
+
+      <div class="filter_product-list">
+        {% for product in collection.products %}
+          {% render 'product_item', product: product %}
+        {% endfor %}
+      </div>
+    </div>
+  </main>
+</div>
+<style>
+    .collection-layout {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    }
+
+    .collection-filters {
+    width: 260px;
+    flex-shrink: 0;
+    border-right: 1px solid #e5e5e5;
+    padding-right: 20px;
+    }
+
+    .collection-products {
+    flex: 1;
+    }
+
+    .filter-title {
+    font-weight: 400;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+    }
+
+    .filter_item {
+    margin-bottom: 8px;
+    }
+
+    .filter_form_checkbox-label {
+    display: inline-block;
+    font-size: 14px;
+    }
+    @media (max-width: 768px) {
+        .collection-layout {
+            flex-direction: column;
+        }
+
+        .collection-filters {
+            width: 100%;
+            border-right: none;
+            border-bottom: 1px solid #e5e5e5;
+            padding-bottom: 20px;
+        }
+    }
+
+
+</style>
+
+{% schema %} {"tag":"section","name":"CollectionFilter","class":"section_filters5","presets":[{"name":"CollectionFilter","category":"Liquify","blocks":[]}]} {% endschema %}

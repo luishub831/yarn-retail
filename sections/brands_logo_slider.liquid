@@ -1,0 +1,119 @@
+{% comment %}
+  Brand Logos Slider Section
+{% endcomment %}
+
+<section class="brand-logos">
+  <div class="container">
+    {% if section.settings.heading != blank %}
+      <h2 class="brand-heading">{{ section.settings.heading }}</h2>
+    {% endif %}
+
+    <div class="logo-slider">
+      <div class="logo-track">
+        {% for block in section.blocks %}
+          <div class="logo-item">
+            {% if block.settings.logo != blank %}
+              <img src="{{ block.settings.logo | image_url: width: 200 }}" alt="Brand Logo">
+            {% endif %}
+          </div>
+        {% endfor %}
+        {%- comment -%}
+        Duplicate logos for infinite scrolling effect
+        {%- endcomment -%}
+        {% for block in section.blocks %}
+          <div class="logo-item">
+            {% if block.settings.logo != blank %}
+              <img src="{{ block.settings.logo | image_url: width: 200 }}" alt="Brand Logo">
+            {% endif %}
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.brand-logos {
+  padding: 40px 20px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.brand-heading {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 25px;
+}
+
+.logo-slider {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.logo-track {
+  display: flex;
+  width: max-content;
+  animation: scroll 40s linear infinite;
+}
+
+.logo-item {
+  flex: 0 0 auto;
+  margin: 0 40px;
+}
+
+.logo-item img {
+  max-height: 60px;
+  width: auto;
+  display: block;
+  object-fit: contain;
+  filter: grayscale(100%);
+  transition: filter 0.3s ease;
+}
+
+.logo-item img:hover {
+  filter: grayscale(0%);
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+</style>
+
+{% schema %}
+{
+  "name": "Brand Logos Slider",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Brands We Trust"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "logo",
+      "name": "Brand Logo",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "logo",
+          "label": "Logo Image"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 20,
+  "presets": [
+    {
+      "name": "Brand Logos Slider"
+    }
+  ]
+}
+{% endschema %}

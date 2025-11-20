@@ -1,0 +1,21 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js" async></script>
+
+{{ 'xe_cart.min.js' | asset_url | script_tag }}
+{{ 'xe_app.js' | asset_url | script_tag }}
+{{ 'xe_cart_image.css' | asset_url | stylesheet_tag }}
+<script type="text/javascript">
+            jQuery(function() {
+               CartJS.init({{ cart | json }});
+  });
+</script>
+{% comment %}
+  Fetching the custom_data metafield
+{% endcomment %}
+{% if product.metafields.Imprintnext.custom_data %}
+  {% assign custom_variants = product.metafields.Imprintnext.custom_data %}
+{% else %}
+  {% assign custom_variants = null %}
+{% endif %}
+{% if custom_variants %}
+  <span id="customData" style="display:none">{{ custom_variants | escape }}</span>
+{% endif %}
