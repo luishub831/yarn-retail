@@ -1,0 +1,29 @@
+# Shopify CLI ignore file
+# This file tells Shopify CLI which files to ignore when uploading your theme
+
+# Ignore generated/minified assets (these should be built by Shopify's asset pipeline)
+assets/theprintgarage.css
+assets/theprintgarage.css.liquid
+assets/theprintgarage.0620bedf1.css
+assets/theprintgarage.0620bedf1.css.liquid
+
+# Ignore any minified CSS files with hash patterns
+assets/*.*.css
+assets/*.*.css.liquid
+
+# Optional: Ignore common development files
+*.log
+*.tmp
+.DS_Store
+Thumbs.db
+
+# Optional: Ignore source files if you have a build process
+# assets/scss/
+# assets/src/
+
+# Optional: Ignore node_modules if you have any
+node_modules/*
+
+# Ignore git files
+.git/*
+.gitignore

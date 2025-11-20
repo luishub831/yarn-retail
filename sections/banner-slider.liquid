@@ -7,23 +7,25 @@
             <img src="{{ block.settings.image | img_url: 'master' }}" alt="{{ block.settings.heading | escape }}" class="banner-slide-image" />
           {% endif %}
 
-          <div class="banner-text">
-            {% if block.settings.heading != blank %}
-              <h2 class="banner-heading">{{ block.settings.heading }}</h2>
-            {% endif %}
-            {% if block.settings.description != blank %}
-              <p class="banner-description">{{ block.settings.description }}</p>
-            {% endif %}
+          <div class="banner-content-wrapper">
+            <div class="banner-text">
+              {% if block.settings.heading != blank %}
+                <h1 class="banner-heading">{{ block.settings.heading }}</h1>
+              {% endif %}
+              {% if block.settings.description != blank %}
+                <p class="banner-description">{{ block.settings.description }}</p>
+              {% endif %}
+              
+              {% if block.settings.button_text != blank %}
+                <a li-object:href="{{ block.settings.button_link }}" href="{{ block.settings.button_link }}" class="button w-inline-block is-default is-primary banner-button">
+                  <div class="settings-schema w-embed"></div>
+                  <span li-if="block.settings.btn_layout != 'btn_layout_icon'">
+                    {{ block.settings.button_text }}
+                  </span>
+                </a>
+              {% endif %}
+            </div>
           </div>
-
-          {% if block.settings.button_text != blank %}
-            
-            <a li-object:href="{{ block.settings.button_link }}" href="{{ block.settings.button_link }}" class="button w-inline-block is-default is-primary banner-button"><div class="settings-schema w-embed"></div>
-                    <span li-if="block.settings.btn_layout != 'btn_layout_icon'">
-                    {{ block.settings.button_text }}   </span>
-                  
-            </a>
-          {% endif %}
         </div>
       </div>
     {% endfor %}
@@ -57,7 +59,7 @@
 {% endschema %}
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
 
 <script>
   document.addEventListener("DOMContentLoaded", function() {
@@ -82,6 +84,8 @@
   position: relative;
   height: 66vh;
   overflow: hidden;
+  display: flex;
+  align-items: center;
 }
 
 /* Image fills container */
@@ -90,29 +94,105 @@
   height: 100%;
   object-fit: cover;
   display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
 }
 
-/* Text block centered */
+/* Content wrapper for left alignment */
+.banner-content-wrapper {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1700px;
+  margin: 0 auto;
+  padding: 0 80px;
+}
+
+/* Text block positioned on the left */
 .banner-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
+  max-width: 600px;
   color: #fff;
-  max-width: 80%;
+  text-align: left;
 }
 
-/* Button anchored 100px above bottom */
+/* Enhanced heading styling */
+.banner-heading {
+  font-family: 'Newake', sans-serif;
+  font-size: clamp(3rem, 6vw, 60px);
+  font-weight: 400;
+  line-height: 60px;
+  letter-spacing: 0%;
+  vertical-align: middle;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Description styling */
+.banner-description {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  opacity: 0.95;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Button styling - using original theme button */
 .banner-button {
-  position: absolute;
-  bottom: 45px;
-  left: 50%;
-  display: inline-block;  
-}
-.swiper-button-next, .swiper-button-prev{
-    color: white;
+  margin-top: 1rem;
+  width: auto !important;
+  display: inline-block !important;
+  max-width: none !important;
 }
 
+/* Navigation buttons */
+.swiper-button-next, .swiper-button-prev {
+  color: white;
+  {% comment %} background: rgba(255, 255, 255, 0.2); {% endcomment %}
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  backdrop-filter: blur(10px);
+}
+
+.swiper-button-next:hover, .swiper-button-prev:hover {
+  {% comment %} background: rgba(255, 255, 255, 0.3); {% endcomment %}
+}
+
+/* Pagination dots */
+.swiper-pagination-bullet {
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.swiper-pagination-bullet-active {
+  background: #ff6b35;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .banner-content-wrapper {
+    padding: 0 40px;
+  }
+  
+  .banner-text {
+    max-width: 100%;
+  }
+  
+  .banner-heading {
+    font-size: clamp(2rem, 6vw, 3rem);
+    margin-bottom: 0.8rem;
+  }
+  
+  .banner-description {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .banner-button {
+    padding: 12px 24px;
+    font-size: 0.9rem;
+  }
+}
 </style>
 
