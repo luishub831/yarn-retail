@@ -3,7 +3,22 @@
       <div class="padding-section-small">
         <div class="heading-style-h3 "><h3 class="text-align-center">{{ section.settings.products_section_title }}</h3></div>
          <div class="product12_component">
-            
+            <div class="margin-bottom">
+               <div class="product12_heading-wrapper">
+                  <div class="product12_heading">
+                     <div class="max-width-large">
+                        <div class="settings-schema w-embed"></div>
+                        <div class="margin-bottom margin-xsmall">
+                           <h2 li-object="section.settings.products_heading_text" class="heading-style-h2">{{ section.settings.products_heading_text }}</h2>
+                        </div>
+                        <div class="richtext-wrapper text-size-medium w-richtext">
+                           <p li-object="section.settings.products_paragraph_text">{{ section.settings.products_paragraph_text }}</p>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="button-group">{% render 'button' %}</div>
+               </div>
+            </div>
             <div data-delay="4000" data-animation="slide" class="product12_slider w-slider" data-autoplay="false" data-easing="ease" data-hide-arrows="false" data-disable-swipe="false" data-autoplay-limit="0" data-nav-spacing="3" data-duration="500" data-infinite="true">
                <div class="product12_mask w-slider-mask">
                   {% for product in section.settings.collection_select_a_collection.products limit: section.settings.collection_select_a_collection_limit %}
@@ -28,22 +43,7 @@
                </div>
                {% comment %} <div class="slider-nav w-slider-nav w-slider-nav-invert w-round"></div> {% endcomment %}
             </div>
-            <div class="margin-bottom">
-               <div class="product12_heading-wrapper">
-                  <div class="product12_heading">
-                     <div class="max-width-large">
-                        <div class="settings-schema w-embed"></div>
-                        <div class="margin-bottom margin-xsmall">
-                           <h2 li-object="section.settings.products_heading_text" class="heading-style-h2">{{ section.settings.products_heading_text }}</h2>
-                        </div>
-                        <div class="richtext-wrapper text-size-medium w-richtext">
-                           <p li-object="section.settings.products_paragraph_text">{{ section.settings.products_paragraph_text }}</p>
-                        </div>
-                     </div>
-                  </div>
-                  {% comment %} <div class="button-group">{% render 'button' %}</div> {% endcomment %}
-               </div>
-            </div>
+            
          </div>
       </div>
    </div>
@@ -250,27 +250,27 @@
         overflow: hidden;
     }
     .product12_component .slider_arrow.is-left{
-       left:0;
+       left:2%;
     }
     .product12_component .w-slider-arrow-right{
         
     }
     .product12_component .product12_heading{
-        margin: auto;
-        text-align: center;
+        {% comment %} margin: auto;
+        text-align: center; {% endcomment %}
     }
     .product12_component  .product12_item{
         aspect-ratio: 4 / 4;
     }
     .product12_component .product12_slider{
-        padding: 20px 40px 20px 40px;
+        padding: 20px 6px;
     }
     .product12_component .product12_slide{
-        padding: 0 1rem;
-        width: 25%;
+        padding: 15px 10px 30px 10px;
+        width: 20%;
     }
     .product12_component .slider_arrow{
-        inset: auto 0% 50% auto;
+        inset: auto 2% 60% 95%;
     }
     .product12_component .w-slider-arrow-left, .product12_component .w-slider-arrow-right{
         margin: inherit;
