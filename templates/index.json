@@ -102,6 +102,7 @@
     },
     "image_with_header_4wEEJL": {
       "type": "image_with_header",
+      "disabled": true,
       "name": "Custom Content with Image",
       "settings": {
         "heading": "How To Order",
@@ -133,15 +134,25 @@
         ".product-item_form-wrapper {display: none;}"
       ],
       "settings": {
-        "products_section_title": "Featured Products",
-        "products_heading_text": "",
+        "products_section_title": "",
+        "products_heading_text": "Featured Products",
         "products_paragraph_text": "",
         "collection_select_a_collection": "show-in-designer",
         "collection_select_a_collection_limit": 6
       }
     },
+    "pageheadersplit_9rz4n4": {
+      "type": "pageheadersplit",
+      "custom_css": [],
+      "name": "PageHeaderSplit",
+      "settings": {
+        "pageheader_heading_text": "A care for craft that’d earn a *slow nod* from the old-school pros.",
+        "pageheader_paragraph_text": "<p>Every print, every stitch, every ship-out is done in-house – with the kind of precision and craft most shops stopped caring about years ago.<br/><br/>We’re fuelled by a love for creativity and a soft spot for the good ol’ days. Think cutting-edge tech meets vintage grit. A retro-styled print house where your wildest ideas don’t just come to life – they come to life looking <em>damn</em> good.<br/><br/>This isn’t tacky promo wear or soul-less dropshipping. It’s shelf-ready quality, made to rival what you'd find in your favourite store or boutique. We obsess over clean prints, premium blanks, and finishes that feel <em>like they belong in a brand campaign, </em>not the bottom of a tote bag.</p>"
+      }
+    },
     "two_image_links_hBX4tD": {
       "type": "two-image-links",
+      "disabled": true,
       "name": "Two Image Product Links",
       "settings": {
         "heading": "DEALS OF THE MONTH",
@@ -153,6 +164,7 @@
     },
     "image_with_header_QHQwxn": {
       "type": "image_with_header",
+      "disabled": true,
       "name": "Custom Content with Image",
       "settings": {
         "heading": "WITH OVER 20 YEARS EXPERIENCEDIN THE PRINTING GAME",
@@ -189,6 +201,34 @@
       ],
       "name": "Banner Slider",
       "settings": {}
+    },
+    "productslider_YzHCq4": {
+      "type": "productslider",
+      "blocks": {
+        "button_QzaLm6": {
+          "type": "button",
+          "settings": {
+            "btn_layout": "btn_layout_both",
+            "btn_style": "is-secondary",
+            "btn_size": "is-default",
+            "btn_icon_size": "icon-1x1-small",
+            "btn_url": "",
+            "btn_text": "VIew all",
+            "btn_icon_viewbox": "",
+            "btn_icon_path": ""
+          }
+        }
+      },
+      "block_order": [
+        "button_QzaLm6"
+      ],
+      "settings": {
+        "products_section_title": "",
+        "products_heading_text": "New Arrivals",
+        "products_paragraph_text": "",
+        "collection_select_a_collection": "show-in-designer",
+        "collection_select_a_collection_limit": 6
+      }
     },
     "scrollanimatecontent": {
       "type": "scrollanimatecontent",
@@ -292,15 +332,6 @@
         "bento_paragraph_text": "<p>The creators with big ideas, the brands chasing a team that feels like their own, and the trade pros who need real production power. If that’s you? You’re in the right garage.</p>"
       }
     },
-    "pageheadersplit_9rz4n4": {
-      "type": "pageheadersplit",
-      "custom_css": [],
-      "name": "PageHeaderSplit",
-      "settings": {
-        "pageheader_heading_text": "A care for craft that’d earn a *slow nod* from the old-school pros.",
-        "pageheader_paragraph_text": "<p>Every print, every stitch, every ship-out is done in-house – with the kind of precision and craft most shops stopped caring about years ago.<br/><br/>We’re fuelled by a love for creativity and a soft spot for the good ol’ days. Think cutting-edge tech meets vintage grit. A retro-styled print house where your wildest ideas don’t just come to life – they come to life looking <em>damn</em> good.<br/><br/>This isn’t tacky promo wear or soul-less dropshipping. It’s shelf-ready quality, made to rival what you'd find in your favourite store or boutique. We obsess over clean prints, premium blanks, and finishes that feel <em>like they belong in a brand campaign, </em>not the bottom of a tote bag.</p>"
-      }
-    },
     "calltoactionbanner": {
       "type": "calltoactionbanner",
       "blocks": {
@@ -331,6 +362,7 @@
     },
     "testimonialslider": {
       "type": "testimonialslider",
+      "disabled": true,
       "settings": {
         "testimonials_heading_text": "But hey, don’t just take our word for it. Take theirs.",
         "testimonials_paragraph_text": ""
@@ -424,12 +456,13 @@
     "banner_slider_rPABRh",
     "image_with_header_4wEEJL",
     "productslider_B7FDfb",
+    "pageheadersplit_9rz4n4",
     "two_image_links_hBX4tD",
     "image_with_header_QHQwxn",
     "banner_slider_8hrrBh",
+    "productslider_YzHCq4",
     "scrollanimatecontent",
     "bentobox_8C79mQ",
-    "pageheadersplit_9rz4n4",
     "calltoactionbanner",
     "testimonialslider",
     "faqs_cPYXEf",
