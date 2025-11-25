@@ -375,11 +375,11 @@
           "type": "button",
           "settings": {
             "btn_layout": "btn_layout_both",
-            "btn_style": "is-primary",
+            "btn_style": "is-secondary",
             "btn_size": "is-default",
             "btn_icon_size": "icon-1x1-small",
             "btn_url": "",
-            "btn_text": "Full FAQs",
+            "btn_text": "Read Full FAQs",
             "btn_icon_viewbox": "",
             "btn_icon_path": ""
           }
@@ -390,7 +390,7 @@
       ],
       "name": "FAQs",
       "settings": {
-        "faq_heading_text": "questions? We've already answered them.",
+        "faq_heading_text": "Got questions? We've already answered them.",
         "faq_cta_heading_text": "Still not sure?",
         "faq_cta_paragraph_text": "<p>Check out the full FAQs list here</p>"
       }
