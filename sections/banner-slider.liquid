@@ -1,42 +1,43 @@
-<div class="swiper mySwiper">
-  <div class="swiper-wrapper">
-    {% for block in section.blocks %}
-      <div class="swiper-slide">
-        <div class="banner-slide-content">
-          {% if block.settings.image %}
-            <img src="{{ block.settings.image | img_url: 'master' }}" alt="{{ block.settings.heading | escape }}" class="banner-slide-image" />
-          {% endif %}
+<div class="section_banner-slider padding-global">
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      {% for block in section.blocks %}
+        <div class="swiper-slide">
+          <div class="banner-slide-content">
+            {% if block.settings.image %}
+              <img src="{{ block.settings.image | img_url: 'master' }}" alt="{{ block.settings.heading | escape }}" class="banner-slide-image" />
+            {% endif %}
 
-          <div class="banner-content-wrapper">
-            <div class="banner-text">
-              {% if block.settings.heading != blank %}
-                <h1 class="banner-heading">{{ block.settings.heading }}</h1>
-              {% endif %}
-              {% if block.settings.description != blank %}
-                <p class="banner-description">{{ block.settings.description }}</p>
-              {% endif %}
-              
-              {% if block.settings.button_text != blank %}
-                <a li-object:href="{{ block.settings.button_link }}" href="{{ block.settings.button_link }}" class="button w-inline-block is-default is-primary banner-button">
-                  <div class="settings-schema w-embed"></div>
-                  <span li-if="block.settings.btn_layout != 'btn_layout_icon'">
-                    {{ block.settings.button_text }}
-                  </span>
-                </a>
-              {% endif %}
+            <div class="banner-content-wrapper">
+              <div class="banner-text">
+                {% if block.settings.heading != blank %}
+                  <h1 class="banner-heading">{{ block.settings.heading }}</h1>
+                {% endif %}
+                {% if block.settings.description != blank %}
+                  <p class="banner-description">{{ block.settings.description }}</p>
+                {% endif %}
+                
+                {% if block.settings.button_text != blank %}
+                  <a li-object:href="{{ block.settings.button_link }}" href="{{ block.settings.button_link }}" class="button w-inline-block is-default is-primary banner-button">
+                    <div class="settings-schema w-embed"></div>
+                    <span li-if="block.settings.btn_layout != 'btn_layout_icon'">
+                      {{ block.settings.button_text }}
+                    </span>
+                  </a>
+                {% endif %}
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    {% endfor %}
+      {% endfor %}
+    </div>
+
+    <!-- arrows + dots -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-pagination"></div>
   </div>
-
-  <!-- arrows + dots -->
-  <div class="swiper-button-next"></div>
-  <div class="swiper-button-prev"></div>
-  <div class="swiper-pagination"></div>
 </div>
-
 
 {% schema %}
 {
@@ -92,12 +93,14 @@
 .banner-slide-image {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   display: block;
   position: absolute;
   top: 0;
   left: 0;
   z-index: 1;
+  background: transparent;
+  border-radius: 20px;
 }
 
 /* Content wrapper for left alignment */

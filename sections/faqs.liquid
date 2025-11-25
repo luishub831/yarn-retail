@@ -1,10 +1,75 @@
-<div id="faq" class="padding-global"><div class="container-large"><div class="padding-section-medium"><div class="faq4_component"><div class="settings-schema w-embed"></div>
-<div class="margin-bottom margin-xlarge"><div class="text-align-center"><div class="max-width-medium align-center"><h2 li-object="section.settings.faq_heading_text" class="heading-style-h2">{{ section.settings.faq_heading_text }}</h2></div></div></div><div class="max-width-large align-center"><div class="w-layout-grid faq4_list">{% for faq in metaobjects.faq.values %}    <div li-for="faq in metaobjects.faq.values" class="faq4_accordion">
-                                    
-                            <div class="faq4_question"><div li-object="faq.question" class="text-size-medium text-weight-bold">{{ faq.question }}</div><div class="faq4_icon-wrappper"><div class="button is-xsmall"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 448 512" width="100%" fill="currentColor" class="icon-1x1-small"><path d="M248 72c0-13.3-10.7-24-24-24s-24 10.7-24 24l0 160L40 232c-13.3 0-24 10.7-24 24s10.7 24 24 24l160 0 0 160c0 13.3 10.7 24 24 24s24-10.7 24-24l0-160 160 0c13.3 0 24-10.7 24-24s-10.7-24-24-24l-160 0 0-160z"></path></svg></div></div></div>
-                            
-                            <div class="faq4_answer"><div class="margin-bottom margin-small"><div class="richtext-wrapper w-richtext"><p li-object="faq.answer">{{ faq.answer }}</p></div></div></div>
-                            
+<div id="faq" class="padding-global">
+   <div class="container-large">
+      <div class="padding-section-medium">
+         <div class="faq4_component">
+            <div class="settings-schema w-embed"></div>
+            <div class="margin-bottom margin-xlarge">
+               <div class="text-align-center">
+                  <div class="max-width-medium align-center">
+                     <h2 li-object="section.settings.faq_heading_text" class="heading-style-h2">{{ section.settings.faq_heading_text }}</h2>
+                  </div>
+               </div>
+            </div>
+            <div class="max-width-large align-center">
+               <div class="w-layout-grid faq4_list">
+                  {% for faq in metaobjects.faq.values %}    
+                  <div li-for="faq in metaobjects.faq.values" class="faq4_accordion">
+                     <div class="faq4_question">
+                        <div li-object="faq.question" class="text-size-medium text-weight-bold">{{ faq.question }}</div>
+                        <div class="faq4_icon-wrappper">
+                           <div class="button is-xsmall">
+                              <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 448 512" width="100%" fill="currentColor" class="icon-1x1-small">
+                                 <path d="M248 72c0-13.3-10.7-24-24-24s-24 10.7-24 24l0 160L40 232c-13.3 0-24 10.7-24 24s10.7 24 24 24l160 0 0 160c0 13.3 10.7 24 24 24s24-10.7 24-24l0-160 160 0c13.3 0 24-10.7 24-24s-10.7-24-24-24l-160 0 0-160z"></path>
+                              </svg>
+                           </div>
                         </div>
-{% endfor %}</div></div><div class="margin-top margin-xxlarge"><div class="text-align-center"><div class="max-width-medium align-center"><div class="margin-bottom margin-xsmall"><h3 li-object="section.settings.faq_cta_heading_text">{{ section.settings.faq_cta_heading_text }}</h3></div><div class="richtext-wrapper w-richtext"><p li-object="section.settings.faq_cta_paragraph_text">{{ section.settings.faq_cta_paragraph_text }}</p></div><div class="margin-top margin-small"><div class="button-group is-center">{% render 'button' %}
-</div></div></div></div></div></div></div></div></div> {% schema %} {"tag":"section","name":"FAQs","class":"section_faq4","blocks":[{"name":"Button","type":"button","settings":[{"type":"header","content":"Button Settings"},{"type":"select","id":"btn_layout","label":"Button Layout","options":[{"value":"btn_layout_text","label":"Text Only"},{"value":"btn_layout_icon","label":"Icon Only"},{"value":"btn_layout_both","label":"Both"}],"default":"btn_layout_both"},{"type":"select","id":"btn_style","label":"Button Style","options":[{"value":"is-primary","label":"Primary"},{"value":"is-secondary","label":"Secondary"},{"value":"is-tertiary","label":"Tertiary"},{"value":"is-alternate","label":"Alternate"},{"value":"is-link","label":"Link"}],"default":"is-primary"},{"type":"select","id":"btn_size","label":"Button Size","options":[{"value":"is-xsmall","label":"xSmall"},{"value":"is-small","label":"Small"},{"value":"is-default","label":"Default"},{"value":"is-large","label":"Large"}],"default":"is-default"},{"type":"select","id":"btn_icon_size","label":"Button Icon Size","options":[{"value":"icon-1x1-xsmall","label":"xSmall"},{"value":"icon-1x1-small","label":"Small"},{"value":"icon-1x1-medium","label":"Medium"},{"value":"icon-1x1-large","label":"Large"}],"default":"icon-1x1-small"},{"type":"url","id":"btn_url","label":"Button Link"},{"type":"text","id":"btn_text","label":"Button Text","placeholder":"Button Text","default":"Button Text"},{"type":"text","id":"btn_icon_viewbox","label":"Button Icon SVG viewBox","placeholder":"0 0 384 512"},{"type":"textarea","id":"btn_icon_path","label":"Button Icon SVG Path","placeholder":"M328 96c13.3 0 24 10.7 24 24l0 240c0 13.3-10.7 24-24 24s-24-10.7-24-24l0-182.1L73 409c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l231-231L88 144c-13.3 0-24-10.7-24-24s10.7-24 24-24l240 0z"}]}],"settings":[{"type":"header","content":"FAQ Content Settings"},{"type":"textarea","id":"faq_heading_text","label":"FAQ Heading Text","default":"Medium length heading goes here"},{"type":"textarea","id":"faq_cta_heading_text","label":"FAQ CTA Heading Text","default":"Short heading goes here"},{"type":"richtext","id":"faq_cta_paragraph_text","label":"FAQ CTA Paragraph Text","default":"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.<\/p>"}],"presets":[{"name":"FAQs","category":"Liquify","blocks":[{"type":"button"}]}]} {% endschema %}
+                     </div>
+                     <div class="faq4_answer">
+                        <div class="margin-bottom margin-small">
+                           <div class="richtext-wrapper w-richtext">
+                              <p li-object="faq.answer">{{ faq.answer }}</p>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  {% endfor %}
+                  <div li-for="faq in metaobjects.faq.values" class="faq4_accordion">
+                     <div class="faq4_question">
+                        <div li-object="faq.question" class="text-size-medium text-weight-bold">{{ section.settings.faq_cta_heading_text }}</div>
+                        <div class="">
+                           {% render 'button' %}
+                        </div>
+                     </div>
+                     
+                  </div>
+               </div>
+            </div>
+            {% comment %} <div class="margin-top margin-xxlarge">
+               <div class="text-align-center">
+                  <div class="max-width-medium align-center">
+                     <div class="margin-bottom margin-xsmall">
+                        <h3 li-object="section.settings.faq_cta_heading_text">{{ section.settings.faq_cta_heading_text }}</h3>
+                     </div>
+                     <div class="richtext-wrapper w-richtext">
+                        <p li-object="section.settings.faq_cta_paragraph_text">{{ section.settings.faq_cta_paragraph_text }}</p>
+                     </div>
+                     <div class="margin-top margin-small">
+                        <div class="button-group is-center">{% render 'button' %}</div>
+                     </div>
+                  </div>
+               </div>
+            </div> {% endcomment %}
+         </div>
+      </div>
+   </div>
+</div>
+<style>
+    .faq4_component {
+        display: flex;
+    }
+    @media screen and (max-width: 767px) {
+        .faq4_component {
+            display: block;
+        }
+    }
+{% schema %} {"tag":"section","name":"FAQs","class":"section_faq4","blocks":[{"name":"Button","type":"button","settings":[{"type":"header","content":"Button Settings"},{"type":"select","id":"btn_layout","label":"Button Layout","options":[{"value":"btn_layout_text","label":"Text Only"},{"value":"btn_layout_icon","label":"Icon Only"},{"value":"btn_layout_both","label":"Both"}],"default":"btn_layout_both"},{"type":"select","id":"btn_style","label":"Button Style","options":[{"value":"is-primary","label":"Primary"},{"value":"is-secondary","label":"Secondary"},{"value":"is-tertiary","label":"Tertiary"},{"value":"is-alternate","label":"Alternate"},{"value":"is-link","label":"Link"}],"default":"is-primary"},{"type":"select","id":"btn_size","label":"Button Size","options":[{"value":"is-xsmall","label":"xSmall"},{"value":"is-small","label":"Small"},{"value":"is-default","label":"Default"},{"value":"is-large","label":"Large"}],"default":"is-default"},{"type":"select","id":"btn_icon_size","label":"Button Icon Size","options":[{"value":"icon-1x1-xsmall","label":"xSmall"},{"value":"icon-1x1-small","label":"Small"},{"value":"icon-1x1-medium","label":"Medium"},{"value":"icon-1x1-large","label":"Large"}],"default":"icon-1x1-small"},{"type":"url","id":"btn_url","label":"Button Link"},{"type":"text","id":"btn_text","label":"Button Text","placeholder":"Button Text","default":"Button Text"},{"type":"text","id":"btn_icon_viewbox","label":"Button Icon SVG viewBox","placeholder":"0 0 384 512"},{"type":"textarea","id":"btn_icon_path","label":"Button Icon SVG Path","placeholder":"M328 96c13.3 0 24 10.7 24 24l0 240c0 13.3-10.7 24-24 24s-24-10.7-24-24l0-182.1L73 409c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l231-231L88 144c-13.3 0-24-10.7-24-24s10.7-24 24-24l240 0z"}]}],"settings":[{"type":"header","content":"FAQ Content Settings"},{"type":"textarea","id":"faq_heading_text","label":"FAQ Heading Text","default":"Medium length heading goes here"},{"type":"textarea","id":"faq_cta_heading_text","label":"FAQ CTA Heading Text","default":"Short heading goes here"},{"type":"richtext","id":"faq_cta_paragraph_text","label":"FAQ CTA Paragraph Text","default":"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.<\/p>"}],"presets":[{"name":"FAQs","category":"Liquify","blocks":[{"type":"button"}]}]} {% endschema %}
