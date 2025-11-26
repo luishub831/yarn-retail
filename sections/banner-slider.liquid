@@ -77,7 +77,8 @@
 <script>
   document.addEventListener("DOMContentLoaded", function() {
     new Swiper(".mySwiper", {
-      loop: true,
+      slidesPerView: 1,
+      spaceBetween: 0,
       navigation: {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
@@ -86,7 +87,25 @@
         el: ".swiper-pagination",
         clickable: true,
       },
+      breakpoints: {
+        // Desktop: can show more if desired (example)
+        1024: {
+          slidesPerView: 1,
+          spaceBetween: 0,
+        },
+        // Tablet
+        768: {
+          slidesPerView: 1,
+          spaceBetween: 0,
+        },
+        // Mobile: strict 1 full slide per view
+        0: {
+          slidesPerView: 1,
+          spaceBetween: 0,
+        }
+      }
     });
+
   });
 </script>
 
