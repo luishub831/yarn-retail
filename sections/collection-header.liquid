@@ -1,110 +1,116 @@
-<div class="collection-header">
-  <div class="container-large">
-    <div class="collection-header__wrapper">
-      <div class="collection-header__content">
-        <div class="collection-header__breadcrumb">
-          <a href="/" class="collection-header__breadcrumb-link">Home</a>
-          <span class="collection-header__breadcrumb-separator">></span>
-          <a href="/collections" class="collection-header__breadcrumb-link">Collections</a>
-          <span class="collection-header__breadcrumb-separator">></span>
-          <span class="collection-header__breadcrumb-current">{{ collection.title }}</span>
+<div class="container-large">
+    <div class="collection-header">
+      <div class="">
+        <div class="collection-header__wrapper">
+          <div class="collection-header__content">
+            <h1 class="collection-header__title">{{ collection.title }}</h1>
+          </div>
         </div>
-        <h1 class="collection-header__title">{{ collection.title }}</h1>
       </div>
       
-      <div class="collection-header__image">
-        <div class="collection-header__curved-design">
-          <svg viewBox="0 0 400 200" class="collection-header__svg">
-            <!-- Curved design elements -->
-            <path d="M0,150 Q100,50 200,100 T400,80" fill="none" stroke="#8B5CF6" stroke-width="20" opacity="0.8"/>
-            <path d="M50,180 Q150,80 250,130 T450,110" fill="none" stroke="#F66718" stroke-width="15" opacity="0.9"/>
-            <path d="M100,120 Q200,20 300,70 T500,50" fill="none" stroke="#EC4899" stroke-width="12" opacity="0.7"/>
-            
-            <!-- Background circles for depth -->
-            <circle cx="320" cy="80" r="40" fill="#8B5CF6" opacity="0.2"/>
-            <circle cx="280" cy="120" r="25" fill="#F66718" opacity="0.3"/>
-            <circle cx="350" cy="140" r="30" fill="#EC4899" opacity="0.2"/>
-          </svg>
+      <div class="collection-header__decorative">
+        <img src="{{ 'decorative-curve.png' | file_url }}" alt="Decorative curve" class="collection-header__curve-image" width="400" height="200">
+      </div>
+    </div>
+    
+    <!-- Breadcrumb below the purple section -->
+    <div class="collection-breadcrumb">
+      <div class="">
+        <div class="collection-breadcrumb__wrapper">
+          <a href="{{ routes.root_url }}" class="collection-breadcrumb__link">Home</a>
+          <span class="collection-breadcrumb__separator">></span>
+          <a href="{{ routes.collections_url }}" class="collection-breadcrumb__link">Collections</a>
+          <span class="collection-breadcrumb__separator">></span>
+          <span class="collection-breadcrumb__current">{{ collection.title }}</span>
         </div>
       </div>
     </div>
-  </div>
+
 </div>
 
 <style>
 .collection-header {
-  background: linear-gradient(135deg, #8B5CF6 0%, #EC4899 50%, #F66718 100%);
+  background: {{ section.settings.background_color | default: '#753F9A' }};
   color: white;
-  padding: 40px 0 60px;
+  height: 80px;
   position: relative;
   overflow: hidden;
+  border-radius: 16px 16px 0 0;
+  display: flex;
+  align-items: center;
 }
 
 .collection-header__wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   position: relative;
   z-index: 2;
 }
 
 .collection-header__content {
-  flex: 1;
-  max-width: 50%;
-}
-
-.collection-header__breadcrumb {
-  margin-bottom: 20px;
-  font-size: 14px;
-  opacity: 0.9;
-}
-
-.collection-header__breadcrumb-link {
-  color: white;
-  text-decoration: none;
-  transition: opacity 0.2s ease;
-}
-
-.collection-header__breadcrumb-link:hover {
-  opacity: 0.8;
-  text-decoration: underline;
-}
-
-.collection-header__breadcrumb-separator {
-  margin: 0 8px;
-  opacity: 0.7;
-}
-
-.collection-header__breadcrumb-current {
-  opacity: 0.8;
+  padding-left: 0;
 }
 
 .collection-header__title {
-  font-size: 48px;
+  font-size: 24px;
   font-weight: bold;
   margin: 0;
   line-height: 1.2;
+  text-transform: uppercase;
 }
 
-.collection-header__image {
-  flex: 1;
-  max-width: 50%;
-  position: relative;
-  height: 200px;
+.collection-header__decorative {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 50%;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.collection-header__curve-image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: auto;
+  max-width: 400px;
+  background: transparent;
+}
+
+/* Breadcrumb section */
+.collection-breadcrumb {
+  background: #E4E4E4;
+  height: 35px;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  border-radius: 0 0 16px 16px;
+  margin-bottom: 30px;
 }
 
-.collection-header__curved-design {
-  width: 100%;
-  height: 100%;
-  position: relative;
+.collection-breadcrumb__wrapper {
+  font-size: 14px;
+  padding: 0;
 }
 
-.collection-header__svg {
-  width: 100%;
-  height: 100%;
+.collection-breadcrumb__link {
+  color: #666;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.collection-breadcrumb__link:hover {
+  color: #753F9A;
+  text-decoration: underline;
+}
+
+.collection-breadcrumb__separator {
+  margin: 0 8px;
+  color: #999;
+}
+
+.collection-breadcrumb__current {
+  color: #333;
+  font-weight: 500;
 }
 
 /* Responsive design */
@@ -113,23 +119,20 @@
     padding: 30px 0 40px;
   }
   
-  .collection-header__wrapper {
-    flex-direction: column;
-    text-align: center;
-    gap: 30px;
-  }
-  
-  .collection-header__content,
-  .collection-header__image {
-    max-width: 100%;
-  }
-  
   .collection-header__title {
     font-size: 36px;
   }
   
-  .collection-header__image {
-    height: 150px;
+  .collection-header__decorative {
+    display: none;
+  }
+  
+  .collection-breadcrumb {
+    padding: 10px 0;
+  }
+  
+  .collection-breadcrumb__wrapper {
+    font-size: 12px;
   }
 }
 
@@ -137,29 +140,9 @@
   .collection-header__title {
     font-size: 28px;
   }
-  
-  .collection-header__breadcrumb {
-    font-size: 12px;
-  }
 }
 
-/* Animation for the curved elements */
-@keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
-}
 
-.collection-header__curved-design path:nth-child(1) {
-  animation: float 6s ease-in-out infinite;
-}
-
-.collection-header__curved-design path:nth-child(2) {
-  animation: float 4s ease-in-out infinite 0.5s;
-}
-
-.collection-header__curved-design path:nth-child(3) {
-  animation: float 5s ease-in-out infinite 1s;
-}
 </style>
 
 {% schema %}
@@ -174,21 +157,9 @@
     },
     {
       "type": "color",
-      "id": "gradient_start",
-      "label": "Gradient Start Color",
-      "default": "#8B5CF6"
-    },
-    {
-      "type": "color", 
-      "id": "gradient_middle",
-      "label": "Gradient Middle Color",
-      "default": "#EC4899"
-    },
-    {
-      "type": "color",
-      "id": "gradient_end", 
-      "label": "Gradient End Color",
-      "default": "#F66718"
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#753F9A"
     },
     {
       "type": "range",
