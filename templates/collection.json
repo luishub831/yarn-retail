@@ -1,1 +1,32 @@
-{"sections":{"collectionfilter_jtdtTD":{"type":"collectionfilter","settings":{}}},"layout":"theme","wrapper":"main.main-wrapper","order":["collectionfilter_jtdtTD"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "collectionfilter_jtdtTD": {
+      "type": "collectionfilter",
+      "settings": {}
+    },
+    "collection_header_yRxwxz": {
+      "type": "collection-header",
+      "name": "Collection Header",
+      "settings": {
+        "background_color": "#753F9A",
+        "header_padding_top": 40,
+        "header_padding_bottom": 60
+      }
+    }
+  },
+  "layout": "theme",
+  "wrapper": "main.main-wrapper",
+  "order": [
+    "collection_header_yRxwxz",
+    "collectionfilter_jtdtTD"
+  ]
+}
