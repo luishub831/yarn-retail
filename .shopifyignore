@@ -2,7 +2,7 @@
 # This file tells Shopify CLI which files to ignore when uploading your theme
 
 # Ignore generated/minified assets (these should be built by Shopify's asset pipeline)
-# assets/theprintgarage.css
+assets/theprintgarage.css
 # assets/theprintgarage.css.liquid
 assets/theprintgarage.0620bedf1.css
 assets/theprintgarage.0620bedf1.css.liquid
