@@ -86,11 +86,12 @@
                         {% endif %}
                      </div>
                   </div>
-                  <div class="footer16_link-column">
-                     <div class="margin-bottom margin-xsmall">
+                  <div class="footer16_link-column footer16_accordion-column">
+                     <div class="footer16_accordion-header" onclick="toggleFooterAccordion(this)">
                         <div li-object="section.settings.footer_column_1_heading_text" class="footer16_column-heading">{{ section.settings.footer_column_1_heading_text }}</div>
+                        <div class="footer16_accordion-icon">+</div>
                      </div>
-                     <ul role="list" class="footer16_link-list w-list-unstyled">
+                     <ul role="list" class="footer16_link-list footer16_accordion-content w-list-unstyled">
                         {% for link in linklists.footer-links-column-1.links %}    
                         <li li-for="link in linklists.footer-links-column-1.links" class="footer16_link-list-item">
                            <a li-object:href="link.url" li-object="link.title" href="{{ link.url }}" class="footer16_link">{{ link.title }}</a>
@@ -98,11 +99,12 @@
                         {% endfor %}
                      </ul>
                   </div>
-                  <div class="footer16_link-column">
-                     <div class="margin-bottom margin-xsmall">
+                  <div class="footer16_link-column footer16_accordion-column">
+                     <div class="footer16_accordion-header" onclick="toggleFooterAccordion(this)">
                         <div li-object="section.settings.footer_column_2_heading_text" class="footer16_column-heading">{{ section.settings.footer_column_2_heading_text }}</div>
+                        <div class="footer16_accordion-icon">+</div>
                      </div>
-                     <ul role="list" class="footer16_link-list w-list-unstyled">
+                     <ul role="list" class="footer16_link-list footer16_accordion-content w-list-unstyled">
                         {% for link in linklists.footer-links-column-2.links %}    
                         <li li-for="link in linklists.footer-links-column-2.links" class="footer16_link-list-item">
                            <a li-object:href="link.url" li-object="link.title" href="{{ link.url }}" class="footer16_link">{{ link.title }}</a>
@@ -161,3 +163,120 @@
    </div>
 </div>
 {% schema %} {"tag":"footer","name":"FooterMain","class":"footer16_component","settings":[{"type":"header","content":"Footer Content Settings"},{"type":"textarea","id":"footer_top_tagline_text","label":"Footer Top Tagline Text","default":"Lorem ipsum dolor sit amet, consectetur adipiscing elit."},{"type":"image_picker","id":"footer_top_logo_icon","label":"Footer Top Logo Icon"},{"type":"text","id":"footer_contact_details_heading_text","label":"Contact Details Heading Text","default":"Short Heading"},{"type":"text","id":"footer_location_details_heading_text","label":"Location Details Heading Text","default":"Short Heading"},{"type":"text","id":"footer_column_1_heading_text","label":"Links Column 1 Heading Text","default":"Short Column Heading"},{"type":"text","id":"footer_column_2_heading_text","label":"Links Column 2 Heading Text","default":"Short Column Heading"},{"type":"text","id":"footer_newsletter_heading_text","label":"Newsletter Heading Text","default":"Short Column Heading"},{"type":"textarea","id":"footer_newsletter_paragraph_text","label":"Newsletter Paragraph Text","default":"Lorem ipsum dolor sit amet, consectetur adipiscing elit."},{"type":"textarea","id":"footer_newsletter_submission_success_text","label":"Newsletter Submission Success Text","default":"Thank you! Your submission has been received!"},{"type":"textarea","id":"footer_newsletter_submission_error_text","label":"Newsletter Submission Error Text","default":"Oops! Something went wrong while submitting the form."},{"type":"textarea","id":"footer_newsletter_terms_text","label":"Newsletter Terms Text","default":"Lorem ipsum dolor sit amet, consectetur adipiscing elit."},{"type":"image_picker","id":"footer_logo_banner","label":"Footer Logo Banner"},{"type":"textarea","id":"footer_copyright_text","label":"Footer Copyright Text","default":"Company Name. All Rights Reserved"},{"type":"image_picker","id":"footer_bottom_logo_icon","label":"Footer Bottom Logo Icon"}],"presets":[{"name":"FooterMain","category":"Liquify","blocks":[]}]} {% endschema %}
+
+<style>
+/* Mobile accordion styles */
+@media (max-width: 768px) {
+  .footer16_menu-wrapper {
+    display: block !important;
+  }
+  
+  .footer16_accordion-column {
+    width: 100% !important;
+    grid-column: 1 / -1 !important;
+    margin-bottom: 0;
+  }
+  
+  .footer16_accordion-column .footer16_accordion-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.8);
+    cursor: pointer;
+  }
+  
+  .footer16_accordion-column .footer16_accordion-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #F66718;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    transition: transform 0.3s ease;
+  }
+  
+  .footer16_accordion-column.active .footer16_accordion-icon {
+    transform: rotate(45deg);
+  }
+  
+  .footer16_accordion-column .footer16_accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+  
+  .footer16_accordion-column.active .footer16_accordion-content {
+    max-height: 500px;
+    padding-bottom: 15px;
+  }
+  
+  .footer16_accordion-column .margin-bottom {
+    display: none;
+  }
+}
+
+/* Desktop styles - normal display */
+@media (min-width: 769px) {
+  .footer16_accordion-header {
+    cursor: default;
+  }
+  
+  .footer16_accordion-icon {
+    display: none;
+  }
+  
+  .footer16_accordion-content {
+    max-height: none !important;
+    overflow: visible !important;
+  }
+  
+  .footer16_accordion-column .margin-bottom {
+    display: block;
+  }
+}
+</style>
+
+<script>
+function toggleFooterAccordion(header) {
+  // Only work on mobile screens
+  if (window.innerWidth <= 768) {
+    const column = header.parentElement;
+    const isActive = column.classList.contains('active');
+    
+    // Close all accordions first
+    document.querySelectorAll('.footer16_accordion-column').forEach(col => {
+      col.classList.remove('active');
+    });
+    
+    // Toggle current accordion
+    if (!isActive) {
+      column.classList.add('active');
+    }
+  }
+}
+
+// Initialize accordions on page load
+document.addEventListener('DOMContentLoaded', function() {
+  // Close all accordions by default on mobile
+  if (window.innerWidth <= 768) {
+    document.querySelectorAll('.footer16_accordion-column').forEach(col => {
+      col.classList.remove('active');
+    });
+  }
+});
+
+// Handle window resize
+window.addEventListener('resize', function() {
+  if (window.innerWidth > 768) {
+    // Remove active class on desktop
+    document.querySelectorAll('.footer16_accordion-column').forEach(col => {
+      col.classList.remove('active');
+    });
+  }
+});
+</script>
