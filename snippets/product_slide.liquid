@@ -24,7 +24,7 @@
    </div>
    <div class="spacer-xxsmall"></div>
    <div class="spacer-xsmall"></div>
-   <div class="product-item_form-wrapper">
+   {% comment %} <div class="product-item_form-wrapper">
       {% if product.available == true %}    
       <div li-if="product.available == true">
          <a li-element="add-to-cart" href="#" class="button is-tertiary is-small w-button" @click="addToCart($event, true)" :disabled="!addToCartButton">Add to Cart</a>    
@@ -34,7 +34,7 @@
          <a href="#" class="button is-secondary is-small pointer-events-off w-button">Not in Stock</a>    
       </div>
       {% endif %}
-   </div>
+   </div> {% endcomment %}
    
 </div>
 <div class="product_desc_wrapper">
@@ -65,7 +65,9 @@
     /* Product slide container - only style on hover */
     .product12_slide {
         transition: all 0.3s ease;
+        padding: 15px 10px 30px 10px;
     }
+    
     
     .product12_slide:hover {
         background: white;
