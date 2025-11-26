@@ -1,35 +1,163 @@
 <div class="settings-schema w-embed"></div>
-<div id="footer" class="padding-global"><div class="container-large"><div class="padding-vertical padding-xsmall"><div class="footer16_top-wrapper"><div li-object="section.settings.footer_top_tagline_text" class="footer16_tagline-text">{{ section.settings.footer_top_tagline_text }}</div><img src="{{ section.settings.footer_top_logo_icon | image_url: width: 180 }}" loading="lazy" li-object:src="section.settings.footer_top_logo_icon | image_url: width: 180" alt="" class="footer16_logo">
-</div></div><div class="line-divider"></div><div class="padding-top padding-large"><div class="padding-bottom padding-xlarge"><div class="w-layout-grid footer16_middle-wrapper"><div class="w-layout-grid footer16_menu-wrapper"><div id="w-node-cc733bdc-2c7e-84ff-dfb4-3ff88116f348-8116f33b" class="footer16_link-column"><div class="footer15_details-wrapper"><div class="margin-bottom margin-xsmall"><div li-object="section.settings.footer_contact_details_heading_text" class="footer16_column-heading">{{ section.settings.footer_contact_details_heading_text }}</div></div><div class="margin-bottom margin-small"><div li-object="shop.phone" class="footer16_link">{{ shop.phone }}</div><a li-object="shop.email" href="mailto:{{ shop.email }}" class="footer16_link">{{ shop.email }}</a></div><div class="margin-bottom margin-xsmall"><div li-object="section.settings.footer_location_details_heading_text" class="footer16_column-heading">{{ section.settings.footer_location_details_heading_text }}</div></div><div class="margin-bottom margin-small"><div li-object="shop.address.summary" class="footer16_link">{{ shop.address.summary }}</div></div></div><div class="w-layout-grid footer15_social-list">{% if shop.brand.metafields.social_links.facebook.value != blank %}    <div li-if="shop.brand.metafields.social_links.facebook.value != blank">
-    <a li-object:href="shop.brand.metafields.social_links.facebook.value" href="{{ shop.brand.metafields.social_links.facebook.value }}" target="_blank" class="footer15_social-link w-inline-block"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 320 512" width="100%" fill="currentColor" aria-hidden="true" class="icon-1x1-small"><path d="M80 299.3V512H196V299.3h86.5l18-97.8H196V166.9c0-51.7 20.3-71.5 72.7-71.5c16.3 0 29.4 .4 37 1.2V7.9C291.4 4 256.4 0 236.2 0C129.3 0 80 50.5 80 159.4v42.1H14v97.8H80z"></path></svg><span class="sr-only">Facebook</span></a>    </div>
-{% endif %}{% if shop.brand.metafields.social_links.linkedin.value != blank %}    <div li-if="shop.brand.metafields.social_links.linkedin.value != blank">
-    <a li-object:href="shop.brand.metafields.social_links.linkedin.value" href="{{ shop.brand.metafields.social_links.linkedin.value }}" target="_blank" class="footer15_social-link w-inline-block"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 448 512" width="100%" fill="currentColor" aria-hidden="true" class="icon-1x1-small"><path d="M100.3 448H7.4V148.9h92.9zM53.8 108.1C24.1 108.1 0 83.5 0 53.8a53.8 53.8 0 0 1 107.6 0c0 29.7-24.1 54.3-53.8 54.3zM447.9 448h-92.7V302.4c0-34.7-.7-79.2-48.3-79.2-48.3 0-55.7 37.7-55.7 76.7V448h-92.8V148.9h89.1v40.8h1.3c12.4-23.5 42.7-48.3 87.9-48.3 94 0 111.3 61.9 111.3 142.3V448z"></path></svg><span class="sr-only">LinkedIn</span></a>    </div>
-{% endif %}{% if shop.brand.metafields.social_links.tiktok.value != blank %}    <div li-if="shop.brand.metafields.social_links.tiktok.value != blank">
-    <a li-object:href="shop.brand.metafields.social_links.tiktok.value" href="{{ shop.brand.metafields.social_links.tiktok.value }}" target="_blank" class="footer15_social-link w-inline-block"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 448 512" width="100%" fill="currentColor" aria-hidden="true" class="icon-1x1-small"><path d="M448 209.9a210.1 210.1 0 0 1 -122.8-39.3V349.4A162.6 162.6 0 1 1 185 188.3V278.2a74.6 74.6 0 1 0 52.2 71.2V0l88 0a121.2 121.2 0 0 0 1.9 22.2h0A122.2 122.2 0 0 0 381 102.4a121.4 121.4 0 0 0 67 20.1z"></path></svg><span class="sr-only">TikTok</span></a>    </div>
-{% endif %}{% if shop.brand.metafields.social_links.youtube.value != blank %}    <div li-if="shop.brand.metafields.social_links.youtube.value != blank">
-    <a li-object:href="shop.brand.metafields.social_links.youtube.value" href="{{ shop.brand.metafields.social_links.youtube.value }}" target="_blank" class="footer15_social-link w-inline-block"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 576 512" width="100%" fill="currentColor" aria-hidden="true" class="icon-1x1-small"><path d="M549.7 124.1c-6.3-23.7-24.8-42.3-48.3-48.6C458.8 64 288 64 288 64S117.2 64 74.6 75.5c-23.5 6.3-42 24.9-48.3 48.6-11.4 42.9-11.4 132.3-11.4 132.3s0 89.4 11.4 132.3c6.3 23.7 24.8 41.5 48.3 47.8C117.2 448 288 448 288 448s170.8 0 213.4-11.5c23.5-6.3 42-24.2 48.3-47.8 11.4-42.9 11.4-132.3 11.4-132.3s0-89.4-11.4-132.3zm-317.5 213.5V175.2l142.7 81.2-142.7 81.2z"></path></svg><span class="sr-only">Youtube</span></a>    </div>
-{% endif %}{% if shop.brand.metafields.social_links.pinterest.value != blank %}    <div li-if="shop.brand.metafields.social_links.pinterest.value != blank">
-    <a li-object:href="shop.brand.metafields.social_links.pinterest.value" href="{{ shop.brand.metafields.social_links.pinterest.value }}" target="_blank" class="footer15_social-link w-inline-block"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 384 512" width="100%" fill="currentColor" aria-hidden="true" class="icon-1x1-small"><path d="M204 6.5C101.4 6.5 0 74.9 0 185.6 0 256 39.6 296 63.6 296c9.9 0 15.6-27.6 15.6-35.4 0-9.3-23.7-29.1-23.7-67.8 0-80.4 61.2-137.4 140.4-137.4 68.1 0 118.5 38.7 118.5 109.8 0 53.1-21.3 152.7-90.3 152.7-24.9 0-46.2-18-46.2-43.8 0-37.8 26.4-74.4 26.4-113.4 0-66.2-93.9-54.2-93.9 25.8 0 16.8 2.1 35.4 9.6 50.7-13.8 59.4-42 147.9-42 209.1 0 18.9 2.7 37.5 4.5 56.4 3.4 3.8 1.7 3.4 6.9 1.5 50.4-69 48.6-82.5 71.4-172.8 12.3 23.4 44.1 36 69.3 36 106.2 0 153.9-103.5 153.9-196.8C384 71.3 298.2 6.5 204 6.5z"></path></svg><span class="sr-only">Pinterest</span></a>    </div>
-{% endif %}{% if shop.brand.metafields.social_links.instagram.value != blank %}    <div li-if="shop.brand.metafields.social_links.instagram.value != blank">
-    <a li-object:href="shop.brand.metafields.social_links.instagram.value" href="{{ shop.brand.metafields.social_links.instagram.value }}" target="_blank" class="footer15_social-link w-inline-block"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 448 512" width="100%" fill="currentColor" aria-hidden="true" class="icon-1x1-small"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"></path></svg><span class="sr-only">Instagram</span></a>    </div>
-{% endif %}</div></div><div class="footer16_link-column"><div class="margin-bottom margin-xsmall"><div li-object="section.settings.footer_column_1_heading_text" class="footer16_column-heading">{{ section.settings.footer_column_1_heading_text }}</div></div><ul role="list" class="footer16_link-list w-list-unstyled">{% for link in linklists.footer-links-column-1.links %}    <li li-for="link in linklists.footer-links-column-1.links" class="footer16_link-list-item">
-                                    
-                            <a li-object:href="link.url" li-object="link.title" href="{{ link.url }}" class="footer16_link">{{ link.title }}</a>
-                            
+<div id="footer" class="padding-global">
+   <div class="container-large">
+      <div class="padding-vertical padding-small">
+         <div class="footer16_top-wrapper">
+            <div li-object="section.settings.footer_top_tagline_text" class="footer16_tagline-text">{{ section.settings.footer_top_tagline_text }}</div>
+            <img src="{{ section.settings.footer_top_logo_icon | image_url: width: 180 }}" loading="lazy" li-object:src="section.settings.footer_top_logo_icon | image_url: width: 180" alt="" class="footer16_logo">
+         </div>
+      </div>
+      <div class="line-divider"></div>
+      <div class="padding-top padding-large">
+         <div class="padding-bottom padding-xlarge">
+            <div class="w-layout-grid footer16_middle-wrapper">
+               <div class="w-layout-grid footer16_menu-wrapper">
+                  <div id="w-node-cc733bdc-2c7e-84ff-dfb4-3ff88116f348-8116f33b" class="footer16_link-column">
+                     <div class="footer15_details-wrapper">
+                        <div class="margin-bottom margin-xsmall">
+                           <div li-object="section.settings.footer_contact_details_heading_text" class="footer16_column-heading">{{ section.settings.footer_contact_details_heading_text }}</div>
+                        </div>
+                        <div class="margin-bottom margin-small">
+                           <div li-object="shop.phone" class="footer16_link">{{ shop.phone }}</div>
+                           <a li-object="shop.email" href="mailto:{{ shop.email }}" class="footer16_link">{{ shop.email }}</a>
+                        </div>
+                        <div class="margin-bottom margin-xsmall">
+                           <div li-object="section.settings.footer_location_details_heading_text" class="footer16_column-heading">{{ section.settings.footer_location_details_heading_text }}</div>
+                        </div>
+                        <div class="margin-bottom margin-small">
+                           <div li-object="shop.address.summary" class="footer16_link">{{ shop.address.summary }}</div>
+                        </div>
+                     </div>
+                     <div class="w-layout-grid footer15_social-list">
+                        {% if shop.brand.metafields.social_links.facebook.value != blank %}    
+                        <div li-if="shop.brand.metafields.social_links.facebook.value != blank">
+                           <a li-object:href="shop.brand.metafields.social_links.facebook.value" href="{{ shop.brand.metafields.social_links.facebook.value }}" target="_blank" class="footer15_social-link w-inline-block">
+                              <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 320 512" width="100%" fill="currentColor" aria-hidden="true" class="icon-1x1-small">
+                                 <path d="M80 299.3V512H196V299.3h86.5l18-97.8H196V166.9c0-51.7 20.3-71.5 72.7-71.5c16.3 0 29.4 .4 37 1.2V7.9C291.4 4 256.4 0 236.2 0C129.3 0 80 50.5 80 159.4v42.1H14v97.8H80z"></path>
+                              </svg>
+                              <span class="sr-only">Facebook</span>
+                           </a>
+                        </div>
+                        {% endif %}{% if shop.brand.metafields.social_links.linkedin.value != blank %}    
+                        <div li-if="shop.brand.metafields.social_links.linkedin.value != blank">
+                           <a li-object:href="shop.brand.metafields.social_links.linkedin.value" href="{{ shop.brand.metafields.social_links.linkedin.value }}" target="_blank" class="footer15_social-link w-inline-block">
+                              <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 448 512" width="100%" fill="currentColor" aria-hidden="true" class="icon-1x1-small">
+                                 <path d="M100.3 448H7.4V148.9h92.9zM53.8 108.1C24.1 108.1 0 83.5 0 53.8a53.8 53.8 0 0 1 107.6 0c0 29.7-24.1 54.3-53.8 54.3zM447.9 448h-92.7V302.4c0-34.7-.7-79.2-48.3-79.2-48.3 0-55.7 37.7-55.7 76.7V448h-92.8V148.9h89.1v40.8h1.3c12.4-23.5 42.7-48.3 87.9-48.3 94 0 111.3 61.9 111.3 142.3V448z"></path>
+                              </svg>
+                              <span class="sr-only">LinkedIn</span>
+                           </a>
+                        </div>
+                        {% endif %}{% if shop.brand.metafields.social_links.tiktok.value != blank %}    
+                        <div li-if="shop.brand.metafields.social_links.tiktok.value != blank">
+                           <a li-object:href="shop.brand.metafields.social_links.tiktok.value" href="{{ shop.brand.metafields.social_links.tiktok.value }}" target="_blank" class="footer15_social-link w-inline-block">
+                              <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 448 512" width="100%" fill="currentColor" aria-hidden="true" class="icon-1x1-small">
+                                 <path d="M448 209.9a210.1 210.1 0 0 1 -122.8-39.3V349.4A162.6 162.6 0 1 1 185 188.3V278.2a74.6 74.6 0 1 0 52.2 71.2V0l88 0a121.2 121.2 0 0 0 1.9 22.2h0A122.2 122.2 0 0 0 381 102.4a121.4 121.4 0 0 0 67 20.1z"></path>
+                              </svg>
+                              <span class="sr-only">TikTok</span>
+                           </a>
+                        </div>
+                        {% endif %}{% if shop.brand.metafields.social_links.youtube.value != blank %}    
+                        <div li-if="shop.brand.metafields.social_links.youtube.value != blank">
+                           <a li-object:href="shop.brand.metafields.social_links.youtube.value" href="{{ shop.brand.metafields.social_links.youtube.value }}" target="_blank" class="footer15_social-link w-inline-block">
+                              <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 576 512" width="100%" fill="currentColor" aria-hidden="true" class="icon-1x1-small">
+                                 <path d="M549.7 124.1c-6.3-23.7-24.8-42.3-48.3-48.6C458.8 64 288 64 288 64S117.2 64 74.6 75.5c-23.5 6.3-42 24.9-48.3 48.6-11.4 42.9-11.4 132.3-11.4 132.3s0 89.4 11.4 132.3c6.3 23.7 24.8 41.5 48.3 47.8C117.2 448 288 448 288 448s170.8 0 213.4-11.5c23.5-6.3 42-24.2 48.3-47.8 11.4-42.9 11.4-132.3 11.4-132.3s0-89.4-11.4-132.3zm-317.5 213.5V175.2l142.7 81.2-142.7 81.2z"></path>
+                              </svg>
+                              <span class="sr-only">Youtube</span>
+                           </a>
+                        </div>
+                        {% endif %}{% if shop.brand.metafields.social_links.pinterest.value != blank %}    
+                        <div li-if="shop.brand.metafields.social_links.pinterest.value != blank">
+                           <a li-object:href="shop.brand.metafields.social_links.pinterest.value" href="{{ shop.brand.metafields.social_links.pinterest.value }}" target="_blank" class="footer15_social-link w-inline-block">
+                              <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 384 512" width="100%" fill="currentColor" aria-hidden="true" class="icon-1x1-small">
+                                 <path d="M204 6.5C101.4 6.5 0 74.9 0 185.6 0 256 39.6 296 63.6 296c9.9 0 15.6-27.6 15.6-35.4 0-9.3-23.7-29.1-23.7-67.8 0-80.4 61.2-137.4 140.4-137.4 68.1 0 118.5 38.7 118.5 109.8 0 53.1-21.3 152.7-90.3 152.7-24.9 0-46.2-18-46.2-43.8 0-37.8 26.4-74.4 26.4-113.4 0-66.2-93.9-54.2-93.9 25.8 0 16.8 2.1 35.4 9.6 50.7-13.8 59.4-42 147.9-42 209.1 0 18.9 2.7 37.5 4.5 56.4 3.4 3.8 1.7 3.4 6.9 1.5 50.4-69 48.6-82.5 71.4-172.8 12.3 23.4 44.1 36 69.3 36 106.2 0 153.9-103.5 153.9-196.8C384 71.3 298.2 6.5 204 6.5z"></path>
+                              </svg>
+                              <span class="sr-only">Pinterest</span>
+                           </a>
+                        </div>
+                        {% endif %}{% if shop.brand.metafields.social_links.instagram.value != blank %}    
+                        <div li-if="shop.brand.metafields.social_links.instagram.value != blank">
+                           <a li-object:href="shop.brand.metafields.social_links.instagram.value" href="{{ shop.brand.metafields.social_links.instagram.value }}" target="_blank" class="footer15_social-link w-inline-block">
+                              <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 448 512" width="100%" fill="currentColor" aria-hidden="true" class="icon-1x1-small">
+                                 <path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"></path>
+                              </svg>
+                              <span class="sr-only">Instagram</span>
+                           </a>
+                        </div>
+                        {% endif %}
+                     </div>
+                  </div>
+                  <div class="footer16_link-column">
+                     <div class="margin-bottom margin-xsmall">
+                        <div li-object="section.settings.footer_column_1_heading_text" class="footer16_column-heading">{{ section.settings.footer_column_1_heading_text }}</div>
+                     </div>
+                     <ul role="list" class="footer16_link-list w-list-unstyled">
+                        {% for link in linklists.footer-links-column-1.links %}    
+                        <li li-for="link in linklists.footer-links-column-1.links" class="footer16_link-list-item">
+                           <a li-object:href="link.url" li-object="link.title" href="{{ link.url }}" class="footer16_link">{{ link.title }}</a>
                         </li>
-{% endfor %}</ul></div><div class="footer16_link-column"><div class="margin-bottom margin-xsmall"><div li-object="section.settings.footer_column_2_heading_text" class="footer16_column-heading">{{ section.settings.footer_column_2_heading_text }}</div></div><ul role="list" class="footer16_link-list w-list-unstyled">{% for link in linklists.footer-links-column-2.links %}    <li li-for="link in linklists.footer-links-column-2.links" class="footer16_link-list-item">
-                                    
-                            <a li-object:href="link.url" li-object="link.title" href="{{ link.url }}" class="footer16_link">{{ link.title }}</a>
-                            
+                        {% endfor %}
+                     </ul>
+                  </div>
+                  <div class="footer16_link-column">
+                     <div class="margin-bottom margin-xsmall">
+                        <div li-object="section.settings.footer_column_2_heading_text" class="footer16_column-heading">{{ section.settings.footer_column_2_heading_text }}</div>
+                     </div>
+                     <ul role="list" class="footer16_link-list w-list-unstyled">
+                        {% for link in linklists.footer-links-column-2.links %}    
+                        <li li-for="link in linklists.footer-links-column-2.links" class="footer16_link-list-item">
+                           <a li-object:href="link.url" li-object="link.title" href="{{ link.url }}" class="footer16_link">{{ link.title }}</a>
                         </li>
-{% endfor %}</ul></div></div><div class="footer16_right-wrapper"><div class="margin-bottom margin-xsmall"><div li-object="section.settings.footer_newsletter_heading_text" class="footer16_column-heading">{{ section.settings.footer_newsletter_heading_text }}</div></div><div class="margin-bottom margin-small"><div li-object="section.settings.footer_newsletter_paragraph_text" class="text-size-medium">{{ section.settings.footer_newsletter_paragraph_text }}</div></div><div class="footer16_form-wrapper"><div class="footer16_form_component w-form">{% form 'customer', return_to: '/', class: 'footer16_form' %}
-<input class="form_input is-simple w-input" maxlength="256" name="contact[email]" data-name="Newsletter Email Address 2" placeholder="Enter your email here..." type="email" id="Newsletter-Email-Address-2" required="">
-<div class="footer16_form-button-wrapper"><button type="submit" value="Submit" data-wait="Please wait..." class="button is-alternate is-small"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 384 512" width="100%" fill="currentColor" class="icon-1x1-small"><path d="M328 96c13.3 0 24 10.7 24 24l0 240c0 13.3-10.7 24-24 24s-24-10.7-24-24l0-182.1L73 409c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l231-231L88 144c-13.3 0-24-10.7-24-24s10.7-24 24-24l240 0z"></path></svg></button></div>{% endform %}
-<div li-object="form.posted_successfully?" class="form_message-success-wrapper w-form-done">{{ form.posted_successfully? }}</div><div li-object="form.errors | default_errors" class="form_message-error-wrapper w-form-fail">{{ form.errors | default_errors }}</div><div class="margin-top margin-small"><div li-object="section.settings.footer_newsletter_terms_text" class="text-size-tiny">{{ section.settings.footer_newsletter_terms_text }}</div></div></div></div></div></div></div><div class="padding-bottom padding-medium"><div class="footer16_image-wrapper"><img li-object:src="section.settings.footer_logo_banner | image_url: width: 1440" loading="lazy" alt="" src="{{ section.settings.footer_logo_banner | image_url: width: 1440 }}" class="footer16_logo-image">
-</div></div><div class="line-divider"></div><div class="padding-vertical padding-xsmall"><div class="footer16_bottom-wrapper"><div class="footer16_credit-text">© <span ct-copyright-year="">2024</span><span li-object="section.settings.footer_copyright_text">{{ section.settings.footer_copyright_text }}</span></div><ul role="list" class="footer16_legal-list w-list-unstyled">{% for link in linklists.footer-legal-menu.links %}    <li li-for="link in linklists.footer-legal-menu.links" class="footer16_legal-list-item">
-                                    
-                            <a li-object:href="link.url" li-object="link.title" href="{{ link.url }}" class="footer16_legal-link">{{ link.title }}</a>
-                            
-                        </li>
-{% endfor %}</ul><img src="{{ section.settings.footer_bottom_logo_icon | image_url: width: 180 }}" loading="lazy" li-object:src="section.settings.footer_bottom_logo_icon | image_url: width: 180" alt="" class="footer16_logo">
-</div></div></div></div></div> {% schema %} {"tag":"footer","name":"FooterMain","class":"footer16_component","settings":[{"type":"header","content":"Footer Content Settings"},{"type":"textarea","id":"footer_top_tagline_text","label":"Footer Top Tagline Text","default":"Lorem ipsum dolor sit amet, consectetur adipiscing elit."},{"type":"image_picker","id":"footer_top_logo_icon","label":"Footer Top Logo Icon"},{"type":"text","id":"footer_contact_details_heading_text","label":"Contact Details Heading Text","default":"Short Heading"},{"type":"text","id":"footer_location_details_heading_text","label":"Location Details Heading Text","default":"Short Heading"},{"type":"text","id":"footer_column_1_heading_text","label":"Links Column 1 Heading Text","default":"Short Column Heading"},{"type":"text","id":"footer_column_2_heading_text","label":"Links Column 2 Heading Text","default":"Short Column Heading"},{"type":"text","id":"footer_newsletter_heading_text","label":"Newsletter Heading Text","default":"Short Column Heading"},{"type":"textarea","id":"footer_newsletter_paragraph_text","label":"Newsletter Paragraph Text","default":"Lorem ipsum dolor sit amet, consectetur adipiscing elit."},{"type":"textarea","id":"footer_newsletter_submission_success_text","label":"Newsletter Submission Success Text","default":"Thank you! Your submission has been received!"},{"type":"textarea","id":"footer_newsletter_submission_error_text","label":"Newsletter Submission Error Text","default":"Oops! Something went wrong while submitting the form."},{"type":"textarea","id":"footer_newsletter_terms_text","label":"Newsletter Terms Text","default":"Lorem ipsum dolor sit amet, consectetur adipiscing elit."},{"type":"image_picker","id":"footer_logo_banner","label":"Footer Logo Banner"},{"type":"textarea","id":"footer_copyright_text","label":"Footer Copyright Text","default":"Company Name. All Rights Reserved"},{"type":"image_picker","id":"footer_bottom_logo_icon","label":"Footer Bottom Logo Icon"}],"presets":[{"name":"FooterMain","category":"Liquify","blocks":[]}]} {% endschema %}
+                        {% endfor %}
+                     </ul>
+                  </div>
+               </div>
+               <div class="footer16_right-wrapper">
+                  <div class="margin-bottom margin-xsmall">
+                     <div li-object="section.settings.footer_newsletter_heading_text" class="footer16_column-heading">{{ section.settings.footer_newsletter_heading_text }}</div>
+                  </div>
+                  <div class="margin-bottom margin-small">
+                     <div li-object="section.settings.footer_newsletter_paragraph_text" class="text-size-medium">{{ section.settings.footer_newsletter_paragraph_text }}</div>
+                  </div>
+                  <div class="footer16_form-wrapper">
+                     <div class="footer16_form_component w-form">
+                        {% form 'customer', return_to: '/', class: 'footer16_form' %}
+                        <input class="form_input is-simple w-input" maxlength="256" name="contact[email]" data-name="Newsletter Email Address 2" placeholder="Enter your email here..." type="email" id="Newsletter-Email-Address-2" required="">
+                        <div class="footer16_form-button-wrapper">
+                           <button type="submit" value="Submit" data-wait="Please wait..." class="button is-alternate is-small">
+                              <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 384 512" width="100%" fill="currentColor" class="icon-1x1-small">
+                                 <path d="M328 96c13.3 0 24 10.7 24 24l0 240c0 13.3-10.7 24-24 24s-24-10.7-24-24l0-182.1L73 409c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l231-231L88 144c-13.3 0-24-10.7-24-24s10.7-24 24-24l240 0z"></path>
+                              </svg>
+                           </button>
+                        </div>
+                        {% endform %}
+                        <div li-object="form.posted_successfully?" class="form_message-success-wrapper w-form-done">{{ form.posted_successfully? }}</div>
+                        <div li-object="form.errors | default_errors" class="form_message-error-wrapper w-form-fail">{{ form.errors | default_errors }}</div>
+                        <div class="margin-top margin-small">
+                           <div li-object="section.settings.footer_newsletter_terms_text" class="text-size-tiny">{{ section.settings.footer_newsletter_terms_text }}</div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="padding-bottom padding-medium">
+            <div class="footer16_image-wrapper"><img li-object:src="section.settings.footer_logo_banner | image_url: width: 1440" loading="lazy" alt="" src="{{ section.settings.footer_logo_banner | image_url: width: 1440 }}" class="footer16_logo-image"></div>
+         </div>
+         <div class="line-divider"></div>
+         <div class="padding-vertical padding-xsmall">
+            <div class="footer16_bottom-wrapper">
+               <div class="footer16_credit-text">© <span ct-copyright-year="">2024</span><span li-object="section.settings.footer_copyright_text">{{ section.settings.footer_copyright_text }}</span></div>
+               <ul role="list" class="footer16_legal-list w-list-unstyled">
+                  {% for link in linklists.footer-legal-menu.links %}    
+                  <li li-for="link in linklists.footer-legal-menu.links" class="footer16_legal-list-item">
+                     <a li-object:href="link.url" li-object="link.title" href="{{ link.url }}" class="footer16_legal-link">{{ link.title }}</a>
+                  </li>
+                  {% endfor %}
+               </ul>
+               <img src="{{ section.settings.footer_bottom_logo_icon | image_url: width: 180 }}" loading="lazy" li-object:src="section.settings.footer_bottom_logo_icon | image_url: width: 180" alt="" class="footer16_logo">
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+{% schema %} {"tag":"footer","name":"FooterMain","class":"footer16_component","settings":[{"type":"header","content":"Footer Content Settings"},{"type":"textarea","id":"footer_top_tagline_text","label":"Footer Top Tagline Text","default":"Lorem ipsum dolor sit amet, consectetur adipiscing elit."},{"type":"image_picker","id":"footer_top_logo_icon","label":"Footer Top Logo Icon"},{"type":"text","id":"footer_contact_details_heading_text","label":"Contact Details Heading Text","default":"Short Heading"},{"type":"text","id":"footer_location_details_heading_text","label":"Location Details Heading Text","default":"Short Heading"},{"type":"text","id":"footer_column_1_heading_text","label":"Links Column 1 Heading Text","default":"Short Column Heading"},{"type":"text","id":"footer_column_2_heading_text","label":"Links Column 2 Heading Text","default":"Short Column Heading"},{"type":"text","id":"footer_newsletter_heading_text","label":"Newsletter Heading Text","default":"Short Column Heading"},{"type":"textarea","id":"footer_newsletter_paragraph_text","label":"Newsletter Paragraph Text","default":"Lorem ipsum dolor sit amet, consectetur adipiscing elit."},{"type":"textarea","id":"footer_newsletter_submission_success_text","label":"Newsletter Submission Success Text","default":"Thank you! Your submission has been received!"},{"type":"textarea","id":"footer_newsletter_submission_error_text","label":"Newsletter Submission Error Text","default":"Oops! Something went wrong while submitting the form."},{"type":"textarea","id":"footer_newsletter_terms_text","label":"Newsletter Terms Text","default":"Lorem ipsum dolor sit amet, consectetur adipiscing elit."},{"type":"image_picker","id":"footer_logo_banner","label":"Footer Logo Banner"},{"type":"textarea","id":"footer_copyright_text","label":"Footer Copyright Text","default":"Company Name. All Rights Reserved"},{"type":"image_picker","id":"footer_bottom_logo_icon","label":"Footer Bottom Logo Icon"}],"presets":[{"name":"FooterMain","category":"Liquify","blocks":[]}]} {% endschema %}

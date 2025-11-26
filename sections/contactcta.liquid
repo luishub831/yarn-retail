@@ -1,10 +1,78 @@
-<div id="contact" class="padding-global"><div class="container-large"><div class="padding-section-large"><div class="contact5_component"><div class="w-layout-grid contact5_content"><div class="settings-schema w-embed"></div>
-<div class="contact5_content-left"><div class="margin-bottom margin-medium"><div class="contact5_heading-wrapper"><div class="margin-bottom margin-small"><h2 li-object="section.settings.contact_heading_text" class="heading-style-h2">{{ section.settings.contact_heading_text }}</h2></div><div class="richtext-wrapper text-size-medium w-richtext"><p li-object="section.settings.contact_paragraph_text">{{ section.settings.contact_paragraph_text }}</p></div></div></div><div class="contact5_contact-list"><div id="w-node-_3229ee03-a3a0-31f7-0e13-66a5ccd51a3d-ccd51a2c" class="contact5_item"><div class="contact5_icon-wrapper"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512" width="100%" fill="currentColor" class="icon-1x1-small"><path d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z"></path></svg></div><div li-object="shop.phone">{{ shop.phone }}</div></div><div id="w-node-_3229ee03-a3a0-31f7-0e13-66a5ccd51a43-ccd51a2c" class="contact5_item"><div class="contact5_icon-wrapper"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512" width="100%" fill="currentColor" class="icon-1x1-small"><path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48L48 64zM0 176L0 384c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-208L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"></path></svg></div><div li-object="shop.email">{{ shop.email }}</div></div><div id="w-node-_3229ee03-a3a0-31f7-0e13-66a5ccd51a49-ccd51a2c" class="contact5_item"><div class="contact5_icon-wrapper"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 384 512" width="100%" fill="currentColor" class="icon-1x1-small"><path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"></path></svg></div><div li-object="shop.address.summary">{{ shop.address.summary }}</div></div></div></div><div class="contact5_content-right">{% form 'contact', return_to: '/pages/thankyou' %}
-{% form 'contact', return_to: '/', class: 'contact5_form' %}
-<div class="form_field-wrapper"><label for="Contact-5-Name-2" class="form_form_label">Name</label><input class="form_input w-input" maxlength="256" name="contact[name]" data-name="Contact 5 Name 2" placeholder="" type="text" id="Contact-5-Name-2" required="">
-</div><div class="form_field-wrapper"><label for="Contact-5-Email-2" class="form_form_label">Email</label><input class="form_input w-input" maxlength="256" name="contact[email]" data-name="Contact 5 Email 2" placeholder="" type="email" id="Contact-5-Email-2" required="">
-</div><div class="form_field-wrapper"><label for="Contact-5-Message-2" class="form_form_label">Message</label><textarea class="form_input is-text-area w-input" maxlength="5000" name="contact[body]" data-name="Contact 5 Message 2" placeholder="Type your message..." id="Contact-5-Message-2" required=""></textarea></div><div class="margin-bottom margin-small"><label id="Contact-5-Checkbox" class="w-checkbox form_checkbox" name="contact[checkbox]"><input type="checkbox" name="Contact-CTA-Checkbox-2" id="Contact-CTA-Checkbox-2" data-name="Contact CTA Checkbox 2" required="" class="w-checkbox-input form_checkbox-icon">
-<span for="Contact-CTA-Checkbox-2" class="form_checkbox-label text-size-tiny w-form-label">I accept the <a href="#" class="text-style-link">Terms</a></span></label></div><input type="submit" data-wait="Please wait..." class="button w-button" value="Submit">
-{% endform %}
-{% endform %}
-</div></div></div></div></div></div> {% schema %} {"tag":"section","name":"ContactCTA","class":"section_contact5","settings":[{"type":"header","content":"Contact CTA Content Settings"},{"type":"textarea","id":"contact_heading_text","label":"Contact CTA Heading Text","default":"Medium length section heading goes here"},{"type":"richtext","id":"contact_paragraph_text","label":"Contact Paragraph Text","default":"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.<\/p>"}],"presets":[{"name":"ContactCTA","category":"Liquify","blocks":[]}]} {% endschema %}
+<div id="contact" class="padding-global">
+   <div class="container-large">
+      <div class="padding-section-large">
+         <div class="contact5_component">
+            <div class="w-layout-grid contact5_content">
+               <div class="settings-schema w-embed"></div>
+               <div class="contact5_content-left">
+                  <div class="margin-bottom margin-medium">
+                     <div class="contact5_heading-wrapper">
+                        <div class="margin-bottom margin-small">
+                           <h2 li-object="section.settings.contact_heading_text" class="heading-style-h2">{{ section.settings.contact_heading_text }}</h2>
+                        </div>
+                        <div class="richtext-wrapper text-size-medium w-richtext">
+                           <p li-object="section.settings.contact_paragraph_text">{{ section.settings.contact_paragraph_text }}</p>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="contact5_contact-list">
+                     <div id="w-node-_3229ee03-a3a0-31f7-0e13-66a5ccd51a3d-ccd51a2c" class="contact5_item">
+                        <div class="contact5_icon-wrapper">
+                           <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512" width="100%" fill="currentColor" class="icon-1x1-small">
+                              <path d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z"></path>
+                           </svg>
+                        </div>
+                        <div li-object="shop.phone">{{ shop.phone }}</div>
+                     </div>
+                     <div id="w-node-_3229ee03-a3a0-31f7-0e13-66a5ccd51a43-ccd51a2c" class="contact5_item">
+                        <div class="contact5_icon-wrapper">
+                           <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512" width="100%" fill="currentColor" class="icon-1x1-small">
+                              <path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48L48 64zM0 176L0 384c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-208L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"></path>
+                           </svg>
+                        </div>
+                        <div li-object="shop.email">{{ shop.email }}</div>
+                     </div>
+                     <div id="w-node-_3229ee03-a3a0-31f7-0e13-66a5ccd51a49-ccd51a2c" class="contact5_item">
+                        <div class="contact5_icon-wrapper">
+                           <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 384 512" width="100%" fill="currentColor" class="icon-1x1-small">
+                              <path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"></path>
+                           </svg>
+                        </div>
+                        <div li-object="shop.address.summary">{{ shop.address.summary }}</div>
+                     </div>
+                  </div>
+               </div>
+               <div class="contact5_content-right">
+                  {% form 'contact', return_to: '/pages/thankyou' %}
+                  {% form 'contact', return_to: '/', class: 'contact5_form' %}
+                  <div class="form_field-wrapper"><label for="Contact-5-Name-2" class="form_form_label">Name</label><input class="form_input w-input" maxlength="256" name="contact[name]" data-name="Contact 5 Name 2" placeholder="" type="text" id="Contact-5-Name-2" required=""></div>
+                  <div class="form_field-wrapper"><label for="Contact-5-Email-2" class="form_form_label">Email</label><input class="form_input w-input" maxlength="256" name="contact[email]" data-name="Contact 5 Email 2" placeholder="" type="email" id="Contact-5-Email-2" required=""></div>
+                  <div class="form_field-wrapper"><label for="Contact-5-Message-2" class="form_form_label">Message</label><textarea class="form_input is-text-area w-input" maxlength="5000" name="contact[body]" data-name="Contact 5 Message 2" placeholder="Type your message..." id="Contact-5-Message-2" required=""></textarea></div>
+                  {% comment %} <div class="margin-bottom margin-small"><label id="Contact-5-Checkbox" class="w-checkbox form_checkbox" name="contact[checkbox]"><input type="checkbox" name="Contact-CTA-Checkbox-2" id="Contact-CTA-Checkbox-2" data-name="Contact CTA Checkbox 2" required="" class="w-checkbox-input form_checkbox-icon">
+                     <span for="Contact-CTA-Checkbox-2" class="form_checkbox-label text-size-tiny w-form-label">I accept the <a href="#" class="text-style-link">Terms</a></span></label>
+                  </div> {% endcomment %}
+                  <div class="form-terms margin-bottom margin-small">TPG needs the contact information you provide to us to contact you about our products
+                    and services. You may unsubscribe from these communications at any time. For
+                    information on how to unsubscribe, as well as our privacy practices and commitment to
+                    protecting your privacy, check out our Privacy Policy.
+                  </div>
+                  <input type="submit" data-wait="Please wait..." class="button w-button submit-button" value="Submit" >
+                  {% endform %}
+                  {% endform %}
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+<style>
+    .contact5_content-right .submit-button{
+        float: right;
+    }
+    @media screen and (max-width: 767px) {
+        .contact5_content-right .submit-button{
+            width: 100%;
+        }
+    }
+</style>
+{% schema %} {"tag":"section","name":"ContactCTA","class":"section_contact5","settings":[{"type":"header","content":"Contact CTA Content Settings"},{"type":"textarea","id":"contact_heading_text","label":"Contact CTA Heading Text","default":"Medium length section heading goes here"},{"type":"richtext","id":"contact_paragraph_text","label":"Contact Paragraph Text","default":"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.<\/p>"}],"presets":[{"name":"ContactCTA","category":"Liquify","blocks":[]}]} {% endschema %}
