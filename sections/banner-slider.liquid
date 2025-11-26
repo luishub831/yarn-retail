@@ -4,8 +4,23 @@
       {% for block in section.blocks %}
         <div class="swiper-slide">
           <div class="banner-slide-content">
+            
             {% if block.settings.image %}
-              <img src="{{ block.settings.image | img_url: 'master' }}" alt="{{ block.settings.heading | escape }}" class="banner-slide-image" />
+              <!-- Desktop Image -->
+              <img 
+                src="{{ block.settings.image | img_url: 'master' }}" 
+                alt="{{ block.settings.heading | escape }}" 
+                class="banner-slide-image desktop-image"
+              />
+            {% endif %}
+            
+            {% if block.settings.mobile_image %}
+              <!-- Mobile Image -->
+              <img 
+                src="{{ block.settings.mobile_image | img_url: 'master' }}" 
+                alt="{{ block.settings.heading | escape }}" 
+                class="banner-slide-image mobile-image"
+              />
             {% endif %}
 
             <div class="banner-content-wrapper">
@@ -16,13 +31,9 @@
                 {% if block.settings.description != blank %}
                   <p class="banner-description">{{ block.settings.description }}</p>
                 {% endif %}
-                
                 {% if block.settings.button_text != blank %}
-                  <a li-object:href="{{ block.settings.button_link }}" href="{{ block.settings.button_link }}" class="button w-inline-block is-default is-primary banner-button">
-                    <div class="settings-schema w-embed"></div>
-                    <span li-if="block.settings.btn_layout != 'btn_layout_icon'">
-                      {{ block.settings.button_text }}
-                    </span>
+                  <a href="{{ block.settings.button_link }}" class="button w-inline-block is-default is-primary banner-button">
+                    <span>{{ block.settings.button_text }}</span>
                   </a>
                 {% endif %}
               </div>
@@ -47,7 +58,8 @@
       "type": "slide",
       "name": "Slide",
       "settings": [
-        { "type": "image_picker", "id": "image", "label": "Slide Image" },
+        { "type": "image_picker", "id": "image", "label": "Desktop Image" },
+        { "type": "image_picker", "id": "mobile_image", "label": "Mobile Image" },
         { "type": "text", "id": "heading", "label": "Heading" },
         { "type": "textarea", "id": "description", "label": "Description" },
         { "type": "text", "id": "button_text", "label": "Button Text" },
@@ -78,9 +90,8 @@
   });
 </script>
 
-
 <style>
-/* Slide container: 2/3 of viewport height */
+/* ---------- Desktop styles (unchanged) ---------- */
 .banner-slide-content {
   position: relative;
   height: 66vh;
@@ -89,7 +100,6 @@
   align-items: center;
 }
 
-/* Image fills container */
 .banner-slide-image {
   width: 100%;
   height: 100%;
@@ -103,7 +113,10 @@
   border-radius: 20px;
 }
 
-/* Content wrapper for left alignment */
+/* Default: show desktop image, hide mobile */
+.desktop-image { display: block; }
+.mobile-image { display: none; }
+
 .banner-content-wrapper {
   position: relative;
   z-index: 2;
@@ -113,14 +126,12 @@
   padding: 0 80px;
 }
 
-/* Text block positioned on the left */
 .banner-text {
   max-width: 600px;
   color: #fff;
   text-align: left;
 }
 
-/* Enhanced heading styling */
 .banner-heading {
   font-family: 'Newake', sans-serif;
   font-size: clamp(3rem, 6vw, 60px);
@@ -130,9 +141,9 @@
   vertical-align: middle;
   margin-bottom: 1rem;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  text-transform: inherit;
 }
 
-/* Description styling */
 .banner-description {
   font-size: 1.2rem;
   line-height: 1.6;
@@ -141,7 +152,6 @@
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
-/* Button styling - using original theme button */
 .banner-button {
   margin-top: 1rem;
   width: auto !important;
@@ -149,21 +159,15 @@
   max-width: none !important;
 }
 
-/* Navigation buttons */
+/* Swiper controls */
 .swiper-button-next, .swiper-button-prev {
   color: white;
-  {% comment %} background: rgba(255, 255, 255, 0.2); {% endcomment %}
   width: 50px;
   height: 50px;
   border-radius: 50%;
   backdrop-filter: blur(10px);
 }
 
-.swiper-button-next:hover, .swiper-button-prev:hover {
-  {% comment %} background: rgba(255, 255, 255, 0.3); {% endcomment %}
-}
-
-/* Pagination dots */
 .swiper-pagination-bullet {
   background: rgba(255, 255, 255, 0.7);
 }
@@ -172,30 +176,39 @@
   background: #ff6b35;
 }
 
-/* Responsive adjustments */
+/* ---------- Mobile adjustments ---------- */
 @media (max-width: 768px) {
+  .banner-slide-content {
+    height: 80vh;
+  }
+
+  /* Swap images */
+  .desktop-image { display: none; }
+  .mobile-image { display: block; object-fit: cover;}
+
+  .banner-slide-content{
+    align-items: flex-start;
+  }
   .banner-content-wrapper {
-    padding: 0 40px;
+    padding: 40px 30px;
   }
-  
-  .banner-text {
-    max-width: 100%;
-  }
-  
+
   .banner-heading {
     font-size: clamp(2rem, 6vw, 3rem);
     margin-bottom: 0.8rem;
+    line-height: 40px;
   }
-  
+
   .banner-description {
     font-size: 1rem;
     margin-bottom: 1.5rem;
   }
-  
+
   .banner-button {
     padding: 12px 24px;
     font-size: 0.9rem;
+    width: 100% !important;
+    text-align: center;
   }
 }
 </style>
-
