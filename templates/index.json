@@ -83,10 +83,11 @@
             "button_link": ""
           }
         },
-        "slide_kgbttd": {
+        "slide_CDPtAr": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/DSC00197.jpg",
+            "image": "shopify://shop_images/Group_18265_2.png",
+            "mobile_image": "shopify://shop_images/mobile-banner.png",
             "heading": "Your Banner Title",
             "description": "Your banner description goes here.",
             "button_text": "Shop Now",
@@ -96,7 +97,7 @@
       },
       "block_order": [
         "slide_Rjy7dJ",
-        "slide_kgbttd"
+        "slide_CDPtAr"
       ],
       "name": "Banner Slider",
       "settings": {}
