@@ -76,6 +76,7 @@
           "type": "slide",
           "settings": {
             "image": "shopify://shop_images/Group_18265_2.png",
+            "mobile_image": "shopify://shop_images/mobile-banner.png",
             "heading": "Your Banner Title",
             "description": "Your banner description goes here.",
             "button_text": "Shop Now",
@@ -178,6 +179,7 @@
           "type": "slide",
           "settings": {
             "image": "shopify://shop_images/bringyourbrand.png",
+            "mobile_image": "shopify://shop_images/second-mobile-banner.png",
             "heading": "Your Banner Title",
             "description": "Your banner description goes here.",
             "button_text": "Shop Now",
