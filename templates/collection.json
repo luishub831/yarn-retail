@@ -9,17 +9,25 @@
  */
 {
   "sections": {
-    "collectionfilter_jtdtTD": {
-      "type": "collectionfilter",
-      "settings": {}
-    },
     "collection_header_yRxwxz": {
       "type": "collection-header",
       "name": "Collection Header",
       "settings": {
-        "background_color": "#753F9A",
+        "background_color": "#753f9a",
         "header_padding_top": 40,
         "header_padding_bottom": 60
+      }
+    },
+    "collectionfilter_jtdtTD": {
+      "type": "collectionfilter",
+      "settings": {}
+    },
+    "contactcta_3QdKeB": {
+      "type": "contactcta",
+      "name": "ContactCTA",
+      "settings": {
+        "contact_heading_text": "Big idea? We’re all ears.",
+        "contact_paragraph_text": "<p>Drop us a note, shoot through a sketch, or call to say hey – our crew’s in the garage, ready to bring it to life.</p>"
       }
     }
   },
@@ -27,6 +35,7 @@
   "wrapper": "main.main-wrapper",
   "order": [
     "collection_header_yRxwxz",
-    "collectionfilter_jtdtTD"
+    "collectionfilter_jtdtTD",
+    "contactcta_3QdKeB"
   ]
 }
