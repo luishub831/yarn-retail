@@ -1,1 +1,46 @@
-{"sections":{"product_hero_kMCttr":{"type":"product_hero","custom_css":[".swiper-container.is-product-gallery {position: static;}",".product-header_quantity div,.product-header_quantity input {display: none;}"],"settings":{"text_delivery_time":"1–3 Days","text_product_description_heading":"Description"}},"product_recommended_zxKCE7":{"type":"product_recommended","settings":{"text_recommended_products_heading":"Recommended"}}},"layout":"theme","wrapper":"main.main-wrapper","order":["product_hero_kMCttr","product_recommended_zxKCE7"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "product_hero_kMCttr": {
+      "type": "product_hero",
+      "custom_css": [
+        ".swiper-container.is-product-gallery {position: static;}",
+        ".product-header_quantity div,.product-header_quantity input {display: none;}"
+      ],
+      "settings": {
+        "text_delivery_time": "1–3 Days",
+        "text_product_description_heading": "Description"
+      }
+    },
+    "product_recommended_zxKCE7": {
+      "type": "product_recommended",
+      "disabled": true,
+      "settings": {
+        "text_recommended_products_heading": "Recommended"
+      }
+    },
+    "contactcta_VVBRkq": {
+      "type": "contactcta",
+      "name": "ContactCTA",
+      "settings": {
+        "contact_heading_text": "Big idea?\nWe’re all ears.",
+        "contact_paragraph_text": "<p>Drop us a note, shoot through a sketch,or call to say hey – our crew’s in the garage, ready to bring it to life.</p>"
+      }
+    }
+  },
+  "layout": "theme",
+  "wrapper": "main.main-wrapper",
+  "order": [
+    "product_hero_kMCttr",
+    "product_recommended_zxKCE7",
+    "contactcta_VVBRkq"
+  ]
+}
