@@ -3,20 +3,47 @@
       <div class="product-header_component">
          <script src="{{ 'liquify_custom.js' | asset_url }}" type="text/javascript"></script>
          <div li-element="product-variant-container" class="w-layout-grid product-header_layout" x-data="handleVariant({{ product | json | escape }}, {{ product.options_by_name | json | escape }}, {{ product.selected_or_first_available_variant | json | escape }})" x-init="$nextTick(() => { activateVariants() })" @setbundleitem.window="updateBundleItem($event.detail.product, $event.detail.quantity)">
-            <div id="w-node-_8c5d1479-95bf-e109-66bc-bdcd43749157-5c6875be" class="swiper-container is-product-gallery">
-               <div class="swiper is-product-gallery">
-                  <div id="my-gallery" class="swiper-wrapper is-product-gallery">
-                     <div class="swiper-slide is-product-gallery">
-                        <div data-pswp-height="{{image.width}}" data-pswp-width="{{image.height}}" class="product_gallery-lightbox"><img loading="lazy" x-bind:src="variantImage ? variantImage : product.featured_image" li-object:alt="image.alt" src="../images/image.svg" alt="{{ image.alt }}" class="product_gallery-image"></div>
+            <div>
+               
+               <div id="w-node-_8c5d1479-95bf-e109-66bc-bdcd43749157-5c6875be" class="product-gallery-container">
+                  <!-- Thumbnail Gallery on Left -->
+                  <div class="product-thumbnails">
+                     <div class="swiper thumbnail-swiper">
+                        <div class="swiper-wrapper">
+                           <div class="swiper-slide thumbnail-slide" data-slide="0">
+                              <img loading="lazy" x-bind:src="variantImage ? variantImage : product.featured_image" src="{{ product.featured_image | product_img_url: '150x150' }}" alt="{{ product.featured_image.alt }}" class="thumbnail-image">
+                           </div>
+                           {% for image in product.images offset:1 %}
+                           <div class="swiper-slide thumbnail-slide" data-slide="{{ forloop.index }}">
+                              <img loading="lazy" src="{{ image.src | product_img_url: '150x150' }}" alt="{{ image.alt }}" class="thumbnail-image">
+                           </div>
+                           {% endfor %}
+                        </div>
+                        <div class="swiper-scrollbar"></div>
                      </div>
-                     {% for image in product.images offset:1 %}    
-                     <div li-for="image in product.images offset:1" class="swiper-slide is-product-gallery">
-                        <div data-pswp-height="{{image.width}}" data-pswp-width="{{image.height}}" class="product_gallery-lightbox"><img loading="lazy" li-object:src="image.src | product_img_url: 'master'" li-object:alt="image.alt" src="{{ image.src | product_img_url: 'master' }}" alt="{{ image.alt }}" class="product_gallery-image"></div>
+                  </div>
+                  
+                  <!-- Main Gallery -->
+                  <div class="swiper-container is-product-gallery">
+                     <div class="swiper main-gallery-swiper">
+                        <div class="swiper-wrapper">
+                           <div class="swiper-slide is-product-gallery">
+                              <div data-pswp-height="{{product.featured_image.width}}" data-pswp-width="{{product.featured_image.height}}" class="product_gallery-lightbox">
+                                 <img loading="lazy" x-bind:src="variantImage ? variantImage : product.featured_image" src="{{ product.featured_image | product_img_url: 'master' }}" alt="{{ product.featured_image.alt }}" class="product_gallery-image">
+                              </div>
+                           </div>
+                           {% for image in product.images offset:1 %}
+                           <div class="swiper-slide is-product-gallery">
+                              <div data-pswp-height="{{image.width}}" data-pswp-width="{{image.height}}" class="product_gallery-lightbox">
+                                 <img loading="lazy" src="{{ image.src | product_img_url: 'master' }}" alt="{{ image.alt }}" class="product_gallery-image">
+                              </div>
+                           </div>
+                           {% endfor %}
+                        </div>
                      </div>
-                     {% endfor %}
                   </div>
                </div>
-               <div class="swiper-slide is-product-thumbnail is-active hide"></div>
+               <!-- Product Info under gallery -->
                <div class="product-info">
                   <div class="product-icons">
                      <div class="icon-item">
@@ -36,34 +63,31 @@
                         <p>Satisfaction<br>Guarantee</p>
                      </div>
                   </div>
-                    <!-- Accordion: Description -->
-                    <div class="accordion">
-                        <button class="accordion-header heading-style-h3">
-                        {{ section.settings.text_product_description_heading }}
-                        <span class="accordion-icon">+</span>
-                        </button>
-                        <div class="accordion-content">
-                            <div li-object="product.description" class="text-rich-text max-width-large w-richtext">{{ product.description }}</div>
-                        </div>
-                    </div>
+                  <!-- Accordion: Description -->
+                  <div class="accordion">
+                     <button class="accordion-header heading-style-h3">
+                     {{ section.settings.text_product_description_heading }}
+                     <span class="accordion-icon">+</span>
+                     </button>
+                     <div class="accordion-content">
+                           <div li-object="product.description" class="text-rich-text max-width-large w-richtext">{{ product.description }}</div>
+                     </div>
+                  </div>
 
-                    <!-- Accordion: Details -->
-                    <div class="accordion">
-                        <button class="accordion-header heading-style-h3">
-                        DETAILS
-                        <span class="accordion-icon">+</span>
-                        </button>
-                        <div class="accordion-content">
-                        <p><strong>Fit:</strong> Regular</p>
-                        <p><strong>Fabric:</strong> Mid weight, 180 GSM, 28-singles, 100% combed cotton (marles 15% viscose)</p>
-                        <p><strong>Construction:</strong> Neck ribbing, side seamed, shoulder to shoulder tape, double needle hems, preshrunk to minimise shrinkage</p>
-                        <p><strong>Embellishment:</strong> Suited for screen printing, DTG and embroidery</p>
-                        </div>
-                    </div>
-                </div>
-
-                                     
-
+                  <!-- Accordion: Details -->
+                  <div class="accordion">
+                     <button class="accordion-header heading-style-h3">
+                     DETAILS
+                     <span class="accordion-icon">+</span>
+                     </button>
+                     <div class="accordion-content">
+                     <p><strong>Fit:</strong> Regular</p>
+                     <p><strong>Fabric:</strong> Mid weight, 180 GSM, 28-singles, 100% combed cotton (marles 15% viscose)</p>
+                     <p><strong>Construction:</strong> Neck ribbing, side seamed, shoulder to shoulder tape, double needle hems, preshrunk to minimise shrinkage</p>
+                     <p><strong>Embellishment:</strong> Suited for screen printing, DTG and embroidery</p>
+                     </div>
+                  </div>
+               </div>
             </div>
             <div id="w-node-_8c5d1479-95bf-e109-66bc-bdcd43749168-5c6875be" class="product-header_product-details">
                <div class="hide w-embed">{% assign show_default_images = true %}
@@ -257,6 +281,136 @@
 {% endschema %}
 
 <style>
+    /* Product Gallery Container */
+    .product-gallery-container {
+        display: flex;
+        gap: 20px;
+        align-items: flex-start;
+        margin-bottom: 30px;
+    }
+
+    /* Thumbnail Gallery */
+    .product-thumbnails {
+        width: 80px;
+        flex-shrink: 0;
+    }
+
+    .thumbnail-swiper {
+        height: 425px; /* Height for exactly 5 thumbnails (5 * 80px + 4 * 10px gap) */
+        overflow: hidden;
+        position: relative;
+    }
+    
+    .thumbnail-swiper .swiper-scrollbar {
+        width: 4px;
+        right: -8px;
+        background-color: #e1e1e1;
+        border-radius: 2px;
+    }
+    
+    .thumbnail-swiper .swiper-scrollbar-drag {
+        background-color: #007bff;
+        border-radius: 2px;
+    }
+
+    .thumbnail-swiper .swiper-wrapper {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .thumbnail-slide {
+        width: 80px !important;
+        height: 80px !important;
+        cursor: pointer;
+        border: 2px solid transparent;
+        border-radius: 8px;
+        overflow: hidden;
+        transition: border-color 0.3s ease;
+        flex-shrink: 0; /* Prevent shrinking */
+    }
+
+    .thumbnail-slide:hover,
+    .thumbnail-slide.swiper-slide-thumb-active {
+        border-color: #007bff;
+    }
+
+    .thumbnail-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+    /* Main Gallery */
+    .swiper-container.is-product-gallery {
+        flex: 1;
+        max-width: calc(100% - 100px);
+    }
+
+    .main-gallery-swiper {
+        height: 500px;
+        border-radius: 12px;
+        overflow: hidden;
+    }
+
+    .product_gallery-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+    .product_gallery-lightbox {
+        width: 100%;
+        height: 100%;
+        {% comment %} cursor: zoom-in; {% endcomment %}
+        padding-left: 5px;
+    }
+
+    /* Mobile responsiveness */
+    @media (max-width: 768px) {
+        .product-gallery-container {
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .product-thumbnails {
+            width: 100%;
+            order: 2;
+        }
+
+        .thumbnail-swiper {
+            height: auto; /* Reset height for mobile */
+        }
+
+        .thumbnail-swiper .swiper-wrapper {
+            flex-direction: row;
+            gap: 10px;
+        }
+
+        .thumbnail-slide {
+            width: 60px !important;
+            height: 60px !important;
+        }
+        
+        .thumbnail-swiper .swiper-scrollbar {
+            width: auto;
+            height: 4px;
+            bottom: -8px;
+            right: auto;
+            left: 0;
+        }
+
+        .swiper-container.is-product-gallery {
+            max-width: 100%;
+            order: 1;
+        }
+
+        .main-gallery-swiper {
+            height: 400px;
+        }
+    }
+
     .product-info {
     max-width: 800px;
     margin: 0 auto;
@@ -343,6 +497,65 @@
     </style>
 
     <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Initialize thumbnails swiper first
+        const thumbnailSwiper = new Swiper('.thumbnail-swiper', {
+            direction: 'vertical',
+            slidesPerView: 5, // Show exactly 5 thumbnails
+            spaceBetween: 10,
+            freeMode: false, // Disable free mode for controlled scrolling
+            watchSlidesProgress: true,
+            scrollbar: {
+                el: '.swiper-scrollbar',
+                draggable: true,
+            },
+            breakpoints: {
+                768: {
+                    direction: 'vertical',
+                    slidesPerView: 5,
+                    scrollbar: {
+                        el: '.swiper-scrollbar',
+                        draggable: true,
+                    },
+                },
+                0: {
+                    direction: 'horizontal',
+                    slidesPerView: 'auto',
+                    scrollbar: {
+                        el: '.swiper-scrollbar',
+                        draggable: true,
+                    },
+                }
+            }
+        });
+
+        // Initialize main gallery swiper
+        const mainGallery = new Swiper('.main-gallery-swiper', {
+            spaceBetween: 10,
+            thumbs: {
+                swiper: thumbnailSwiper,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            keyboard: {
+                enabled: true,
+            },
+            mousewheel: {
+                enabled: false,
+            }
+        });
+
+        // Sync thumbnail clicks with main gallery
+        document.querySelectorAll('.thumbnail-slide').forEach((thumbnail, index) => {
+            thumbnail.addEventListener('click', () => {
+                mainGallery.slideTo(index);
+            });
+        });
+    });
+
+    // Accordion functionality
     document.querySelectorAll(".accordion-header").forEach(header => {
     header.addEventListener("click", () => {
         const accordion = header.parentElement;
