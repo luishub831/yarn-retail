@@ -15,7 +15,7 @@
             <line x1="9" y1="8" x2="15" y2="8"></line>
             <line x1="17" y1="16" x2="23" y2="16"></line>
           </svg>
-          <span class="filter-toggle-text">Hide filters</span>
+          <span class="filter-toggle-text">Show filters</span>
         </div>
         <svg class="filter-toggle-arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor">
           <polyline points="15,18 9,12 15,6"></polyline>
@@ -52,8 +52,28 @@
 </div>
 
 <div class="collection-layout container-large">
+  <!-- Mobile Overlay -->
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+  
   <!-- Left Sidebar Filters -->
   <aside class="collection-filters" id="collectionFilters">
+    <div class="filter-header">
+      <div class="filter-header-left">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <line x1="4" y1="21" x2="4" y2="14"></line>
+          <line x1="4" y1="10" x2="4" y2="3"></line>
+          <line x1="12" y1="21" x2="12" y2="12"></line>
+          <line x1="12" y1="8" x2="12" y2="3"></line>
+          <line x1="20" y1="21" x2="20" y2="16"></line>
+          <line x1="20" y1="12" x2="20" y2="3"></line>
+          <line x1="1" y1="14" x2="7" y2="14"></line>
+          <line x1="9" y1="8" x2="15" y2="8"></line>
+          <line x1="17" y1="16" x2="23" y2="16"></line>
+        </svg>
+        <span>Hide filters</span>
+      </div>
+      <button class="filter-close-btn" id="filterCloseBtn">×</button>
+    </div>
     <div class="filter_filters-wrapper">
       <form action="{{ routes.search_url }}" method="get" role="search" class="filter_form_component">
         <div class="filter_form">
@@ -730,36 +750,97 @@
   background: #5d2f7a;
   transform: translateY(-2px);
 }
+.collection-filters .filter-header{
+  display: none;
+}
 
 /* Mobile Responsive */
 @media (max-width: 768px) {
   .collection-filter-header {
     position: static;
+    padding: 15px;
   }
   
   .collection-header-bar {
     flex-direction: column;
     gap: 15px;
     align-items: stretch;
-    padding-left: 0; /* Remove padding on mobile */
+    padding: 0;
     position: relative;
   }
   
-  .collection-left-controls,
+  .collection-left-controls {
+    margin-left: 0;
+    gap: 15px;
+    order: 1;
+    width: 100%;
+    flex-direction: column;
+  }
+  
   .collection-right-controls {
-    justify-content: space-between;
-    margin-left: 0; /* Remove negative margin on mobile */
+    margin-right: 0;
+    gap: 15px;
+    order: 2;
+    width: 100%;
+    flex-direction: column;
   }
   
   .filter-toggle-btn {
-    position: relative; /* Reset position on mobile */
+    position: static;
     left: auto;
-    width: auto; /* Reset width on mobile */
-    justify-content: center; /* Center content on mobile */
+    width: 100%;
+    padding: 15px;
+    font-size: 16px;
+    border-radius: 8px;
+    background: white;
+    border: 1px solid #ddd;
+    text-align: left;
+    justify-content: space-between;
   }
   
   .filter-toggle-left {
-    gap: 6px; /* Smaller gap on mobile */
+    gap: 8px;
+  }
+  
+  .collection-info {
+    display: none;
+  }
+  
+  .filter_tags-wrapper {
+    display: none;
+  }
+  
+  .sort-wrapper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .sort-label {
+    font-size: 16px;
+    color: #333;
+    font-weight: 500;
+    margin: 0;
+    white-space: nowrap;
+    padding: 15px;
+    border-right: 1px solid #ddd;
+  }
+  
+  .sort_select {
+    flex: 1;
+    padding: 15px;
+    border: none;
+    background: white;
+    font-size: 16px;
+    text-align: left;
+    outline: none;
+    cursor: pointer;
+  }
+    font-size: 16px;
   }
   
   .collection-layout {
@@ -769,22 +850,120 @@
   }
 
   .collection-filters {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 85%;
+    max-width: 350px;
+    height: 100vh;
+    background: white;
+    z-index: 1000;
+    transition: right 0.3s ease;
+    overflow-y: auto;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+    padding: 0;
+  }
+  
+  .collection-filters.mobile-open {
+    right: 0;
+  }
+  
+  .collection-filters .filter-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 0;
+    background: white;
+  }
+  
+  .collection-filters .filter-header-left {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 16px;
+    color: #333;
+  }
+  
+  .collection-filters .filter-header h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+  }
+  
+  .collection-filters .filter-close-btn {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 0;
+    color: #666;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .collection-filters .filter_filters-wrapper {
+    padding: 20px;
+    position: relative;
+    display: block;
     width: 100%;
-    order: 2;
+    transform: none;
+  }
+  
+  /* Ensure filter elements are visible on mobile */
+  .collection-filters .filter_form_component,
+  .collection-filters .filter_form,
+  .collection-filters .filter_scroll-wrapper,
+  .collection-filters .filter_filter-group-list {
+    position: static;
+    display: block;
+    width: 100%;
+  }
+  
+  .collection-filters .filter_filter-group {
+    margin-bottom: 25px;
+    display: block;
+  }
+  
+  .collection-filters .filter-title {
+    font-weight: 600;
+    font-size: 16px;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e0e0e0;
+    text-transform: uppercase;
+    color: #333;
+    display: block;
+  }
+  
+  .collection-filters .filter_list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  /* Mobile Overlay */
+  .mobile-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+  }
+  
+  .mobile-overlay.active {
+    display: block;
   }
 
   .collection-products {
     order: 1;
-  }
-
-  .collection-header-bar {
-    flex-direction: column;
-    gap: 15px;
-    align-items: stretch;
-  }
-
-  .collection-controls {
-    justify-content: space-between;
   }
 
   .filter_product-grid {
@@ -847,26 +1026,66 @@ document.addEventListener('DOMContentLoaded', function() {
   const collectionFilters = document.getElementById('collectionFilters');
   const collectionLayout = document.querySelector('.collection-layout');
   const filterToggleText = document.querySelector('.filter-toggle-text');
+  const mobileOverlay = document.getElementById('mobileOverlay');
+  const filterCloseBtn = document.getElementById('filterCloseBtn');
+  
+  function isMobile() {
+    return window.innerWidth <= 768;
+  }
   
   if (filterToggle && collectionFilters) {
     filterToggle.addEventListener('click', function() {
-      const isHidden = collectionFilters.classList.contains('hidden');
-      
-      if (isHidden) {
-        // Show filters
-        collectionFilters.classList.remove('hidden');
-        collectionLayout.classList.remove('filters-hidden');
-        filterToggle.classList.remove('collapsed');
-        filterToggleText.textContent = 'Hide filters';
-      } else {
-        // Hide filters
-        collectionFilters.classList.add('hidden');
-        collectionLayout.classList.add('filters-hidden');
-        filterToggle.classList.add('collapsed');
+      if (isMobile()) {
+        // Mobile behavior - show side navigation from right
+        collectionFilters.classList.add('mobile-open');
+        mobileOverlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        // Keep button text as "Show filters" on mobile
         filterToggleText.textContent = 'Show filters';
+      } else {
+        // Desktop behavior
+        const isHidden = collectionFilters.classList.contains('hidden');
+        
+        if (isHidden) {
+          collectionFilters.classList.remove('hidden');
+          collectionLayout.classList.remove('filters-hidden');
+          filterToggle.classList.remove('collapsed');
+          filterToggleText.textContent = 'Hide filters';
+        } else {
+          collectionFilters.classList.add('hidden');
+          collectionLayout.classList.add('filters-hidden');
+          filterToggle.classList.add('collapsed');
+          filterToggleText.textContent = 'Show filters';
+        }
       }
     });
   }
+
+  // Close mobile filters
+  function closeMobileFilters() {
+    if (collectionFilters) {
+      collectionFilters.classList.remove('mobile-open');
+    }
+    if (mobileOverlay) {
+      mobileOverlay.classList.remove('active');
+    }
+    document.body.style.overflow = '';
+  }
+
+  if (filterCloseBtn) {
+    filterCloseBtn.addEventListener('click', closeMobileFilters);
+  }
+
+  if (mobileOverlay) {
+    mobileOverlay.addEventListener('click', closeMobileFilters);
+  }
+
+  // Handle window resize
+  window.addEventListener('resize', function() {
+    if (!isMobile()) {
+      closeMobileFilters();
+    }
+  });
 
   // Handle filter checkbox clicks
   const filterCheckboxes = document.querySelectorAll('.filter_checkbox-input');
