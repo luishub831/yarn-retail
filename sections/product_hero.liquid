@@ -3,6 +3,7 @@
       <div class="product-header_component">
          <script src="{{ 'liquify_custom.js' | asset_url }}" type="text/javascript"></script>
          <div li-element="product-variant-container" class="w-layout-grid product-header_layout" x-data="handleVariant({{ product | json | escape }}, {{ product.options_by_name | json | escape }}, {{ product.selected_or_first_available_variant | json | escape }})" x-init="$nextTick(() => { activateVariants() })" @setbundleitem.window="updateBundleItem($event.detail.product, $event.detail.quantity)">
+   
             
                
             <div id="w-node-_8c5d1479-95bf-e109-66bc-bdcd43749157-5c6875be" class="product-gallery-container">
@@ -27,13 +28,13 @@
                <div class="swiper-container is-product-gallery">
                   <div class="swiper main-gallery-swiper">
                      <div class="swiper-wrapper">
-                        <div class="swiper-slide is-product-gallery">
+                        <div class="swiper-slide is-product-gallery1" data-slide="0"> 
                            <div data-pswp-height="{{product.featured_image.width}}" data-pswp-width="{{product.featured_image.height}}" class="product_gallery-lightbox">
                               <img loading="lazy" x-bind:src="variantImage ? variantImage : product.featured_image" src="{{ product.featured_image | product_img_url: 'master' }}" alt="{{ product.featured_image.alt }}" class="product_gallery-image">
-                           </div>
+                           </div> 
                         </div>
                         {% for image in product.images offset:1 %}
-                        <div class="swiper-slide is-product-gallery">
+                        <div class="swiper-slide is-product-gallery1" data-slide="{{ forloop.index }}">
                            <div data-pswp-height="{{image.width}}" data-pswp-width="{{image.height}}" class="product_gallery-lightbox">
                               <img loading="lazy" src="{{ image.src | product_img_url: 'master' }}" alt="{{ image.alt }}" class="product_gallery-image">
                            </div>
@@ -286,12 +287,17 @@
 
     /* Thumbnail Gallery */
     .product-thumbnails {
-        width: 80px;
+        width: 80px !important;
+        max-width: 80px !important;
+        min-width: 80px !important;
         flex-shrink: 0;
+        overflow: hidden;
     }
 
     .thumbnail-swiper {
         height: 425px; /* Height for exactly 5 thumbnails (5 * 80px + 4 * 10px gap) */
+        width: 80px !important;
+        max-width: 80px !important;
         overflow: hidden;
         position: relative;
     }
@@ -311,11 +317,16 @@
     .thumbnail-swiper .swiper-wrapper {
         flex-direction: column;
         gap: 10px;
+        width: 80px !important;
+        max-width: 80px !important;
     }
 
     .thumbnail-slide {
         width: 80px !important;
         height: 80px !important;
+        max-width: 80px !important;
+        min-width: 80px !important;
+        flex-shrink: 0;
         cursor: pointer;
         border: 2px solid transparent;
         border-radius: 8px;
@@ -343,6 +354,7 @@
     }
 
     .main-gallery-swiper {
+       width: 100%;
         height: 500px;
         border-radius: 12px;
         overflow: hidden;
@@ -375,29 +387,40 @@
             flex-direction: column;
             gap: 15px;
             position: static; /* Remove sticky on mobile */
+            width: 100% !important;
+            max-width: 100% !important;
         }
 
         .product-thumbnails {
-            width: 100%;
+            {% comment %} width: 100% !important; {% endcomment %}
+            max-width: 100% !important;
+            min-width: 100% !important;
             order: 2;
         }
 
         .thumbnail-swiper {
-            height: auto; /* Reset height for mobile */
+            height: 70px !important; /* Fixed height for mobile horizontal layout */
+            width: 100% !important;
+            max-width: 100% !important;
         }
 
         .thumbnail-swiper .swiper-wrapper {
-            flex-direction: row;
+            flex-direction: row !important;
             gap: 10px;
+            width: auto !important;
+            max-width: none !important;
         }
 
         .thumbnail-slide {
             width: 60px !important;
             height: 60px !important;
+            max-width: 60px !important;
+            min-width: 60px !important;
+            flex-shrink: 0;
         }
         
         .thumbnail-swiper .swiper-scrollbar {
-            width: auto;
+            width: auto !important;
             height: 4px;
             bottom: -8px;
             right: auto;
@@ -410,6 +433,7 @@
         }
 
         .main-gallery-swiper {
+            max-width: 372px;
             height: 400px;
         }
 
@@ -417,7 +441,51 @@
         .product-header_add-to-cart-wrapper {
             position: static;
         }
+        .swiper-container.is-product-gallery {
+            {% comment %} max-width: 100%; {% endcomment %}
+            order: 1;
+        }
+    
+        {% comment %} .main-gallery-swiper {
+            height: 400px;
+        } {% endcomment %}
+    
+        /* Remove sticky behavior on mobile for add-to-cart wrapper */
+        .product-header_add-to-cart-wrapper {
+            position: static;
+        }
+
+        /* Product icons 2x2 grid on mobile */
+        .product-icons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            gap: 15px;
+            justify-items: center;
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+        }
+
+        .icon-item {
+            text-align: center;
+            flex: none;
+            min-width: auto;
+            width: 100%;
+        }
+
+        .icon-item img {
+            width: 35px;
+            height: 35px;
+            margin-bottom: 5px;
+        }
+
+        .icon-item p {
+            font-size: 12px;
+            line-height: 1.2;
+        }
     }
+
+    
 
     .product-info {
     max-width: 800px;
@@ -478,29 +546,37 @@
 
     <script>
     document.addEventListener('DOMContentLoaded', function() {
-        // Initialize thumbnails swiper first
+        // Initialize thumbnails swiper with explicit width control
         const thumbnailSwiper = new Swiper('.thumbnail-swiper', {
             direction: 'vertical',
             slidesPerView: 5, // Show exactly 5 thumbnails
             spaceBetween: 10,
             freeMode: false, // Disable free mode for controlled scrolling
             watchSlidesProgress: true,
+            width: 80, // Explicitly set container width
+            allowTouchMove: true,
             scrollbar: {
                 el: '.swiper-scrollbar',
                 draggable: true,
             },
             breakpoints: {
-                768: {
+                // Desktop
+                769: {
                     direction: 'vertical',
                     slidesPerView: 5,
+                    spaceBetween: 10,
+                    width: 80,
                     scrollbar: {
                         el: '.swiper-scrollbar',
                         draggable: true,
                     },
                 },
+                // Mobile - NO 'auto' slidesPerView
                 0: {
                     direction: 'horizontal',
-                    slidesPerView: 'auto',
+                    slidesPerView: 4, // Fixed number, never 'auto'
+                    spaceBetween: 10,
+                    width: 80, // Let CSS handle width
                     scrollbar: {
                         el: '.swiper-scrollbar',
                         draggable: true,
@@ -515,10 +591,10 @@
             thumbs: {
                 swiper: thumbnailSwiper,
             },
-            pagination: {
+            {% comment %} pagination: {
                 el: '.swiper-pagination',
                 clickable: true,
-            },
+            }, {% endcomment %}
             keyboard: {
                 enabled: true,
             },
