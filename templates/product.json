@@ -34,6 +34,39 @@
         "contact_heading_text": "Big idea?\nWe’re all ears.",
         "contact_paragraph_text": "<p>Drop us a note, shoot through a sketch,or call to say hey – our crew’s in the garage, ready to bring it to life.</p>"
       }
+    },
+    "176477436446a61d64": {
+      "type": "apps",
+      "blocks": {
+        "google_reviews_google_carousel_one_T8MmXR": {
+          "type": "shopify://apps/google-reviews/blocks/google-carousel-one/4eeaae1c-902b-481c-bec5-3f32291a58d5",
+          "settings": {
+            "rank": "all",
+            "photo_size": "large",
+            "auto_scroll": true,
+            "auto_scroll_interval": 3,
+            "rating": true,
+            "submit_review_button": true,
+            "business_info": true,
+            "review_photo": true,
+            "review_card_shadow": false,
+            "corner_radius": 20,
+            "star_color": "#f6ab00",
+            "review_card_background": "#F3F6F9",
+            "content_color": "#000000",
+            "name_color": "#000000",
+            "date_color": "#7a7a7a",
+            "more_color": "#1a73e8",
+            "submit_button_background_color": "#0084FF",
+            "submit_button_text": "#ffffff",
+            "business_info_color": "#000000"
+          }
+        }
+      },
+      "block_order": [
+        "google_reviews_google_carousel_one_T8MmXR"
+      ],
+      "settings": {}
     }
   },
   "layout": "theme",
@@ -41,6 +74,7 @@
   "order": [
     "product_hero_kMCttr",
     "product_recommended_zxKCE7",
+    "176477436446a61d64",
     "contactcta_VVBRkq"
   ]
 }
