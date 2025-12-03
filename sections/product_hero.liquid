@@ -3,92 +3,47 @@
       <div class="product-header_component">
          <script src="{{ 'liquify_custom.js' | asset_url }}" type="text/javascript"></script>
          <div li-element="product-variant-container" class="w-layout-grid product-header_layout" x-data="handleVariant({{ product | json | escape }}, {{ product.options_by_name | json | escape }}, {{ product.selected_or_first_available_variant | json | escape }})" x-init="$nextTick(() => { activateVariants() })" @setbundleitem.window="updateBundleItem($event.detail.product, $event.detail.quantity)">
-            <div>
+            
                
-               <div id="w-node-_8c5d1479-95bf-e109-66bc-bdcd43749157-5c6875be" class="product-gallery-container">
-                  <!-- Thumbnail Gallery on Left -->
-                  <div class="product-thumbnails">
-                     <div class="swiper thumbnail-swiper">
-                        <div class="swiper-wrapper">
-                           <div class="swiper-slide thumbnail-slide" data-slide="0">
-                              <img loading="lazy" x-bind:src="variantImage ? variantImage : product.featured_image" src="{{ product.featured_image | product_img_url: '150x150' }}" alt="{{ product.featured_image.alt }}" class="thumbnail-image">
-                           </div>
-                           {% for image in product.images offset:1 %}
-                           <div class="swiper-slide thumbnail-slide" data-slide="{{ forloop.index }}">
-                              <img loading="lazy" src="{{ image.src | product_img_url: '150x150' }}" alt="{{ image.alt }}" class="thumbnail-image">
-                           </div>
-                           {% endfor %}
+            <div id="w-node-_8c5d1479-95bf-e109-66bc-bdcd43749157-5c6875be" class="product-gallery-container">
+               <!-- Thumbnail Gallery on Left -->
+               <div class="product-thumbnails">
+                  <div class="swiper thumbnail-swiper">
+                     <div class="swiper-wrapper">
+                        <div class="swiper-slide thumbnail-slide" data-slide="0">
+                           <img loading="lazy" x-bind:src="variantImage ? variantImage : product.featured_image" src="{{ product.featured_image | product_img_url: '150x150' }}" alt="{{ product.featured_image.alt }}" class="thumbnail-image">
                         </div>
-                        <div class="swiper-scrollbar"></div>
-                     </div>
-                  </div>
-                  
-                  <!-- Main Gallery -->
-                  <div class="swiper-container is-product-gallery">
-                     <div class="swiper main-gallery-swiper">
-                        <div class="swiper-wrapper">
-                           <div class="swiper-slide is-product-gallery">
-                              <div data-pswp-height="{{product.featured_image.width}}" data-pswp-width="{{product.featured_image.height}}" class="product_gallery-lightbox">
-                                 <img loading="lazy" x-bind:src="variantImage ? variantImage : product.featured_image" src="{{ product.featured_image | product_img_url: 'master' }}" alt="{{ product.featured_image.alt }}" class="product_gallery-image">
-                              </div>
-                           </div>
-                           {% for image in product.images offset:1 %}
-                           <div class="swiper-slide is-product-gallery">
-                              <div data-pswp-height="{{image.width}}" data-pswp-width="{{image.height}}" class="product_gallery-lightbox">
-                                 <img loading="lazy" src="{{ image.src | product_img_url: 'master' }}" alt="{{ image.alt }}" class="product_gallery-image">
-                              </div>
-                           </div>
-                           {% endfor %}
+                        {% for image in product.images offset:1 %}
+                        <div class="swiper-slide thumbnail-slide" data-slide="{{ forloop.index }}">
+                           <img loading="lazy" src="{{ image.src | product_img_url: '150x150' }}" alt="{{ image.alt }}" class="thumbnail-image">
                         </div>
+                        {% endfor %}
                      </div>
+                     <div class="swiper-scrollbar"></div>
                   </div>
                </div>
-               <!-- Product Info under gallery -->
-               <div class="product-info">
-                  <div class="product-icons">
-                     <div class="icon-item">
-                        <img src="https://cdn.shopify.com/s/files/1/0746/7768/2449/files/PDP_Check_Point-_Printed_in_Aus_icon_033a8e21-33a3-4866-a058-b18e24579c80.png?v=1761706928" alt="Printed in Australia">
-                        <p>Printed in Australia</p>
-                     </div>
-                     <div class="icon-item">
-                        <img src="https://cdn.shopify.com/s/files/1/0746/7768/2449/files/PDP_Check_Point-_Eco_Friendly_Inks_icon_a8981aa4-897c-4e78-b250-40036c9c925e.png?v=1761706928" alt="Fast Turnarounds">
-                        <p>Fast Turn<br>Arounds</p>
-                     </div>
-                     <div class="icon-item">
-                        <img src="https://cdn.shopify.com/s/files/1/0746/7768/2449/files/PDP_Check_Point-_Fast_Turnaround_icon_711422cd-fb9a-4943-8725-0e889b25c0d1.png?v=1761706928" alt="Eco Friendly Inks">
-                        <p>Eco Friendly<br>Inks</p>
-                     </div>
-                     <div class="icon-item">
-                        <img src="https://cdn.shopify.com/s/files/1/0746/7768/2449/files/PDP_Check_Point-_Satisfaction_icon_eaed0247-eb46-49a7-a1c7-d85d24d11229.png?v=1761706928" alt="Satisfaction Guarantee">
-                        <p>Satisfaction<br>Guarantee</p>
-                     </div>
-                  </div>
-                  <!-- Accordion: Description -->
-                  <div class="accordion">
-                     <button class="accordion-header heading-style-h3">
-                     {{ section.settings.text_product_description_heading }}
-                     <span class="accordion-icon">+</span>
-                     </button>
-                     <div class="accordion-content">
-                           <div li-object="product.description" class="text-rich-text max-width-large w-richtext">{{ product.description }}</div>
-                     </div>
-                  </div>
-
-                  <!-- Accordion: Details -->
-                  <div class="accordion">
-                     <button class="accordion-header heading-style-h3">
-                     DETAILS
-                     <span class="accordion-icon">+</span>
-                     </button>
-                     <div class="accordion-content">
-                     <p><strong>Fit:</strong> Regular</p>
-                     <p><strong>Fabric:</strong> Mid weight, 180 GSM, 28-singles, 100% combed cotton (marles 15% viscose)</p>
-                     <p><strong>Construction:</strong> Neck ribbing, side seamed, shoulder to shoulder tape, double needle hems, preshrunk to minimise shrinkage</p>
-                     <p><strong>Embellishment:</strong> Suited for screen printing, DTG and embroidery</p>
+               
+               <!-- Main Gallery -->
+               <div class="swiper-container is-product-gallery">
+                  <div class="swiper main-gallery-swiper">
+                     <div class="swiper-wrapper">
+                        <div class="swiper-slide is-product-gallery">
+                           <div data-pswp-height="{{product.featured_image.width}}" data-pswp-width="{{product.featured_image.height}}" class="product_gallery-lightbox">
+                              <img loading="lazy" x-bind:src="variantImage ? variantImage : product.featured_image" src="{{ product.featured_image | product_img_url: 'master' }}" alt="{{ product.featured_image.alt }}" class="product_gallery-image">
+                           </div>
+                        </div>
+                        {% for image in product.images offset:1 %}
+                        <div class="swiper-slide is-product-gallery">
+                           <div data-pswp-height="{{image.width}}" data-pswp-width="{{image.height}}" class="product_gallery-lightbox">
+                              <img loading="lazy" src="{{ image.src | product_img_url: 'master' }}" alt="{{ image.alt }}" class="product_gallery-image">
+                           </div>
+                        </div>
+                        {% endfor %}
                      </div>
                   </div>
                </div>
             </div>
+            
             <div id="w-node-_8c5d1479-95bf-e109-66bc-bdcd43749168-5c6875be" class="product-header_product-details">
                <div class="hide w-embed">{% assign show_default_images = true %}
                   {% for image in product.images %}
@@ -239,12 +194,47 @@
                      <div>Oops! Something went wrong while submitting the form.</div>
                   </div>
                </div>
+               
+               <!-- Product Info moved here after customize button -->
+               <div class="product-info">
+                  <div class="product-icons">
+                     <div class="icon-item">
+                        <img src="https://cdn.shopify.com/s/files/1/0746/7768/2449/files/PDP_Check_Point-_Printed_in_Aus_icon_033a8e21-33a3-4866-a058-b18e24579c80.png?v=1761706928" alt="Printed in Australia" width="45" height="45">
+                        <p>Printed in Australia</p>
+                     </div>
+                     <div class="icon-item">
+                        <img src="https://cdn.shopify.com/s/files/1/0746/7768/2449/files/PDP_Check_Point-_Eco_Friendly_Inks_icon_a8981aa4-897c-4e78-b250-40036c9c925e.png?v=1761706928" alt="Fast Turnarounds" width="45" height="45">
+                        <p>Fast Turn<br>Arounds</p>
+                     </div>
+                     <div class="icon-item">
+                        <img src="https://cdn.shopify.com/s/files/1/0746/7768/2449/files/PDP_Check_Point-_Fast_Turnaround_icon_711422cd-fb9a-4943-8725-0e889b25c0d1.png?v=1761706928" alt="Eco Friendly Inks" width="45" height="45">
+                        <p>Eco Friendly<br>Inks</p>
+                     </div>
+                     <div class="icon-item">
+                        <img src="https://cdn.shopify.com/s/files/1/0746/7768/2449/files/PDP_Check_Point-_Satisfaction_icon_eaed0247-eb46-49a7-a1c7-d85d24d11229.png?v=1761706928" alt="Satisfaction Guarantee" width="45" height="45">
+                        <p>Satisfaction<br>Guarantee</p>
+                     </div>
+                  </div>
+                  
+                  <!-- Simple Description Section -->
+                  <div class="product-description-section">
+                     <h3 class="heading-style-h3">{{ section.settings.text_product_description_heading }}</h3>
+                     <div li-object="product.description" class="text-rich-text max-width-large w-richtext">{{ product.description }}</div>
+                  </div>
+
+                  <!-- Simple Details Section -->
+                  <div class="product-details-section">
+                     <h3 class="heading-style-h3">Product Details</h3>
+                     <div class="details-content">
+                        <p><strong>Fit:</strong> Regular</p>
+                        <p><strong>Fabric:</strong> Mid weight, 180 GSM, 28-singles, 100% combed cotton (marles 15% viscose)</p>
+                        <p><strong>Construction:</strong> Neck ribbing, side seamed, shoulder to shoulder tape, double needle hems, preshrunk to minimise shrinkage</p>
+                        <p><strong>Embellishment:</strong> Suited for screen printing, DTG and embroidery</p>
+                     </div>
+                  </div>
+               </div>
+               
                <div class="spacer-medium"></div>
-               <h2 class="heading-style-h3">
-                  {{ section.settings.text_product_description_heading }}
-               </h2>
-               <div class="spacer-medium"></div>
-               <div li-object="product.description" class="text-rich-text max-width-large w-richtext">{{ product.description }}</div>
             </div>
          </div>
       </div>
@@ -287,6 +277,9 @@
         gap: 20px;
         align-items: flex-start;
         margin-bottom: 30px;
+        position: sticky;
+        top: 20px;
+        z-index: 10;
     }
 
     /* Thumbnail Gallery */
@@ -413,18 +406,17 @@
 
     .product-info {
     max-width: 800px;
-    margin: 0 auto;
+    margin: 40px 0;
     font-family: "Helvetica Neue", Arial, sans-serif;
     color: #000;
     line-height: 1.6;
-    margin-top: 45px;
     }
+    
     /* Icons Row */
    .product-icons {
    display: flex;
    justify-content: space-between;
    flex-wrap: wrap;
-   {% comment %} border-bottom: 1px solid #ccc; {% endcomment %}
    padding-bottom: 15px;
    margin-bottom: 25px;
    }
@@ -448,52 +440,25 @@
    margin: 0;
    }
 
-
-    /* Accordion styling */
-    .accordion {
-    border-top: 1px solid #000;
-    }
-
-    .accordion-header {
-    background: none;
-    border: none;
-    width: 100%;
-    text-align: left;
-    padding: 15px 0;
-    {% comment %} font-size: 16px; {% endcomment %}
-    {% comment %} font-weight: 600; {% endcomment %}
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    cursor: pointer;
-    }
-
-    .accordion-icon {
-    font-size: 20px;
-    font-weight: 500;
-    width: 20px;
-    text-align: center;
-    transition: transform 0.2s ease;
-    }
-
-    .accordion-content {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.25s ease-out;
-    font-size: 14px;
-    padding-right: 10px;
-    }
-
-    .accordion-content.open {
-    max-height: 500px;
-    transition: max-height 0.25s ease-in;
-    }
-
-    .accordion-content p {
-    margin: 5px 0;
-    }
+   /* Simple Description and Details Sections */
+   .product-description-section,
+   .product-details-section {
+   padding: 30px 0;
+   border-top: 1px solid #EDEDED;
+   }
+   
+   .product-description-section h3,
+   .product-details-section h3 {
+   padding-bottom: 10px;
+   text-transform: capitalize;
+   letter-spacing: 0.5px;
+   }
+   
+   .details-content p {
+   margin: 8px 0;
+   font-size: 14px;
+   line-height: 1.5;
+   }
     </style>
 
     <script>
@@ -555,23 +520,4 @@
         });
     });
 
-    // Accordion functionality
-    document.querySelectorAll(".accordion-header").forEach(header => {
-    header.addEventListener("click", () => {
-        const accordion = header.parentElement;
-        const content = accordion.querySelector(".accordion-content");
-        const icon = header.querySelector(".accordion-icon");
-        const isOpen = content.classList.contains("open");
-
-        // Close all accordions
-        document.querySelectorAll(".accordion-content").forEach(c => c.classList.remove("open"));
-        document.querySelectorAll(".accordion-icon").forEach(i => i.textContent = "+");
-
-        // Open the clicked one if not already open
-        if (!isOpen) {
-        content.classList.add("open");
-        icon.textContent = "–";
-        }
-    });
-    });
     </script>
