@@ -186,6 +186,45 @@
                         </div>
                      </template>
                   </div>
+
+                  <!-- Product Info moved here after customize button -->
+                  <div class="product-info">
+                     <div class="product-icons">
+                        <div class="icon-item">
+                           <img src="https://cdn.shopify.com/s/files/1/0746/7768/2449/files/PDP_Check_Point-_Printed_in_Aus_icon_033a8e21-33a3-4866-a058-b18e24579c80.png?v=1761706928" alt="Printed in Australia" width="45" height="45">
+                           <p>Printed in Australia</p>
+                        </div>
+                        <div class="icon-item">
+                           <img src="https://cdn.shopify.com/s/files/1/0746/7768/2449/files/PDP_Check_Point-_Eco_Friendly_Inks_icon_a8981aa4-897c-4e78-b250-40036c9c925e.png?v=1761706928" alt="Fast Turnarounds" width="45" height="45">
+                           <p>Fast Turn<br>Arounds</p>
+                        </div>
+                        <div class="icon-item">
+                           <img src="https://cdn.shopify.com/s/files/1/0746/7768/2449/files/PDP_Check_Point-_Fast_Turnaround_icon_711422cd-fb9a-4943-8725-0e889b25c0d1.png?v=1761706928" alt="Eco Friendly Inks" width="45" height="45">
+                           <p>Eco Friendly<br>Inks</p>
+                        </div>
+                        <div class="icon-item">
+                           <img src="https://cdn.shopify.com/s/files/1/0746/7768/2449/files/PDP_Check_Point-_Satisfaction_icon_eaed0247-eb46-49a7-a1c7-d85d24d11229.png?v=1761706928" alt="Satisfaction Guarantee" width="45" height="45">
+                           <p>Satisfaction<br>Guarantee</p>
+                        </div>
+                     </div>
+                     
+                     <!-- Simple Description Section -->
+                     <div class="product-description-section">
+                        <h3 class="heading-style-h3">{{ section.settings.text_product_description_heading }}</h3>
+                        <div li-object="product.description" class="text-rich-text max-width-large w-richtext">{{ product.description }}</div>
+                     </div>
+
+                     <!-- Simple Details Section -->
+                     <div class="product-details-section">
+                        <h3 class="heading-style-h3">Product Details</h3>
+                        <div class="details-content">
+                           <p><strong>Fit:</strong> Regular</p>
+                           <p><strong>Fabric:</strong> Mid weight, 180 GSM, 28-singles, 100% combed cotton (marles 15% viscose)</p>
+                           <p><strong>Construction:</strong> Neck ribbing, side seamed, shoulder to shoulder tape, double needle hems, preshrunk to minimise shrinkage</p>
+                           <p><strong>Embellishment:</strong> Suited for screen printing, DTG and embroidery</p>
+                        </div>
+                     </div>
+                  </div>
                   {% endform %}
                   <div class="out-of-stock-state w-form-done">
                      <div>Thank you! Your submission has been received!</div>
@@ -195,44 +234,7 @@
                   </div>
                </div>
                
-               <!-- Product Info moved here after customize button -->
-               <div class="product-info">
-                  <div class="product-icons">
-                     <div class="icon-item">
-                        <img src="https://cdn.shopify.com/s/files/1/0746/7768/2449/files/PDP_Check_Point-_Printed_in_Aus_icon_033a8e21-33a3-4866-a058-b18e24579c80.png?v=1761706928" alt="Printed in Australia" width="45" height="45">
-                        <p>Printed in Australia</p>
-                     </div>
-                     <div class="icon-item">
-                        <img src="https://cdn.shopify.com/s/files/1/0746/7768/2449/files/PDP_Check_Point-_Eco_Friendly_Inks_icon_a8981aa4-897c-4e78-b250-40036c9c925e.png?v=1761706928" alt="Fast Turnarounds" width="45" height="45">
-                        <p>Fast Turn<br>Arounds</p>
-                     </div>
-                     <div class="icon-item">
-                        <img src="https://cdn.shopify.com/s/files/1/0746/7768/2449/files/PDP_Check_Point-_Fast_Turnaround_icon_711422cd-fb9a-4943-8725-0e889b25c0d1.png?v=1761706928" alt="Eco Friendly Inks" width="45" height="45">
-                        <p>Eco Friendly<br>Inks</p>
-                     </div>
-                     <div class="icon-item">
-                        <img src="https://cdn.shopify.com/s/files/1/0746/7768/2449/files/PDP_Check_Point-_Satisfaction_icon_eaed0247-eb46-49a7-a1c7-d85d24d11229.png?v=1761706928" alt="Satisfaction Guarantee" width="45" height="45">
-                        <p>Satisfaction<br>Guarantee</p>
-                     </div>
-                  </div>
-                  
-                  <!-- Simple Description Section -->
-                  <div class="product-description-section">
-                     <h3 class="heading-style-h3">{{ section.settings.text_product_description_heading }}</h3>
-                     <div li-object="product.description" class="text-rich-text max-width-large w-richtext">{{ product.description }}</div>
-                  </div>
-
-                  <!-- Simple Details Section -->
-                  <div class="product-details-section">
-                     <h3 class="heading-style-h3">Product Details</h3>
-                     <div class="details-content">
-                        <p><strong>Fit:</strong> Regular</p>
-                        <p><strong>Fabric:</strong> Mid weight, 180 GSM, 28-singles, 100% combed cotton (marles 15% viscose)</p>
-                        <p><strong>Construction:</strong> Neck ribbing, side seamed, shoulder to shoulder tape, double needle hems, preshrunk to minimise shrinkage</p>
-                        <p><strong>Embellishment:</strong> Suited for screen printing, DTG and embroidery</p>
-                     </div>
-                  </div>
-               </div>
+               
                
                <div class="spacer-medium"></div>
             </div>
@@ -360,11 +362,19 @@
         padding-left: 5px;
     }
 
+    /* Sticky Add to Cart Wrapper */
+    .product-header_add-to-cart-wrapper {
+        position: sticky;
+        top: 20px;
+        z-index: 20;
+    }
+
     /* Mobile responsiveness */
     @media (max-width: 768px) {
         .product-gallery-container {
             flex-direction: column;
             gap: 15px;
+            position: static; /* Remove sticky on mobile */
         }
 
         .product-thumbnails {
@@ -401,6 +411,11 @@
 
         .main-gallery-swiper {
             height: 400px;
+        }
+
+        /* Remove sticky behavior on mobile for add-to-cart wrapper */
+        .product-header_add-to-cart-wrapper {
+            position: static;
         }
     }
 
