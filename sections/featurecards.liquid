@@ -1,26 +1,95 @@
-<div class="padding-global"><div class="container-large"><div class="padding-section-large"><div class="layout250_component"><div class="settings-schema w-embed"></div>
-<div class="margin-bottom margin-xlarge"><div class="max-width-large align-center"><h2 li-object="section.settings.featurecards_heading_text" class="heading-style-h2 text-align-center">{{ section.settings.featurecards_heading_text }}</h2></div></div><div li-content-for-blocks="" class="w-layout-grid layout250_list">
-{% for block in section.blocks %}
-    {% case block.type %}
-        {% when '@app' %}
-            {% render block %}
-    {% when 'feature-card' %}
-            <div li-block="Feature Card" class="layout250_item">
-                    
-                    <div class="settings-schema w-embed"></div>
-
-                    
-                    <div class="margin-bottom margin-medium"><div class="home4-features_image-wrapper"><img li-object:src="block.settings.featurecard_image | image_url: width: 720" loading="lazy" alt="" src="{{ block.settings.featurecard_image | image_url: width: 720 }}" class="layout250_image">
-</div></div>
-                    
-                    <div class="margin-bottom margin-xsmall"><h3 li-object="block.settings.featurecard_heading_text" class="heading-style-h5">{{ block.settings.featurecard_heading_text }}</h3></div>
-                    
-                    <div class="richtext-wrapper text-size-regular w-richtext"><p li-object="block.settings.featurecard_paragraph_text">{{ block.settings.featurecard_paragraph_text }}</p></div>
-                    
-                </div>
-        {% endcase %}
-{% endfor %}
-
+<div class="padding-global">
+   <div class="container-large">
+      <div class="padding-section-large">
+         <div class="layout250_component">
+            <div class="settings-schema w-embed"></div>
+            <div class="margin-bottom margin-xlarge">
+               <div class="max-width-large align-center">
+                  <h2 li-object="section.settings.featurecards_heading_text" class="heading-style-h2 text-align-center">{{ section.settings.featurecards_heading_text }}</h2>
+               </div>
+            </div>
+            <div li-content-for-blocks="" class="w-layout-grid layout250_list">
+               {% for block in section.blocks %}
+               {% case block.type %}
+               {% when '@app' %}
+               {% render block %}
+               {% when 'feature-card' %}
+               <div li-block="Feature Card" class="layout250_item">
+                  <div class="settings-schema w-embed"></div>
+                  <div class="margin-bottom margin-medium">
+                     <div class="home4-features_image-wrapper"><img li-object:src="block.settings.featurecard_image | image_url: width: 720" loading="lazy" alt="" src="{{ block.settings.featurecard_image | image_url: width: 720 }}" class="layout250_image"></div>
+                  </div>
+                  <div class="margin-bottom margin-xsmall">
+                     <h3 li-object="block.settings.featurecard_heading_text" class="heading-style-h5">{{ block.settings.featurecard_heading_text }}</h3>
+                  </div>
+                  <div class="richtext-wrapper text-size-regular w-richtext">
+                     <p li-object="block.settings.featurecard_paragraph_text">{{ block.settings.featurecard_paragraph_text }}</p>
+                  </div>
+               </div>
+               {% endcase %}
+               {% endfor %}
+            </div>
+         </div>
+      </div>
+   </div>
 </div>
 
-</div></div></div></div> {% schema %} {"tag":"section","name":"FeatureCards","class":"section_layout250","blocks":[{"name":"Feature Card","type":"feature-card","settings":[{"type":"header","content":"Feature Card Content Settings"},{"type":"textarea","id":"featurecard_heading_text","label":"Feature Card Heading Text","default":"Medium length hero heading goes here"},{"type":"richtext","id":"featurecard_paragraph_text","label":"Feature Card Paragraph Text","default":"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla.<\/p>"},{"type":"image_picker","id":"featurecard_image","label":"Feature Card Image"}]}],"settings":[{"type":"header","content":"Feature Cards Content Settings"},{"type":"textarea","id":"featurecards_heading_text","label":"Feature Cards Heading Text","default":"Medium length section heading goes here"}],"presets":[{"name":"FeatureCards","category":"Liquify","blocks":[{"type":"feature-card"}]}]} {% endschema %}
+{% schema %} 
+{
+  "tag": "section",
+  "name": "FeatureCards",
+  "class": "section_layout250",
+  "blocks": [
+    {
+      "name": "Feature Card",
+      "type": "feature-card",
+      "settings": [
+        {
+          "type": "header",
+          "content": "Feature Card Content Settings"
+        },
+        {
+          "type": "textarea",
+          "id": "featurecard_heading_text",
+          "label": "Feature Card Heading Text",
+          "default": "Medium length hero heading goes here"
+        },
+        {
+          "type": "richtext",
+          "id": "featurecard_paragraph_text",
+          "label": "Feature Card Paragraph Text",
+          "default": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla.</p>"
+        },
+        {
+          "type": "image_picker",
+          "id": "featurecard_image",
+          "label": "Feature Card Image"
+        }
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "type": "header",
+      "content": "Feature Cards Content Settings"
+    },
+    {
+      "type": "textarea",
+      "id": "featurecards_heading_text",
+      "label": "Feature Cards Heading Text",
+      "default": "Medium length section heading goes here"
+    }
+  ],
+  "presets": [
+    {
+      "name": "FeatureCards",
+      "category": "Liquify",
+      "blocks": [
+        {
+          "type": "feature-card"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
