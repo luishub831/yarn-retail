@@ -1,2 +1,51 @@
-<div class="padding-global"><div class="container-large"><div class="padding-section-medium"><div class="header49_component"><div class="settings-schema w-embed"></div>
-<div class="w-layout-grid header49_content"><div class="header49_content-left"><h1 li-object="section.settings.pageheader_heading_text" class="heading-style-h1">{{ section.settings.pageheader_heading_text }}</h1></div><div class="header49_content-right"><div class="richtext-wrapper text-size-medium w-richtext"><p li-object="section.settings.pageheader_paragraph_text">{{ section.settings.pageheader_paragraph_text }}</p></div></div></div></div></div></div></div> {% schema %} {"tag":"header","name":"PageHeaderSplit","class":"section_header49","settings":[{"type":"header","content":"Page Header Content Settings"},{"type":"textarea","id":"pageheader_heading_text","label":"Page Header Heading Text","default":"Medium length heading goes here"},{"type":"richtext","id":"pageheader_paragraph_text","label":"Page Header Paragraph Text","default":"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.<\/p>"}],"presets":[{"name":"PageHeaderSplit","category":"Liquify","blocks":[]}]} {% endschema %}
+<div class="padding-global">
+   <div class="container-large">
+      <div class="padding-section-medium">
+         <div class="header49_component">
+            <div class="settings-schema w-embed"></div>
+            <div class="w-layout-grid header49_content">
+               <div class="header49_content-left">
+                  <h1 li-object="section.settings.pageheader_heading_text" class="heading-style-h1">{{ section.settings.pageheader_heading_text }}</h1>
+               </div>
+               <div class="header49_content-right">
+                  <div class="richtext-wrapper text-size-medium w-richtext">
+                     <p li-object="section.settings.pageheader_paragraph_text">{{ section.settings.pageheader_paragraph_text }}</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+{% schema %} 
+{
+  "tag": "header",
+  "name": "PageHeaderSplit",
+  "class": "section_header49",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Page Header Content Settings"
+    },
+    {
+      "type": "textarea",
+      "id": "pageheader_heading_text",
+      "label": "Page Header Heading Text",
+      "default": "Medium length heading goes here"
+    },
+    {
+      "type": "richtext",
+      "id": "pageheader_paragraph_text",
+      "label": "Page Header Paragraph Text",
+      "default": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>"
+    }
+  ],
+  "presets": [
+    {
+      "name": "PageHeaderSplit",
+      "category": "Liquify",
+      "blocks": []
+    }
+  ]
+}
+{% endschema %}
