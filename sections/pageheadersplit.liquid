@@ -5,7 +5,7 @@
             <div class="settings-schema w-embed"></div>
             <div class="w-layout-grid header49_content">
                <div class="header49_content-left">
-                  <h1 li-object="section.settings.pageheader_heading_text" class="heading-style-h1">{{ section.settings.pageheader_heading_text }}</h1>
+                  <h1 li-object="section.settings.pageheader_heading_text" class="heading-style-h2">{{ section.settings.pageheader_heading_text }}</h1>
                </div>
                <div class="header49_content-right">
                   <div class="richtext-wrapper text-size-medium w-richtext">
@@ -17,6 +17,29 @@
       </div>
    </div>
 </div>
+<style>
+    .header49_content-left{
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 20px;
+        border: 2px solid #592A78;
+        background: #753F9A;
+        box-shadow: -8px 8px 0 0 #592A78;
+        padding: 50px;
+    }
+    .header49_content-left h1{
+        color: #FFFFFF;
+        font-size: 3rem;
+    }
+    @media (max-width: 768px) {
+        .header49_content-left h1{
+            font-size: 2rem;
+        }
+    }
+
+</style>
 {% schema %} 
 {
   "tag": "header",
