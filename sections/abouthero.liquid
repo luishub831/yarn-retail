@@ -1,32 +1,225 @@
 <div class="padding-global">
    <div class="container-large">
       <div class="padding-section-large">
-         <div class="header136_component">
+         <div class="abouthero_component">
             <div class="settings-schema w-embed"></div>
-            <div class="margin-bottom margin-xxlarge">
-               <div class="text-align-center">
-                  <div class="max-width-large align-center">
-                     <div class="margin-bottom margin-small">
-                        <h1 li-object="section.settings.hero_heading_text" class="heading-style-h1">{{ section.settings.hero_heading_text }}</h1>
+            
+            <!-- Main content grid -->
+            <div class="abouthero_grid">
+               <!-- Left content -->
+               <div class="abouthero_content">
+                  <div class="abouthero_text-wrapper">
+                     <h1 li-object="section.settings.hero_heading_text" class="heading-style-h1">{{ section.settings.hero_heading_text }}</h1>
+                     <div class="abouthero_paragraph">
+                        <div li-object="section.settings.hero_paragraph_text">{{ section.settings.hero_paragraph_text }}</div>
                      </div>
-                     <div class="richtext-wrapper is-center text-size-medium w-richtext">
-                        <p li-object="section.settings.hero_paragraph_text">{{ section.settings.hero_paragraph_text }}</p>
-                     </div>
-                     <div class="margin-top margin-small">
-                        <div class="button-group is-center">{% render 'button' %}</div>
+                     <div class="abouthero_button-wrapper button-group">
+                        {% render 'button' %}
                      </div>
                   </div>
                </div>
-            </div>
-            <div class="header136_image-group">
-               <div class="header136_image-wrapper2"><img li-object:src="section.settings.hero_image_2 | image_url: width: 720" loading="eager" alt="" src="{{ section.settings.hero_image_2 | image_url: width: 720 }}" class="header136_image2"></div>
-               <div class="header136_image-wrapper1"><img li-object:src="section.settings.hero_image_1 | image_url: width: 1440" loading="eager" alt="" src="{{ section.settings.hero_image_1 | image_url: width: 1440 }}" class="header136_image1"></div>
-               <div class="header136_image-wrapper3"><img li-object:src="section.settings.hero_image_3 | image_url: width: 720" loading="eager" alt="" src="{{ section.settings.hero_image_3 | image_url: width: 720 }}" class="header136_image3"></div>
+               
+               <!-- Right images -->
+               <div class="abouthero_images">
+                  <!-- Main large image -->
+                  <div class="abouthero_main-image">
+                     <img li-object:src="section.settings.hero_image_1 | image_url: width: 600" loading="eager" alt="" src="{{ section.settings.hero_image_1 | image_url: width: 600 }}" class="abouthero_image-main">
+                  </div>
+                  
+                  <!-- Bottom row with 2 left + 1 right layout -->
+                  <div class="abouthero_bottom-images">
+                     <!-- Left side: 2 smaller images -->
+                     <div class="abouthero_left-images">
+                        <div class="abouthero_small-image">
+                           <img li-object:src="section.settings.hero_image_2 | image_url: width: 180" loading="eager" alt="" src="{{ section.settings.hero_image_2 | image_url: width: 180 }}" class="abouthero_image-small">
+                        </div>
+                        <div class="abouthero_small-image">
+                           <img li-object:src="section.settings.hero_image_3 | image_url: width: 180" loading="eager" alt="" src="{{ section.settings.hero_image_3 | image_url: width: 180 }}" class="abouthero_image-small">
+                        </div>
+                     </div>
+                     
+                     <!-- Right side: 1 larger image -->
+                     <div class="abouthero_right-image">
+                        <img li-object:src="section.settings.hero_image_4 | image_url: width: 360" loading="eager" alt="" src="{{ section.settings.hero_image_4 | image_url: width: 360 }}" class="abouthero_image-medium">
+                     </div>
+                  </div>
+               </div>
             </div>
          </div>
       </div>
    </div>
 </div>
+
+<style>
+.abouthero_component {
+   width: 100%;
+}
+
+.abouthero_grid {
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   gap: 60px;
+   align-items: start;
+   min-height: 500px;
+}
+
+.abouthero_content {
+   display: flex;
+   align-items: flex-start;
+   justify-content: flex-start;
+   margin-top: 40px;
+}
+
+.abouthero_text-wrapper {
+   {% comment %} max-width: 500px; {% endcomment %}
+}
+.abouthero_text-wrapper .heading-style-h1 {
+   text-transform: inherit;
+}   
+
+.abouthero_heading {
+   font-size: 3rem;
+   font-weight: 400;
+   color: #1a1a1a;
+   line-height: 1;
+   margin-bottom: 20px;
+   text-transform: inherit;
+}
+
+.abouthero_paragraph {
+   font-size: 1.1rem;
+   line-height: 1.6;
+   color: #555;
+   margin: 30px 0;
+}
+.abouthero_paragraph p{
+    margin-bottom: 15px;
+}
+
+.abouthero_button-wrapper {
+   margin-top: 30px;
+}
+
+.abouthero_images {
+   display: flex;
+   flex-direction: column;
+   gap: 20px;
+   position: relative;
+}
+
+.abouthero_main-image {
+   width: 100%;
+   border-radius: 12px;
+   overflow: hidden;
+   box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+}
+
+.abouthero_image-main {
+   width: 100%;
+   height: auto;
+   object-fit: cover;
+   display: block;
+}
+
+.abouthero_bottom-images {
+   display: flex;
+   gap: 20px;
+   align-items: stretch;
+}
+
+.abouthero_left-images {
+   flex: 1;
+   display: flex;
+   flex-direction: column;
+   gap: 15px;
+}
+
+.abouthero_right-image {
+   flex: 2;
+   border-radius: 8px;
+   overflow: hidden;
+   box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+   display: flex;
+}
+
+.abouthero_small-image {
+   flex: 1;
+   border-radius: 8px;
+   overflow: hidden;
+   box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+   display: flex;
+}
+
+.abouthero_image-small {
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+   display: block;
+}
+
+.abouthero_image-medium {
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+   display: block;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+   .abouthero_grid {
+      grid-template-columns: 1fr;
+      gap: 40px;
+   }
+   
+   .abouthero_content {
+      margin-top: 0px;
+   }
+   
+   .abouthero_text-wrapper {
+      max-width: 100%;
+   }
+   
+   .abouthero_heading {
+      font-size: 2.2rem;
+   }
+   
+   .abouthero_paragraph {
+      font-size: 1rem;
+   }
+   
+   /* Keep same layout as desktop - don't change flex direction */
+   .abouthero_bottom-images {
+      flex-direction: row;
+      gap: 15px;
+   }
+   
+   .abouthero_left-images {
+      flex: 1;
+      flex-direction: column;
+      gap: 10px;
+   }
+   
+   .abouthero_right-image {
+      flex: 2;
+   }
+}
+
+@media (max-width: 480px) {
+   .abouthero_heading {
+      font-size: 1.8rem;
+   }
+   
+   /* Maintain the same layout even on very small screens */
+   .abouthero_bottom-images {
+      gap: 10px;
+   }
+   
+   .abouthero_left-images {
+      gap: 8px;
+   }
+}
+</style>
+
 {% schema %} 
 {
   "tag": "header",
@@ -184,17 +377,22 @@
     {
       "type": "image_picker",
       "id": "hero_image_1",
-      "label": "Hero Image 1 (Center)"
+      "label": "Hero Image 1 (Main Large Image)"
     },
     {
       "type": "image_picker",
       "id": "hero_image_2",
-      "label": "Hero Image 2 (Left)"
+      "label": "Hero Image 2 (Bottom Left)"
     },
     {
       "type": "image_picker",
       "id": "hero_image_3",
-      "label": "Hero Image 3 (Right)"
+      "label": "Hero Image 3 (Bottom Center Left)"
+    },
+    {
+      "type": "image_picker",
+      "id": "hero_image_4",
+      "label": "Hero Image 4 (Bottom Right)"
     }
   ],
   "presets": [
