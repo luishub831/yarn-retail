@@ -1,29 +1,34 @@
 <div class="padding-global">
    <div class="container-large">
       <div class="padding-section-large">
-         <div class="layout250_component">
+         <div class="featurecards_component">
             <div class="settings-schema w-embed"></div>
-            <div class="margin-bottom margin-xlarge">
-               <div class="max-width-large align-center">
-                  <h2 li-object="section.settings.featurecards_heading_text" class="heading-style-h2 text-align-center">{{ section.settings.featurecards_heading_text }}</h2>
-               </div>
+            <div class="featurecards_header">
+               <h2 li-object="section.settings.featurecards_heading_text" class="featurecards_main-heading">{{ section.settings.featurecards_heading_text }}</h2>
             </div>
-            <div li-content-for-blocks="" class="w-layout-grid layout250_list">
+            <div li-content-for-blocks="" class="featurecards_grid">
                {% for block in section.blocks %}
                {% case block.type %}
                {% when '@app' %}
                {% render block %}
                {% when 'feature-card' %}
-               <div li-block="Feature Card" class="layout250_item">
+               <div li-block="Feature Card" class="featurecard_item">
                   <div class="settings-schema w-embed"></div>
-                  <div class="margin-bottom margin-medium">
-                     <div class="home4-features_image-wrapper"><img li-object:src="block.settings.featurecard_image | image_url: width: 720" loading="lazy" alt="" src="{{ block.settings.featurecard_image | image_url: width: 720 }}" class="layout250_image"></div>
+                  <div class="featurecard_icon-wrapper">
+                     <div class="featurecard_icon1">
+                        {% if block.settings.featurecard_image %}
+                           <img li-object:src="block.settings.featurecard_image | image_url: width: 80" loading="lazy" alt="" src="{{ block.settings.featurecard_image | image_url: width: 80 }}" class="featurecard_icon-image">
+                        {% endif %}
+                     </div>
                   </div>
-                  <div class="margin-bottom margin-xsmall">
-                     <h3 li-object="block.settings.featurecard_heading_text" class="heading-style-h5">{{ block.settings.featurecard_heading_text }}</h3>
-                  </div>
-                  <div class="richtext-wrapper text-size-regular w-richtext">
-                     <p li-object="block.settings.featurecard_paragraph_text">{{ block.settings.featurecard_paragraph_text }}</p>
+                  <div class="featurecard_content">
+                     <h3 li-object="block.settings.featurecard_heading_text" class="featurecard_heading">{{ block.settings.featurecard_heading_text }}</h3>
+                     {% if block.settings.featurecard_subheading_text %}
+                     <p li-object="block.settings.featurecard_subheading_text" class="featurecard_sub-heading">{{ block.settings.featurecard_subheading_text }}</p>
+                     {% endif %}
+                     <div class="featurecard_description">
+                        <div li-object="block.settings.featurecard_paragraph_text">{{ block.settings.featurecard_paragraph_text }}</div>
+                     </div>
                   </div>
                </div>
                {% endcase %}
@@ -33,6 +38,140 @@
       </div>
    </div>
 </div>
+
+<style>
+.featurecards_component {
+   width: 100%;
+}
+
+.featurecards_header {
+   text-align: center;
+   margin-bottom: 60px;
+}
+
+.featurecards_main-heading {
+   font-size: 3rem;
+   font-weight: 400;
+   margin: 0;
+   line-height: 1.2;
+   text-transform: initial;
+}
+
+.featurecards_grid {
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   gap: 40px;
+}
+
+.featurecard_item {
+   background: #FAF4E7;
+   border: 1px solid #ECE2CC;
+   border-radius: 16px;
+   padding: 40px 30px;
+   text-align: center;
+   transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.featurecard_item:hover {
+   transform: translateY(-5px);
+   box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.featurecard_icon-wrapper {
+   margin-bottom: 30px;
+   display: flex;
+   justify-content: center;
+}
+
+.featurecard_icon {
+   width: 80px;
+   height: 80px;
+   border-radius: 50%;
+   background: white;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+}
+
+.featurecard_icon-image {
+   width: 80px;
+   height: 80px;
+   object-fit: cover;
+   border-radius: 50%;
+}
+
+.featurecard_content {
+   text-align: center;
+}
+
+.featurecard_heading {
+   font-size: 20px;
+   font-weight: 400;
+   color: #001828;
+   margin: 0 0 25px 0;
+   line-height: 1;
+}
+
+.featurecard_sub-heading {
+   font-size: 1rem;
+   color: #314958;
+   margin: 0 0 25px 0;
+   line-height: 1.3;
+   font-weight: 800;
+}
+
+.featurecard_description {
+   color: #666;
+   line-height: 1.6;
+   font-size: 1rem;
+}
+
+.featurecard_description p {
+   margin: 0;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+   .featurecards_grid {
+      grid-template-columns: 1fr;
+      gap: 30px;
+   }
+   
+   .featurecards_main-heading {
+      font-size: 2rem;
+   }
+   
+   .featurecard_item {
+      padding: 30px 20px;
+   }
+   
+   .featurecard_heading {
+      font-size: 1.3rem;
+   }
+}
+
+@media (max-width: 480px) {
+   .featurecards_header {
+      margin-bottom: 40px;
+   }
+   
+   .featurecards_main-heading {
+      font-size: 1.8rem;
+   }
+   
+   .featurecard_item {
+      padding: 25px 15px;
+   }
+   
+   .featurecard_icon {
+      width: 70px;
+      height: 70px;
+   }
+   
+   
+}
+</style>
 
 {% schema %} 
 {
@@ -49,21 +188,27 @@
           "content": "Feature Card Content Settings"
         },
         {
+          "type": "image_picker",
+          "id": "featurecard_image",
+          "label": "Feature Card Icon Image"
+        },
+        {
           "type": "textarea",
           "id": "featurecard_heading_text",
           "label": "Feature Card Heading Text",
           "default": "Medium length hero heading goes here"
         },
         {
+          "type": "textarea",
+          "id": "featurecard_subheading_text",
+          "label": "Feature Card Sub-heading Text",
+          "default": "Optional sub-heading text"
+        },
+        {
           "type": "richtext",
           "id": "featurecard_paragraph_text",
           "label": "Feature Card Paragraph Text",
           "default": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla.</p>"
-        },
-        {
-          "type": "image_picker",
-          "id": "featurecard_image",
-          "label": "Feature Card Image"
         }
       ]
     }
