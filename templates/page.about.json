@@ -52,25 +52,28 @@
         "feature_card_d8nUxR": {
           "type": "feature-card",
           "settings": {
+            "featurecard_image": "shopify://shop_images/cbed3b15-d7a6-4ab4-a526-7b609c0d3744.png",
             "featurecard_heading_text": "Creators, influencers & Trend-Setters.",
-            "featurecard_paragraph_text": "<p>Got ideas in your notes app and DMs full of “when’s the drop?” We help you turn your creative identity into premium merch — without the inventory costs, MOQ headaches, or shipping stress. Launch your own line. Create on your terms. And flex your brand with pieces that make people stop you on the street.</p>",
-            "featurecard_image": "shopify://shop_images/cbed3b15-d7a6-4ab4-a526-7b609c0d3744.png"
+            "featurecard_subheading_text": "Got ideas in your notes app and DMs full of “when’s the drop?”",
+            "featurecard_paragraph_text": "<p>We help you turn your creative identity into premium merch — without the inventory costs, MOQ headaches, or shipping stress. Launch your own line. Create on your terms. And flex your brand with pieces that make people stop you on the street.</p>"
           }
         },
         "feature_card_ET7xbg": {
           "type": "feature-card",
           "settings": {
+            "featurecard_image": "shopify://shop_images/DSC00192.jpg",
             "featurecard_heading_text": "Brands, Businesses & Events Teams.",
-            "featurecard_paragraph_text": "<p>Need merch that <em>doesn’t</em> scream “freebie tee”? We’re your behind-the-scenes print and production partner — bringing your brand to life through premium custom apparel. From team uniforms and client gifts, to brand campaigns and pop-up events, we’ll help you create gear you’re actually proud to put your name on.</p>",
-            "featurecard_image": "shopify://shop_images/DSC00192.jpg"
+            "featurecard_subheading_text": "Need merch that doesn’t scream “freebie tee”?",
+            "featurecard_paragraph_text": "<p>We’re your behind-the-scenes print and production partner — bringing your brand to life through premium custom apparel. From team uniforms and client gifts, to brand campaigns and pop-up events, we’ll help you create gear you’re actually proud to put your name on.</p>"
           }
         },
         "feature_card_GHLkhK": {
           "type": "feature-card",
           "settings": {
+            "featurecard_image": "shopify://shop_images/DSC00677.jpg",
             "featurecard_heading_text": "Distributors, Agencies & Trade Pros.",
-            "featurecard_paragraph_text": "<p>You’ve already got the clients. We bring the production grunt to back you up, with white-label fulfilment, spec-perfect runs, quoting tools, and priority support. It’s like having a full production team in your back pocket — helping you scale sustainably <em>and outpace the competition</em>.</p>",
-            "featurecard_image": "shopify://shop_images/DSC00677.jpg"
+            "featurecard_subheading_text": "You’ve already got the clients.",
+            "featurecard_paragraph_text": "<p>We bring the production grunt to back you up, with white-label fulfilment, spec-perfect runs, quoting tools, and priority support. It’s like having a full production team in your back pocket — helping you scale sustainably <em>and outpace the competition</em>.</p>"
           }
         }
       },
@@ -226,7 +229,8 @@
       "name": "BentoBox",
       "settings": {
         "bento_heading_text": "Take a peek under the hood.",
-        "bento_paragraph_text": "<p>With us, you get a crew who know their stuff, production systems built for scale, and retail-ready quality that speaks for itself. Here’s why teaming up with us just makes sense.</p>"
+        "bento_paragraph_text": "<p>With us, you get a crew who know their stuff, production systems built for scale, and retail-ready quality that speaks for itself. Here’s why teaming up with us just makes sense.</p>",
+        "arrow_image": "shopify://shop_images/arrow.png"
       }
     },
     "pageheadersplit_UTjgmR": {
