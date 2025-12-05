@@ -1,21 +1,22 @@
 <div class="padding-global" id="about">
    <div class="container-large">
       <div class="padding-section-medium">
-         <div class="layout527_component">
-            <div class="margin-bottom margin-xxlarge">
-               <div class="text-align-center">
-                  <div class="max-width-medium align-center">
-                     <div class="settings-schema w-embed"></div>
-                     <div class="margin-bottom margin-small">
-                        <h2 li-object="section.settings.bento_heading_text" class="heading-style-h2">{{ section.settings.bento_heading_text }}</h2>
-                     </div>
-                     <div class="richtext-wrapper is-center text-size-medium w-richtext">
-                        <p li-object="section.settings.bento_paragraph_text">{{ section.settings.bento_paragraph_text }}</p>
-                     </div>
+         <div class="layout527_component bentobox_main-grid">
+            <div class="bentobox_left-section">
+               <div class="bentobox_text-content">
+                  <div class="settings-schema w-embed"></div>
+                  <h2 li-object="section.settings.bento_heading_text" class="heading-style-h2">{{ section.settings.bento_heading_text }}</h2>
+                  <div class="richtext-wrapper text-size-medium w-richtext">
+                     <div li-object="section.settings.bento_paragraph_text">{{ section.settings.bento_paragraph_text }}</div>
                   </div>
                </div>
+               {% if section.settings.arrow_image %}
+               <div class="bentobox_arrow-section">
+                  <img li-object:src="section.settings.arrow_image | image_url: width: 300" loading="lazy" alt="" src="{{ section.settings.arrow_image | image_url: width: 300 }}" class="bentobox_arrow-image">
+               </div>
+               {% endif %}
             </div>
-            <div li-content-for-blocks="" class="w-layout-grid layout527_grid">
+            <div li-content-for-blocks="" class="bentobox_cards-section">
                {% for block in section.blocks %}
                {% case block.type %}
                {% when '@app' %}
@@ -66,6 +67,63 @@
       </div>
    </div>
 </div>
+
+<style>
+.bentobox_main-grid {
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   gap: 60px;
+   align-items: start;
+}
+
+.bentobox_left-section {
+   display: flex;
+   flex-direction: column;
+   gap: 40px;
+}
+
+.bentobox_text-content {
+   text-align: left;
+}
+
+.bentobox_arrow-section {
+   display: flex;
+   justify-content: flex-end;
+   align-items: center;
+}
+
+.bentobox_arrow-image {
+   max-width: 200px;
+   height: auto;
+   background-color: transparent;
+    margin-right: 50px;
+}
+
+.bentobox_cards-section {
+   display: flex;
+   flex-direction: column;
+   gap: 20px;
+}
+.layout527_card-content{
+   color: white;
+}
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+   .bentobox_main-grid {
+      grid-template-columns: 1fr;
+      gap: 30px;
+   }
+   
+   .bentobox_text-content {
+      text-align: center;
+   }
+   
+   .bentobox_arrow-section {
+      justify-content: center;
+   }
+}
+</style>
+
 {% schema %} 
 {
   "tag": "section",
@@ -199,6 +257,11 @@
       "id": "bento_paragraph_text",
       "label": "Bento Paragraph Text",
       "default": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>"
+    },
+    {
+      "type": "image_picker",
+      "id": "arrow_image",
+      "label": "Arrow Image"
     }
   ],
   "presets": [
