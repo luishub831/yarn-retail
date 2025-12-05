@@ -60,9 +60,9 @@
 }
 
 .what-we-bring_grid {
-   display: grid;
-   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-   gap: 40px;
+   display: inline-flex;
+   align-items: flex-start;
+   gap: 22px;
 }
 
 .what-we-bring_card {
@@ -70,8 +70,8 @@
 }
 
 .what-we-bring_card-heading {
-   font-size: 1.5rem;
-   font-weight: 600;
+   font-size: 20px;
+   font-weight: 400;
    margin-bottom: 16px;
    line-height: 1.3;
 }
@@ -90,21 +90,21 @@
    .what-we-bring_header {
       flex-direction: column;
       gap: 30px;
-      text-align: center;
    }
    
    .what-we-bring_button-wrapper {
       margin-left: 0;
+      width: 100%;
    }
    
    .what-we-bring_grid {
-      grid-template-columns: 1fr;
-      gap: 30px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      align-self: stretch;
    }
    
-   .what-we-bring_card {
-      text-align: center;
-   }
+   
 }
 </style>
 
@@ -118,9 +118,6 @@
       "name": "Attribute Card",
       "type": "attribute-card",
       "settings": [
-        {
-          "content": "Card Content"
-        },
         {
           "id": "card_heading",
           "type": "text",
@@ -138,15 +135,13 @@
   ],
   "settings": [
     {
-      "content": "Section Content"
-    },
-    {
       "id": "main_heading",
       "type": "text",
       "label": "Main Heading",
       "default": "What we bring to the (print) table."
     },
     {
+      "type": "header",
       "content": "Call to Action"
     },
     {
@@ -158,8 +153,7 @@
     {
       "id": "cta_url",
       "type": "url",
-      "label": "Button URL",
-      "default": "#"
+      "label": "Button URL"
     }
   ],
   "presets": [
