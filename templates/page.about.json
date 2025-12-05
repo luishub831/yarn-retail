@@ -94,14 +94,14 @@
           "type": "bento-card",
           "settings": {
             "card_heading_text": "Built to back you.",
-            "card_paragraph_text": "<p>We didn’t start in a garage. W<strong>e built one. </strong>With 30+ years in high-volume production, we’ve fine-tuned every process, every press, every packaging run. <br/><br/>We’ve tested our workflows across thousands of jobs – our own and our clients’ – so you get speed, consistency, and merch that’s been battle-proven at scale.</p>",
+            "card_paragraph_text": "<p><strong>We didn’t start in a garage. We built one.<br/><br/> </strong>With 30+ years in high-volume production, we’ve fine-tuned every process, every press, every packaging run. <br/><br/>We’ve tested our workflows across thousands of jobs – our own and our clients’ – so you get speed, consistency, and merch that’s been battle-proven at scale.</p>",
             "card_type": "card_type_color",
             "card_size": "is-medium",
             "card_bg": "background-color-quaternary",
             "hide_link": true,
             "card_link": "",
             "card_background_image": "shopify://shop_images/DSC01094.jpg",
-            "hide_icon": false,
+            "hide_icon": true,
             "icon_viewbox": "",
             "icon_path": ""
           }
@@ -110,14 +110,14 @@
           "type": "bento-card",
           "settings": {
             "card_heading_text": "Designed for shelves, not showbags.",
-            "card_paragraph_text": "<p>We don’t do throwaway. Every piece is made to retail-grade standards: quality blanks, sharp prints, and pro-level finishes that hold up in-store and in the wild. This is merch your team, community and customers will wear again, and again, and again.</p>",
+            "card_paragraph_text": "<p><strong>We don’t do throwaway. <br/><br/></strong>Every piece is made to retail-grade standards: quality blanks, sharp prints, and pro-level finishes that hold up in-store and in the wild. This is merch your team, community and customers will wear again, and again, and again.</p>",
             "card_type": "card_type_image",
             "card_size": "is-medium",
             "card_bg": "background-color-quaternary",
             "hide_link": true,
             "card_link": "",
             "card_background_image": "shopify://shop_images/DSC01094.jpg",
-            "hide_icon": false,
+            "hide_icon": true,
             "icon_viewbox": "",
             "icon_path": ""
           }
@@ -126,14 +126,14 @@
           "type": "bento-card",
           "settings": {
             "card_heading_text": "Creative-first crew.",
-            "card_paragraph_text": "<p>You won’t find any cookie-cutters here. Our team is stacked with designers, strategists, and production pros who obsess over detail. We treat your merch like a brand asset, not an afterthought, bringing your artwork to life with intention, alignment, and polish.</p>",
+            "card_paragraph_text": "<p><strong>You won’t find any cookie-cutters here.<br/><br/></strong>Our team is stacked with designers, strategists, and production pros who obsess over detail. We treat your merch like a brand asset, not an afterthought, bringing your artwork to life with intention, alignment, and polish.</p>",
             "card_type": "card_type_color",
             "card_size": "is-small",
             "card_bg": "background-color-tertiary",
             "hide_link": true,
             "card_link": "",
             "card_background_image": "shopify://shop_images/DSC01094.jpg",
-            "hide_icon": false,
+            "hide_icon": true,
             "icon_viewbox": "",
             "icon_path": ""
           }
@@ -142,13 +142,28 @@
           "type": "bento-card",
           "settings": {
             "card_heading_text": "Innovation that stands out.",
-            "card_paragraph_text": "<p>We’re not just keeping up – we’re leading the pack. Think edge-to-edge drinkware, personalised drops at scale, hybrid finishes, and print applications others won’t even attempt. If you’ve got a bold idea, we’ll help make it real.</p>",
+            "card_paragraph_text": "<p><strong>We’re not just keeping up – we’re leading the pack.</strong> <br/><br/>Think edge-to-edge drinkware, personalised drops at scale, hybrid finishes, and print applications others won’t even attempt. If you’ve got a bold idea, we’ll help make it real.</p>",
             "card_type": "card_type_image",
             "card_size": "is-medium",
             "card_bg": "background-color-quaternary",
             "hide_link": true,
             "card_link": "",
             "card_background_image": "shopify://shop_images/5801_STANDARD_JEAN_DETAIL4__17801.1690763523.386.513_0dfac2e9-cf02-4a6d-84aa-c5dc4716258d.jpg",
+            "hide_icon": true,
+            "icon_viewbox": "",
+            "icon_path": ""
+          }
+        },
+        "bento_card_9gXDpA": {
+          "type": "bento-card",
+          "settings": {
+            "card_heading_text": "Fulfilment that grows with you.",
+            "card_paragraph_text": "<p>Our operation is built for scale. Whether you’re testing a new drop, running a creator store, or launching a national campaign, we’ve got the tech and logistics to handle it – without breaking a sweat. On-brand, on-time, every time.</p>",
+            "card_type": "card_type_color",
+            "card_size": "is-small",
+            "card_bg": "background-color-tertiary",
+            "hide_link": true,
+            "card_link": "",
             "hide_icon": false,
             "icon_viewbox": "",
             "icon_path": ""
@@ -165,22 +180,7 @@
             "hide_link": true,
             "card_link": "",
             "card_background_image": "shopify://shop_images/4525_WOS_QUILTED_JACKET_DETAIL__57227.1730172468.386.513.jpg",
-            "hide_icon": false,
-            "icon_viewbox": "",
-            "icon_path": ""
-          }
-        },
-        "bento_card_9gXDpA": {
-          "type": "bento-card",
-          "settings": {
-            "card_heading_text": "Fulfilment that grows with you.",
-            "card_paragraph_text": "<p>Our operation is built for scale. Whether you’re testing a new drop, running a creator store, or launching a national campaign, we’ve got the tech and logistics to handle it – without breaking a sweat. On-brand, on-time, every time.</p>",
-            "card_type": "card_type_color",
-            "card_size": "is-small",
-            "card_bg": "background-color-tertiary",
-            "hide_link": true,
-            "card_link": "",
-            "hide_icon": false,
+            "hide_icon": true,
             "icon_viewbox": "",
             "icon_path": ""
           }
@@ -221,8 +221,8 @@
         "bento_card_xatD99",
         "bento_card_ERiVam",
         "bento_card_EkrLhh",
-        "bento_card_DzFdtY",
         "bento_card_9gXDpA",
+        "bento_card_DzFdtY",
         "bento_card_NxyxxP",
         "bento_card_qfCHK3"
       ],
