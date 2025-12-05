@@ -233,8 +233,62 @@
         "arrow_image": "shopify://shop_images/arrow.png"
       }
     },
+    "what_we_bring_g9zGJL": {
+      "type": "what-we-bring",
+      "blocks": {
+        "attribute_card_k6mDdH": {
+          "type": "attribute-card",
+          "settings": {
+            "card_heading": "We're authentic",
+            "card_description": "No polished façades, no empty promises. We share the behind-the-scenes, own our wins and mistakes, and treat your brand like our own."
+          }
+        },
+        "attribute_card_zzmyhG": {
+          "type": "attribute-card",
+          "settings": {
+            "card_heading": "We're creative to our core.",
+            "card_description": "Whether it's packaging, product lines, or problem-solving - we zig where others zag, and spot opportunities others miss."
+          }
+        },
+        "attribute_card_8rtLKM": {
+          "type": "attribute-card",
+          "settings": {
+            "card_heading": "We're bold.",
+            "card_description": "Not loud-for-loud's sake, but confident, curious, and unafraid to stand out."
+          }
+        },
+        "attribute_card_MtmBri": {
+          "type": "attribute-card",
+          "settings": {
+            "card_heading": "We're approachable.",
+            "card_description": "You don't need a design degree or a marketing team to create great merch with us. Just an idea. We'll help with the rest."
+          }
+        },
+        "attribute_card_biQcRA": {
+          "type": "attribute-card",
+          "settings": {
+            "card_heading": "We're reliable AF.",
+            "card_description": "Because all the creative sauce in the world doesn't matter if your stuff doesn't ship on time or show up right. We're here to bring both style and structure."
+          }
+        }
+      },
+      "block_order": [
+        "attribute_card_k6mDdH",
+        "attribute_card_zzmyhG",
+        "attribute_card_8rtLKM",
+        "attribute_card_MtmBri",
+        "attribute_card_biQcRA"
+      ],
+      "name": "What We Bring",
+      "settings": {
+        "main_heading": "What we bring to the (print) table.",
+        "cta_text": "CHAT YOUR IDEA WITH US",
+        "cta_url": "shopify://pages/about-us"
+      }
+    },
     "pageheadersplit_UTjgmR": {
       "type": "pageheadersplit",
+      "disabled": true,
       "name": "PageHeaderSplit",
       "settings": {
         "pageheader_heading_text": "What we bring to the (print) table.",
@@ -271,7 +325,7 @@
         "button_8fJBia"
       ],
       "settings": {
-        "faq_heading_text": "Questions? We’ve already answered them.",
+        "faq_heading_text": "Got questions? We’ve already answered them.",
         "faq_cta_heading_text": "Still Not Sure?",
         "faq_cta_paragraph_text": "<p>Check out the full FAQs list here.</p>"
       }
@@ -282,6 +336,14 @@
         "contact_heading_text": "If you’re ready to roll, we’re ready to ride.",
         "contact_paragraph_text": "<p>Shoot us your brief and timeline (or any questions you have), and we'll help you kick things into gear.</p>"
       }
+    },
+    "contactcta_GkXWz3": {
+      "type": "contactcta",
+      "name": "ContactCTA",
+      "settings": {
+        "contact_heading_text": "Big idea?\nWe’re all ears.",
+        "contact_paragraph_text": "<p>Drop us a note, shoot through a sketch,or call to say hey – our crew’s in the garage, ready to bring it to life.</p>"
+      }
     }
   },
   "layout": "theme",
@@ -291,9 +353,11 @@
     "pageheadersplit_zGNq7a",
     "featurecards_iPVhrW",
     "bentobox_3LxRdk",
+    "what_we_bring_g9zGJL",
     "pageheadersplit_UTjgmR",
     "team_dniVtq",
     "faqs_7iEMdP",
-    "contactcta_zVK3tN"
+    "contactcta_zVK3tN",
+    "contactcta_GkXWz3"
   ]
 }
