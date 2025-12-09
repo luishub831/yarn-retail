@@ -1,1 +1,46 @@
-{"sections":{"contactformimage_4j9aYE":{"type":"contactformimage","settings":{"contact_form_tagline_text":"Got something in the pipeline?","contact_form_heading_text":"Drop us a note, let’s bring it to life.","contact_form_paragraph_text":"<p>You might be ready to roll with a full brief, still sketching out ideas, or just need a hand figuring out what’ll work best. Wherever you’re at, we’re here to back you up with expert advice, transparent quotes, and a passion for print you won't find anywhere else. Let's chat.<\/p>","contact_form_image":"shopify:\/\/shop_images\/ThePrintGarage-building-corner-shot-Recovered.jpg"}},"contactdetailsmap_rR6RRd":{"type":"contactdetailsmap","settings":{"contact_map_tagline_text":"Wanna see where the magic happens?","contact_map_heading_text":"Swing by the garage.","contact_map_paragraph_text":"<p>We’re open for drop-ins during biz hours, so come talk shop, check out our setup, or chat through your next big idea.<\/p>","html_maps_embed_code":"<iframe src=\"https:\/\/www.google.com\/maps\/embed?pb=!1m18!1m12!1m3!1d3540.4355714507547!2d153.07644067658967!3d-27.45569591611173!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b915913083e0ac5%3A0x456286db7f337e55!2sThe%20Print%20Garage!5e0!3m2!1sen!2sau!4v1734574616091!5m2!1sen!2sau\" width=\"100%\" height=\"100%\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"><\/iframe>"}}},"layout":"theme","wrapper":"main.main-wrapper","order":["contactformimage_4j9aYE","contactdetailsmap_rR6RRd"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "contactformimage_4j9aYE": {
+      "type": "contactformimage",
+      "settings": {
+        "contact_form_tagline_text": "Got something in the pipeline?",
+        "contact_form_heading_text": "Drop us a note, let’s bring it to life.",
+        "contact_form_paragraph_text": "<p>You might be ready to roll with a full brief, still sketching out ideas, or just need a hand figuring out what’ll work best. Wherever you’re at, we’re here to back you up with expert advice, transparent quotes, and a passion for print you won't find anywhere else. Let's chat.</p>",
+        "contact_form_image": "shopify://shop_images/ThePrintGarage-building-corner-shot-Recovered.jpg"
+      }
+    },
+    "contactdetailsmap_rR6RRd": {
+      "type": "contactdetailsmap",
+      "settings": {
+        "contact_map_tagline_text": "Wanna see where the magic happens?",
+        "contact_map_heading_text": "Swing by the garage.",
+        "contact_map_paragraph_text": "<p>We’re open for drop-ins during biz hours, so come talk shop, check out our setup, or chat through your next big idea.</p>",
+        "html_maps_embed_code": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3540.4355714507547!2d153.07644067658967!3d-27.45569591611173!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b915913083e0ac5%3A0x456286db7f337e55!2sThe%20Print%20Garage!5e0!3m2!1sen!2sau!4v1734574616091!5m2!1sen!2sau\" width=\"100%\" height=\"100%\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>"
+      }
+    },
+    "contactform_a6wkRi": {
+      "type": "contactform",
+      "name": "ContactForm",
+      "settings": {
+        "contact_heading_text": "Drop us a note,\nlet’s bring your ideas to life.",
+        "contact_paragraph_text": "<p>Whether you’ve got a full brief, a rough idea, or just need help figuring out what works, we’ve got your back. Expect expert advice, clear quotes, and a passion for print you won’t find anywhere else. <strong>Let’s chat.</strong><br/></p>"
+      }
+    }
+  },
+  "layout": "theme",
+  "wrapper": "main.main-wrapper",
+  "order": [
+    "contactformimage_4j9aYE",
+    "contactdetailsmap_rR6RRd",
+    "contactform_a6wkRi"
+  ]
+}
