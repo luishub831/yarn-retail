@@ -11,6 +11,7 @@
   "sections": {
     "contactformimage_4j9aYE": {
       "type": "contactformimage",
+      "disabled": true,
       "settings": {
         "contact_form_tagline_text": "Got something in the pipeline?",
         "contact_form_heading_text": "Drop us a note, let’s bring it to life.",
@@ -20,6 +21,7 @@
     },
     "contactdetailsmap_rR6RRd": {
       "type": "contactdetailsmap",
+      "disabled": true,
       "settings": {
         "contact_map_tagline_text": "Wanna see where the magic happens?",
         "contact_map_heading_text": "Swing by the garage.",
@@ -32,7 +34,15 @@
       "name": "ContactForm",
       "settings": {
         "contact_heading_text": "Drop us a note,\nlet’s bring your ideas to life.",
-        "contact_paragraph_text": "<p>Whether you’ve got a full brief, a rough idea, or just need help figuring out what works, we’ve got your back. Expect expert advice, clear quotes, and a passion for print you won’t find anywhere else. <strong>Let’s chat.</strong><br/></p>"
+        "contact_paragraph_text": "<p>Whether you’ve got a full brief, a rough idea, or just need help figuring out what works, we’ve got your back. Expect expert advice, clear quotes, and a passion for print you won’t find anywhere else. <strong>Let’s chat.</strong><br/></p>",
+        "visit_address_line1": "2/338 Lytton Road,",
+        "visit_address_line2": "Morningside,",
+        "visit_address_line3": "Queensland, Australia",
+        "social_platform1": "LinkedIn",
+        "social_platform2": "Facebook",
+        "social_platform3": "TikTok",
+        "phone_number": "2/338 Lytton Road,",
+        "email_address": "2/338 Lytton Road,"
       }
     }
   },
