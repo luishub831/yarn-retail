@@ -231,6 +231,9 @@
         .contact5_content-left{
             padding: 0;
         }
+        .contact5_content-right{
+            display: none;
+        }
         
         /* Single column layout on mobile */
         .contact5_content {
@@ -240,16 +243,26 @@
         /* Show mobile form */
         .contact5_mobile-form {
             display: block !important;
+            border: .125rem solid var(--border-color--border-primary);
+            border-radius: var(--border-radius--medium);
+            background-color: var(--shades-beige--beige200);
+            box-shadow: var(--shadow-size--x-medium) var(--shadow-size--y-medium) 0 0 var(--border-color--border-primary);
+            padding: 2rem 1.75rem;
+            transition: all .3s;
         }
         
         .contact5_contact-grid {
             grid-template-columns: 1fr;
             gap: 30px;
             width: 100%;
+            margin-top: 50px;
         }
         
         .contact5_contact-section {
             padding: 0;
+        }
+        .contact5_content-left-top{
+            border: none;
         }
     }
 </style>
