@@ -88,8 +88,8 @@
           "settings": {
             "image": "shopify://shop_images/design_on_any_product_slw_days_club.png",
             "mobile_image": "shopify://shop_images/mobile-banner.png",
-            "heading": "Your Banner Title",
-            "description": "Your banner description goes here.",
+            "heading": "",
+            "description": "",
             "button_text": "Shop Now",
             "button_link": ""
           }
