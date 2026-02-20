@@ -40,7 +40,7 @@
 <div class="product_desc_wrapper">
    <a href="{{ product.url }}">
       <div class="product_title">{{ product.title }}</div>
-      <div class="product_price">From ${{ product.price }}</div>
+      <div class="product_price">From {{ product.price | money }}</div>
    </a>
    
    <!-- GET STARTED button for hover -->
