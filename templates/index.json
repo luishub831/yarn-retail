@@ -80,7 +80,13 @@
             "heading": "",
             "description": "",
             "button_text": "Shop Now",
-            "button_link": ""
+            "button_link": "",
+            "desktop_position": "bottom_center",
+            "desktop_alignment": "left",
+            "desktop_width": 600,
+            "desktop_spacing": 80,
+            "mobile_position": "top",
+            "mobile_alignment": "left"
           }
         },
         "slide_CDPtAr": {
@@ -91,7 +97,13 @@
             "heading": "",
             "description": "",
             "button_text": "Shop Now",
-            "button_link": ""
+            "button_link": "",
+            "desktop_position": "center_left",
+            "desktop_alignment": "left",
+            "desktop_width": 600,
+            "desktop_spacing": 80,
+            "mobile_position": "top",
+            "mobile_alignment": "left"
           }
         }
       },
@@ -184,7 +196,13 @@
             "heading": "Your Banner Title",
             "description": "Your banner description goes here.",
             "button_text": "Shop Now",
-            "button_link": ""
+            "button_link": "",
+            "desktop_position": "center_left",
+            "desktop_alignment": "left",
+            "desktop_width": 600,
+            "desktop_spacing": 80,
+            "mobile_position": "top",
+            "mobile_alignment": "left"
           }
         },
         "slide_V6xYMD": {
@@ -194,7 +212,13 @@
             "heading": "Your Banner Title",
             "description": "Your banner description goes here.",
             "button_text": "Shop Now",
-            "button_link": ""
+            "button_link": "",
+            "desktop_position": "center_left",
+            "desktop_alignment": "left",
+            "desktop_width": 600,
+            "desktop_spacing": 80,
+            "mobile_position": "top",
+            "mobile_alignment": "left"
           }
         }
       },
