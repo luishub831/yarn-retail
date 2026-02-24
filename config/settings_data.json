@@ -50,14 +50,6 @@
       "headernavmain": {
         "type": "headernavmain",
         "blocks": {
-          "product_category_icon_t9Xxdp": {
-            "type": "product-category-icon",
-            "settings": {
-              "text_category_title": "Towels",
-              "image_category_icon": "shopify://shop_images/Product_Menu_Images-09.jpg",
-              "url_category_link": ""
-            }
-          },
           "product_category_icon_Vy8awi": {
             "type": "product-category-icon",
             "settings": {
@@ -120,6 +112,14 @@
               "text_category_title": "Mugs",
               "image_category_icon": "shopify://shop_images/Product_Menu_Images-06.jpg",
               "url_category_link": "shopify://collections/all"
+            }
+          },
+          "product_category_icon_t9Xxdp": {
+            "type": "product-category-icon",
+            "settings": {
+              "text_category_title": "Towels",
+              "image_category_icon": "shopify://shop_images/Product_Menu_Images-09.jpg",
+              "url_category_link": ""
             }
           },
           "search_suggestions_dAMXXk": {
@@ -490,7 +490,6 @@
           }
         },
         "block_order": [
-          "product_category_icon_t9Xxdp",
           "product_category_icon_Vy8awi",
           "product_category_icon_XP3PE8",
           "product_category_icon_3TqttU",
@@ -499,6 +498,7 @@
           "product_category_icon_QpHnhA",
           "product_category_icon_kbP43N",
           "product_category_icon_Bw64YT",
+          "product_category_icon_t9Xxdp",
           "search_suggestions_dAMXXk",
           "search_suggestions_ndCW9t",
           "search_suggestions_cTYUtQ",
