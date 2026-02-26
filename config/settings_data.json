@@ -53,24 +53,24 @@
           "product_category_icon_Vy8awi": {
             "type": "product-category-icon",
             "settings": {
-              "text_category_title": "All Products",
-              "image_category_icon": "shopify://shop_images/second-mobile-banner.png",
-              "url_category_link": "shopify://collections/all"
+              "text_category_title": "T-Shirts",
+              "image_category_icon": "shopify://shop_images/Product_Menu_Images-01.jpg",
+              "url_category_link": "shopify://collections/t-shirts"
             }
           },
           "product_category_icon_XP3PE8": {
             "type": "product-category-icon",
             "settings": {
-              "text_category_title": "T-shirts",
-              "image_category_icon": "shopify://shop_images/202602060505098774.png",
+              "text_category_title": "Hoodies",
+              "image_category_icon": "shopify://shop_images/Product_Menu_Images-02.jpg",
               "url_category_link": "shopify://collections/all"
             }
           },
           "product_category_icon_3TqttU": {
             "type": "product-category-icon",
             "settings": {
-              "text_category_title": "Hoodies",
-              "image_category_icon": "shopify://shop_images/Hoodie-03_flipped.png",
+              "text_category_title": "Workwear",
+              "image_category_icon": "shopify://shop_images/Product_Menu_Images-04.jpg",
               "url_category_link": "shopify://collections/all"
             }
           },
@@ -78,7 +78,15 @@
             "type": "product-category-icon",
             "settings": {
               "text_category_title": "Jackets",
-              "image_category_icon": "shopify://shop_images/5527_CANVAS_HEAVY_JACKET_WALNUT_THUMB__04013.1751576756.1280.1280_b13cb26e-142e-4092-8904-c3e671beeb58.jpg",
+              "image_category_icon": "shopify://shop_images/Product_Menu_Images-07.jpg",
+              "url_category_link": "shopify://collections/all"
+            }
+          },
+          "product_category_icon_YYKatG": {
+            "type": "product-category-icon",
+            "settings": {
+              "text_category_title": "Headwear",
+              "image_category_icon": "shopify://shop_images/Product_Menu_Images-08.jpg",
               "url_category_link": "shopify://collections/all"
             }
           },
@@ -86,24 +94,32 @@
             "type": "product-category-icon",
             "settings": {
               "text_category_title": "Bags",
-              "image_category_icon": "shopify://shop_images/KhakiToteBag_684fc285-7936-4ede-8785-7f3377a4f009.jpg",
+              "image_category_icon": "shopify://shop_images/Product_Menu_Images-03.jpg",
               "url_category_link": "shopify://collections/all"
             }
           },
-          "product_category_icon_YYKatG": {
+          "product_category_icon_kbP43N": {
             "type": "product-category-icon",
             "settings": {
-              "text_category_title": "Accessaries",
-              "image_category_icon": "shopify://shop_images/1208_RELAX_SOCK_CAROLINA_BLUE_THUMB__99239.1753652092.1280.1280_e2712676-035e-452d-acc4-a77b93fbf615.jpg",
-              "url_category_link": "shopify://collections/all"
+              "text_category_title": "Bottles",
+              "image_category_icon": "shopify://shop_images/Product_Menu_Images-05.jpg",
+              "url_category_link": ""
             }
           },
           "product_category_icon_Bw64YT": {
             "type": "product-category-icon",
             "settings": {
-              "text_category_title": "Hats",
-              "image_category_icon": "shopify://shop_images/1171_NYLON_BUCKET_HAT_POWDER_BACK__03357.1748390622.1280.1280_aa554037-3954-480a-9623-5ccb2f36c7c2.jpg",
+              "text_category_title": "Mugs",
+              "image_category_icon": "shopify://shop_images/Product_Menu_Images-06.jpg",
               "url_category_link": "shopify://collections/all"
+            }
+          },
+          "product_category_icon_t9Xxdp": {
+            "type": "product-category-icon",
+            "settings": {
+              "text_category_title": "Towels",
+              "image_category_icon": "shopify://shop_images/Product_Menu_Images-09.jpg",
+              "url_category_link": ""
             }
           },
           "search_suggestions_dAMXXk": {
@@ -478,9 +494,11 @@
           "product_category_icon_XP3PE8",
           "product_category_icon_3TqttU",
           "product_category_icon_FLBg4U",
-          "product_category_icon_QpHnhA",
           "product_category_icon_YYKatG",
+          "product_category_icon_QpHnhA",
+          "product_category_icon_kbP43N",
           "product_category_icon_Bw64YT",
+          "product_category_icon_t9Xxdp",
           "search_suggestions_dAMXXk",
           "search_suggestions_ndCW9t",
           "search_suggestions_cTYUtQ",
