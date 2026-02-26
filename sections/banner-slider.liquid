@@ -1,8 +1,8 @@
 <div class="section_banner-slider padding-global">
-  <div class="swiper mySwiper">
+  <div class="swiper mySwiper-{{ section.id }}">
     <div class="swiper-wrapper">
       {% for block in section.blocks %}
-        <div class="swiper-slide">
+        <div class="swiper-slide{% if section.settings.transition_style == 'seamless' %} seamless-slide{% endif %}">
           <div class="banner-slide-content">
             {% if block.settings.image %}
               <!-- Desktop Image -->
@@ -48,15 +48,45 @@
     </div>
 
     <!-- arrows + dots -->
-    <div class="swiper-button-next"></div>
-    <div class="swiper-button-prev"></div>
-    <div class="swiper-pagination"></div>
+    <div class="swiper-button-next swiper-button-next-{{ section.id }}"></div>
+    <div class="swiper-button-prev swiper-button-prev-{{ section.id }}"></div>
+    <div class="swiper-pagination swiper-pagination-{{ section.id }}"></div>
   </div>
 </div>
 
 {% schema %}
 {
   "name": "Banner Slider",
+  "settings": [
+    {
+      "type": "select",
+      "id": "transition_style",
+      "label": "Transition style",
+      "default": "fade",
+      "options": [
+        { "value": "fade", "label": "Fade" },
+        { "value": "slide", "label": "Swipe" },
+        { "value": "seamless", "label": "Seamless" }
+      ],
+      "info": "With seamless mode slides appear as one smooth line when you drag them"
+    },
+    {
+      "type": "checkbox",
+      "id": "autoplay_enabled",
+      "label": "Enable autoplay",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "autoplay_interval",
+      "label": "Autoplay interval",
+      "min": 1,
+      "max": 30,
+      "step": 1,
+      "default": 10,
+      "unit": "s"
+    }
+  ],
   "blocks": [
     {
       "type": "slide",
@@ -153,19 +183,42 @@
 
 <script>
   document.addEventListener("DOMContentLoaded", function() {
-    new Swiper(".mySwiper", {
+    // Use transition style from section settings
+    var transition = "{{ section.settings.transition_style | default: 'slide' }}";
+    var sectionId = "{{ section.id }}";
+    var swiperSelector = ".mySwiper-" + sectionId;
+    var autoplayEnabled = {{ section.settings.autoplay_enabled | default: false | json }};
+    var autoplayInterval = ({{ section.settings.autoplay_interval | default: 10 }} || 10) * 1000;
+    var swiperOptions = {
       loop: true,
       slidesPerView: 1,
       spaceBetween: 0,
       navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
+        nextEl: ".swiper-button-next-" + sectionId,
+        prevEl: ".swiper-button-prev-" + sectionId,
       },
       pagination: {
-        el: ".swiper-pagination",
+        el: ".swiper-pagination-" + sectionId,
         clickable: true,
-      },
-    });
+      }
+    };
+    if (autoplayEnabled) {
+      swiperOptions.autoplay = {
+        delay: autoplayInterval,
+        disableOnInteraction: false
+      };
+    }
+    if (transition === 'fade') {
+      swiperOptions.effect = 'fade';
+      swiperOptions.fadeEffect = { crossFade: true };
+    } else if (transition === 'seamless') {
+      swiperOptions.freeMode = true;
+      swiperOptions.loop = true;
+      swiperOptions.slidesPerView = 'auto';
+      swiperOptions.spaceBetween = 0;
+    }
+    new Swiper(swiperSelector, swiperOptions);
+  
   });
 </script>
 
@@ -271,6 +324,7 @@
   background: #ff6b35;
 }
 
+
 /* ---------- Mobile adjustments ---------- */
 @media (max-width: 768px) {
   .banner-slide-content {
@@ -315,5 +369,6 @@
     width: 100% !important;
     text-align: center;
   }
+  
 }
 </style>
