@@ -555,7 +555,7 @@
           "text_services_menu_recommended_service_heading_text": "What are you looking for?",
           "checkbox_show_solutions_megamenu": false,
           "text_solutions_menu_recommended_solutions_heading_text": "Our Solutions",
-          "checkbox_show_resources_megamenu": true,
+          "checkbox_show_resources_megamenu": false,
           "text_resources_menu_column_1_heading_text": "OUR SERVICES",
           "text_resources_menu_column_2_heading_text": "Garage Power Tools",
           "text_resources_menu_featured_articles_heading_text": "Featured from the blog",

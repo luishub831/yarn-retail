@@ -80,7 +80,7 @@
             "heading": "",
             "description": "",
             "button_text": "Shop Now",
-            "button_link": "",
+            "button_link": "shopify://collections/hoodies",
             "desktop_position": "bottom_center",
             "desktop_alignment": "left",
             "desktop_width": 600,
@@ -112,7 +112,11 @@
         "slide_CDPtAr"
       ],
       "name": "Banner Slider",
-      "settings": {}
+      "settings": {
+        "transition_style": "fade",
+        "autoplay_enabled": false,
+        "autoplay_interval": 10
+      }
     },
     "image_with_header_4wEEJL": {
       "type": "image_with_header",
@@ -227,7 +231,11 @@
         "slide_V6xYMD"
       ],
       "name": "Banner Slider",
-      "settings": {}
+      "settings": {
+        "transition_style": "fade",
+        "autoplay_enabled": false,
+        "autoplay_interval": 10
+      }
     },
     "productslider_YzHCq4": {
       "type": "productslider",

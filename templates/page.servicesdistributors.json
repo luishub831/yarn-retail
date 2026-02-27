@@ -9,29 +9,19 @@
  */
 {
   "sections": {
-    "pageheadersplit_z8HezP": {
-      "type": "pageheadersplit",
+    "page_header_ebqTtQ": {
+      "type": "page-header",
+      "name": "Page Header",
       "settings": {
-        "pageheader_heading_text": "Distributors Services Heading Text",
-        "pageheader_paragraph_text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>"
+        "background_color": "#753f9a",
+        "header_padding_top": 40,
+        "header_padding_bottom": 60
       }
     },
-    "imagetabs_TAHDTY": {
-      "type": "imagetabs",
-      "settings": {
-        "tabs_heading_text": "Short heading goes here",
-        "tabs_button1_text": "Tab Button 1",
-        "tabs_button2_text": "Tab Button 2",
-        "tabs_button3_text": "Tab Button 3",
-        "tabs_image1": "shopify://shop_images/WO_HEAVY.jpg",
-        "tabs_image2": "shopify://shop_images/5166_FLATLAY_GROUP3.jpg",
-        "tabs_image3": "shopify://shop_images/5146_STACK.jpg"
-      }
-    },
-    "contenttextimagespli_tR8YmG": {
-      "type": "contenttextimagespli",
+    "abouthero_P7YzHW": {
+      "type": "abouthero",
       "blocks": {
-        "button_AzwiTd": {
+        "button_Y366Y8": {
           "type": "button",
           "settings": {
             "btn_layout": "btn_layout_both",
@@ -39,27 +29,29 @@
             "btn_size": "is-default",
             "btn_icon_size": "icon-1x1-small",
             "btn_url": "",
-            "btn_text": "Button Text",
+            "btn_text": "Request A free quote",
             "btn_icon_viewbox": "",
             "btn_icon_path": ""
           }
         }
       },
       "block_order": [
-        "button_AzwiTd"
+        "button_Y366Y8"
       ],
+      "name": "AboutHero",
       "settings": {
-        "content_layout": "is-horizontal",
-        "content_tagline_text": "Short tagline here",
-        "content_heading_text": "Medium length section heading goes here",
-        "content_paragraph_text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>",
-        "content_image": "shopify://shop_images/4080_WOS_HEAVY_TEE_MAIN.jpg"
+        "hero_heading_text": "",
+        "hero_paragraph_text": "<p><strong>Your brand deserves to look professional everywhere it appears – especially on the garments your sta\u001c, members or customers wear</strong>.  Regal Sportswear provides high-quality screen printing and DTG services for businesses, schools, clubs and events, making the process of ordering custom apparel straightforward and stress-free. <br/><br/>Whether you need uniforms, teamwear or merch for a launch or festival, we help you get a result that feels polished and on-brand. <br/><br/><strong>From the first conversation, our focus is on what you’re trying to achieve.</strong><br/><br/>We look at who the garments are for, how they’ll be used and how many you need, then guide you towards the right combination of print method, garment style and budget. You don’t need to be an expert in printing – that’s our job. We’re here to translate your ideas into something that looks as good in real life as it does in your head.</p>",
+        "hero_image_1": "shopify://shop_images/image_37.png",
+        "hero_image_2": "shopify://shop_images/85cf57cae0ade71eb45d1d9c72ac23dd238704c6.png",
+        "hero_image_3": "shopify://shop_images/b86b0ab72ecc5990c0e0f72e5782a0520dc7ab99.png",
+        "hero_image_4": "shopify://shop_images/4fb2ff37325066e7dd7c87cfaca1214964743b72.png"
       }
     },
-    "contenttextimagespli_qgq7BX": {
+    "contenttextimagespli_eJLHAP": {
       "type": "contenttextimagespli",
       "blocks": {
-        "button_TweMrG": {
+        "button_m3CCBA": {
           "type": "button",
           "settings": {
             "btn_layout": "btn_layout_both",
@@ -67,49 +59,90 @@
             "btn_size": "is-default",
             "btn_icon_size": "icon-1x1-small",
             "btn_url": "",
-            "btn_text": "Button Text",
+            "btn_text": "Request a free quote",
             "btn_icon_viewbox": "",
             "btn_icon_path": ""
           }
         }
       },
       "block_order": [
-        "button_TweMrG"
+        "button_m3CCBA"
       ],
+      "name": "ContentTextImageSpli",
       "settings": {
         "content_layout": "is-reversed",
-        "content_tagline_text": "Short tagline here",
-        "content_heading_text": "Medium length section heading goes here",
-        "content_paragraph_text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>",
-        "content_image": "shopify://shop_images/5161_RELAX_HOOD_MAIN.jpg"
+        "content_tagline_text": "",
+        "content_heading_text": "Screen Printing for Larger Orders",
+        "content_paragraph_text": "<p><strong>Screen printing is the go-to option when you’re ordering in volume. </strong><br/><br/>It’s ideal for sta uniforms, school and club apparel, event and festival shirts, or promotional tees for a marketing campaign.<br/><br/>The process is highly ecient for medium to large quantities and produces bold, durable prints that stand up to repeated wear and washing. If you’re planning ongoing or seasonal orders, we can help you map out a plan so you get the best value over time while keeping your branding consistent across every reorder</p>",
+        "content_image": "shopify://shop_images/1720822de53948f957a086c7096edc7ee6687c6d.jpg"
       }
     },
-    "featuredarticles_DM7qtP": {
-      "type": "featuredarticles",
+    "dtg_dtf_split_Fh6Uzj": {
+      "type": "dtg-dtf-split",
+      "name": "DTG & DTF Split Section",
       "settings": {
-        "blog_heading_text": "Short heading goes here",
-        "blog_paragraph_text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>",
-        "article_select_article_1": "printing-methods-explained/is-dtf-printing-taking-over",
-        "article_select_article_2": "printing-methods-explained/example",
-        "article_select_article_3": "design-tips-tricks/tips-tricks"
+        "left_bg_image": "shopify://shop_images/d46f55a9423f24cbe5677868d2861eb9508d2d3f.png",
+        "left_bg_opacity": 0.7,
+        "left_header": "DTG for Short Runs and Complex Artwork",
+        "left_desc": "<p>DTG (Direct-to-Garment) printing is the best choice when your order is smaller, your design is highly detailed, or you want to experiment with new ideas. </p><p>It handles full-colour artwork, gradients and photos beautifully and delivers a soft print that feels comfortable to wear. DTG is perfect for limited-edition merch, one-o\u001c events, small teams, or personalised prints with names and numbers. Because there are no traditional setup fees, it’s a smart option when you want \u001eexibility without committing to a large run.</p>",
+        "right_bg_color": "#c8104a",
+        "right_header": "DTF Transfers for Versatility and On-Demand Decoration",
+        "right_desc": "<p>DTF (Direct-to-Film) is a modern decoration option that gives you a lot of \u001eexibility, especially when you want the same logo or design across di\u001cerent garments and products. With DTF, we print a transfer that is then heat-applied to the item. This works well on a wide range of fabrics and is great for small<br/>logos, left chest prints, names and numbers, and branding across mixed orders where not every<br/>garment is the same.<br/><br/>For you, this means we can keep your logo looking consistent across T-shirts, hoodies, some outerwear<br/>and other items that might be di\u001dcult to run in the same traditional print setup. It’s also a practical<br/>solution when you expect ongoing top-up orders in small quantities, because we can produce transfers<br/>that allow for e\u001dcient, repeatable decoration without starting from scratch each time.</p>"
+      }
+    },
+    "custom_faqs_kwHmTF": {
+      "type": "custom-faqs",
+      "blocks": {
+        "faq_dxBiit": {
+          "type": "faq",
+          "settings": {
+            "question": "",
+            "answer": ""
+          }
+        },
+        "faq_Hd3YEb": {
+          "type": "faq",
+          "settings": {
+            "question": "",
+            "answer": ""
+          }
+        },
+        "faq_anG8yQ": {
+          "type": "faq",
+          "settings": {
+            "question": "",
+            "answer": ""
+          }
+        }
+      },
+      "block_order": [
+        "faq_dxBiit",
+        "faq_Hd3YEb",
+        "faq_anG8yQ"
+      ],
+      "name": "Custom FAQs",
+      "settings": {
+        "faq_heading": "Got questions? We've already answered them.",
+        "cta_text": "Still Not Sure? Check out the full FAQs list here.",
+        "cta_url": "shopify://pages/contact"
       }
     },
     "contactcta_EL3D4p": {
       "type": "contactcta",
       "settings": {
-        "contact_heading_text": "Medium length section heading goes here",
-        "contact_paragraph_text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>"
+        "contact_heading_text": "Big idea?\nWe’re all ears.",
+        "contact_paragraph_text": "<p>Drop us a note, shoot through a sketch,<br/>or call to say hey – our crew’s in the garage, ready to bring it to life.</p>"
       }
     }
   },
   "layout": "theme",
   "wrapper": "main.main-wrapper",
   "order": [
-    "pageheadersplit_z8HezP",
-    "imagetabs_TAHDTY",
-    "contenttextimagespli_tR8YmG",
-    "contenttextimagespli_qgq7BX",
-    "featuredarticles_DM7qtP",
+    "page_header_ebqTtQ",
+    "abouthero_P7YzHW",
+    "contenttextimagespli_eJLHAP",
+    "dtg_dtf_split_Fh6Uzj",
+    "custom_faqs_kwHmTF",
     "contactcta_EL3D4p"
   ]
 }
