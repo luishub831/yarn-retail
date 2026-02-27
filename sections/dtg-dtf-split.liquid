@@ -1,0 +1,182 @@
+{%- assign top_image = section.settings.top_image -%}
+{%- assign left_bg_image = section.settings.left_bg_image -%}
+{%- assign left_bg_opacity = section.settings.left_bg_opacity | default: 0.7 -%}
+{%- assign left_header = section.settings.left_header -%}
+{%- assign left_desc = section.settings.left_desc -%}
+{%- assign right_bg_color = section.settings.right_bg_color | default: '#C8104A' -%}
+{%- assign right_header = section.settings.right_header -%}
+{%- assign right_desc = section.settings.right_desc -%}
+
+<div class="padding-global">
+    <div class="splitsection1 container-large">
+    <div class="splitsection__topimg">
+        {% if top_image %}
+        <img src="{{ top_image | image_url: width: 1200 }}" alt="" class="splitsection__img" />
+        {% endif %}
+    </div>
+    <div class="splitsection__bottom">
+    <div class="splitsection__bottom-left" style="{% if left_bg_image %}background-image: url('{{ left_bg_image | image_url: width: 800 }}');{% endif %}">
+        <div class="splitsection__overlay" style="opacity: {{ left_bg_opacity }};"></div>
+        <div class="splitsection__content">
+            <h3 class="splitsection__header">{{ left_header }}</h3>
+            <div class="splitsection__desc">{{ left_desc }}</div>
+        </div>
+        </div>
+        <div class="splitsection__bottom-right" style="background: {{ right_bg_color }};">
+        <div class="splitsection__content">
+            <h3 class="splitsection__header">{{ right_header }}</h3>
+            <div class="splitsection__desc">{{ right_desc }}</div>
+        </div>
+        </div>
+    </div>
+    </div>
+</div>
+
+<style>
+
+.splitsection__topimg {
+  width: 100%;
+  margin-bottom: 32px;
+}
+.splitsection__img {
+  width: 100%;
+  height: auto;
+  border-radius: 18px;
+  display: block;
+}
+.splitsection__bottom {
+  display: flex;
+  gap: 32px;
+}
+.splitsection__bottom-left, .splitsection__bottom-right {
+  flex: 1;
+  border-radius: 18px;
+  position: relative;
+  min-height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  overflow: hidden;
+}
+.splitsection__bottom-left {
+  background-size: cover;
+  background-position: center;
+}
+.splitsection__overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: #0A1A2F;
+  z-index: 1;
+}
+.splitsection__content {
+  position: relative;
+  z-index: 2;
+  padding: 32px 28px;
+}
+.splitsection__bottom-right {
+  background-size: cover;
+  background-position: center;
+}
+.splitsection__header {
+  font-family: Newake, Arial, sans-serif;
+  font-size: 30px;
+  font-weight: 400;
+  margin-bottom: 16px;
+  color: #fff;
+}
+.splitsection__bottom-left .splitsection__header {
+  color: #fff;
+}
+.splitsection__bottom-right .splitsection__header {
+  color: #fff;
+}
+.splitsection__desc {
+  font-size: 16px;
+  line-height: 20px;
+  color: #fff;
+}
+.splitsection__desc p{
+    margin-bottom: 1rem;
+}
+.splitsection__bottom-right .splitsection__desc {
+  color: #fff;
+}
+@media (max-width: 900px) {
+  .splitsection__bottom {
+    flex-direction: column;
+    gap: 24px;
+  }
+}
+@media (max-width: 600px) {
+  .splitsection__topimg{    
+    display: none;
+  }
+  .splitsection{
+    padding: 6rem 1rem 0 1rem;
+  }
+}
+</style>
+
+{% schema %}
+{
+  "tag":"section",
+  "name": "DTG & DTF Split Section",
+  "settings": [
+    
+    {
+      "type": "image_picker",
+      "id": "top_image",
+      "label": "Top Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "left_bg_image",
+      "label": "Left Block Background Image"
+    },
+    {
+      "type": "range",
+      "id": "left_bg_opacity",
+      "label": "Left Block Overlay Opacity",
+      "min": 0,
+      "max": 1,
+      "step": 0.1,
+      "default": 0.7
+    },
+    {
+      "type": "text",
+      "id": "left_header",
+      "label": "Left Block Header",
+      "default": "DTG for Short Runs and Complex Artwork"
+    },
+    {
+      "type": "richtext",
+      "id": "left_desc",
+      "label": "Left Block Description",
+      "default": "<p>For smaller quantities, frequent design changes or complex artwork, our DTG service gives you the flexibility that traditional screen printing can’t. DTG works especially well for full-colour designs, gradients, photos and limited runs where you still want a professional, retail-ready finish. It’s ideal for online stores, on-demand campaigns and short runs that don’t justify screen setup.</p><p>Because there are no screens, you can even run your clients multiple designs or personalised prints with low setup fees to every variation. You get low minimums, fast changeovers and a soft hand feel on the garment, all produced under your brand.</p>"
+    },
+    {
+      "type": "color",
+      "id": "right_bg_color",
+      "label": "Right Block Background Color",
+      "default": "#C8104A"
+    },
+    {
+      "type": "text",
+      "id": "right_header",
+      "label": "Right Block Header",
+      "default": "DTF Transfers for Versatility and On-Demand Decoration"
+    },
+    {
+      "type": "richtext",
+      "id": "right_desc",
+      "label": "Right Block Description",
+      "default": "<p>DTF (Direct-to-Film) opens up even more flexibility for you and your customers. Instead of printing directly to the garment, we print transfers that can be heat-applied to a wide range of products, including items that are difficult or inefficient to run as standard screen or DTG jobs.</p><p>DTF works particularly well for multi-colour logos, left chest and pocket prints, names and numbers, and branding across mixed garments and sizes.</p>"
+    }
+  ],
+  "presets": [
+    {
+      "name": "DTG & DTF Split Section"
+    }
+  ]
+}
+{% endschema %}

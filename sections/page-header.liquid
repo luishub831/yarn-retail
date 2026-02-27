@@ -1,0 +1,194 @@
+<div class="page-header-wrapper">
+    <div class="page-header">
+      <div class="margin-left-3percent">
+        <div class="page-header__wrapper">
+          <div class="page-header__content">
+            <h1 class="page-header__title">{{ collection.title }}</h1>
+          </div>
+        </div>
+      </div>
+      
+      <div class="page-header__decorative">
+        <img src="{{ 'decorative-curve.png' | file_url }}" alt="Decorative curve" class="page-header__curve-image" width="400" height="200">
+      </div>
+    </div>
+    
+    <!-- Breadcrumb below the purple section -->
+    <div class="page-breadcrumb">
+      <div class="margin-left-3percent">
+        <div class="page-breadcrumb__wrapper">
+          <a href="{{ routes.root_url }}" class="page-breadcrumb__link">Home</a>
+          <span class="page-breadcrumb__separator">></span>
+          <span class="page-breadcrumb__current">{{ page.title }}</span>
+        </div>
+      </div>
+    </div>
+
+</div>
+
+<style>
+.page-header-section{
+  padding-left: 5%;
+  padding-right: 5%;
+}
+.page-header {
+  background: {{ section.settings.background_color | default: '#753F9A' }};
+  color: white;
+  height: 80px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px 16px 0 0;
+  display: flex;
+  align-items: center;
+}
+
+.page-header__wrapper {
+  position: relative;
+  z-index: 2;
+}
+
+.page-header__content {
+  padding-left: 0;
+}
+
+.page-header__title {
+  font-size: 2rem;
+  font-weight: 400;
+  margin: 0;
+  line-height: 1.2;
+  text-transform: inherit;
+}
+
+.page-header__decorative {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 50%;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.page-header__curve-image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: auto;
+  max-width: 400px;
+  background: transparent;
+}
+
+/* Breadcrumb section */
+.page-breadcrumb {
+  background: #E4E4E4;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  border-radius: 0 0 16px 16px;
+  margin-bottom: 30px;
+}
+
+.page-breadcrumb__wrapper {
+  font-size: 14px;
+  padding: 0;
+}
+
+.page-breadcrumb__link {
+  color: #666;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.page-breadcrumb__link:hover {
+  color: #753F9A;
+  text-decoration: underline;
+}
+
+.page-breadcrumb__separator {
+  margin: 0 8px;
+  color: #999;
+}
+
+.page-breadcrumb__current {
+  color: #333;
+  font-weight: 500;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .page-header {
+    padding: 30px 0 40px;
+  }
+  
+  .page-header__title {
+    font-size: 36px;
+  }
+  
+  .page-header__decorative {
+    display: none;
+  }
+  
+  .page-breadcrumb {
+    padding: 10px 0;
+  }
+  
+  .page-breadcrumb__wrapper {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-header__title {
+    font-size: 28px;
+  }
+}
+
+
+</style>
+
+{% schema %}
+{
+  "tag": "section",
+  "name": "page Header",
+  "class": "page-header-section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Page Header Settings"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#753F9A"
+    },
+    {
+      "type": "range",
+      "id": "header_padding_top",
+      "min": 20,
+      "max": 80,
+      "step": 5,
+      "unit": "px",
+      "label": "Top Padding",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "header_padding_bottom", 
+      "min": 20,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Bottom Padding",
+      "default": 60
+    }
+  ],
+  "presets": [
+    {
+      "name": "Page Header",
+      "category": "Collection"
+    }
+  ]
+}
+{% endschema %}

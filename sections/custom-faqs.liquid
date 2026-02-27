@@ -1,0 +1,305 @@
+{%- assign faq_heading = section.settings.faq_heading -%}
+{%- assign cta_text = section.settings.cta_text -%}
+{%- assign cta_url = section.settings.cta_url -%}
+
+<div class="padding-global">
+  <div class="container-large">
+    <div class="padding-section-medium">
+      <div class="custom-faqs-section">
+        <div class="custom-faqs-grid">
+          <div class="custom-faqs-left">
+            <h2 class="section-header">{{ faq_heading }}</h2>
+          </div>
+          <div class="custom-faqs-right">
+            <div class="custom-faqs-list">
+              {% for faq in metaobjects.faq.values %}
+                <div class="custom-faqs-item">
+                  <button class="custom-faqs-question" aria-expanded="false" type="button">
+                    <span class="custom-faqs-question-text">{{ faq.question }}</span>
+                    <span class="custom-faqs-plus-btn">
+                      <svg  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="16" height="16" fill="currentColor">
+                          <circle cx="224" cy="256" r="19" fill="#F66718" stroke="#001828" stroke-width="2" />
+                          <path d="M248 72c0-13.3-10.7-24-24-24s-24 10.7-24 24l0 160L40 232c-13.3 0-24 10.7-24 24s10.7 24 24 24l160 0 0 160c0 13.3 10.7 24 24 24s24-10.7 24-24l0-160 160 0c13.3 0 24-10.7 24-24s-10.7-24-24-24l-160 0 0-160z" fill="#fff"/>
+                      </svg>
+                     </span>
+                  </button>
+                  <div class="custom-faqs-answer" hidden>
+                    <div>{{ faq.answer }}</div>
+                  </div>
+                </div>
+              {% endfor %}
+              <div class="custom-faqs-item custom-faqs-cta">
+                <div class="custom-faqs-question custom-faqs-cta-text">{{ cta_text }}</div>
+                {% if cta_url %}
+                  <a class="custom-faqs-cta-btn" href="{{ cta_url }}" target="_blank">READ FULL FAQS 
+                      <span aria-hidden="true">
+                          <svg viewBox="0 0 384 512" width="15" height="15" fill="currentColor" li-if="block.settings.btn_layout != 'btn_layout_text'" class="icon-1x1-small icon-1x1-small">
+                              <path d="M328 96c13.3 0 24 10.7 24 24l0 240c0 13.3-10.7 24-24 24s-24-10.7-24-24l0-182.1L73 409c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l231-231L88 144c-13.3 0-24-10.7-24-24s10.7-24 24-24l240 0z"></path>    
+                          </svg>
+                      </span>
+                  </a>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+    var items = document.querySelectorAll('.custom-faqs-question');
+    items.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+        var parent = btn.closest('.custom-faqs-item');
+        var answer = parent.querySelector('.custom-faqs-answer');
+        var expanded = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', !expanded);
+        if (answer) {
+            answer.hidden = expanded;
+        }
+        // Toggle open class for icon rotation
+        if (!expanded) {
+            parent.classList.add('open');
+        } else {
+            parent.classList.remove('open');
+        }
+        });
+    });
+    });
+</script>
+<style>
+.custom-faqs-plus-btn {
+  border-radius: 1920px;
+  border: 1px solid #001828;
+  background: #F66718;
+  box-shadow: -2px 2px 0 0 #001828;
+  width: 25px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  transition: transform 0.2s;
+  color: #fff;
+  margin-left: 10px;
+  flex-shrink: 0;
+}
+.custom-faqs-plus-btn svg {
+  display: block;
+  transition: transform 0.2s;
+}
+.custom-faqs-item.open .custom-faqs-plus-btn svg {
+  transform: rotate(45deg);
+}
+.custom-faqs-section {
+  padding-top: 30px;
+    padding-bottom: 30px;
+}
+.custom-faqs-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 25px;
+  align-items: flex-start;
+}
+.custom-faqs-left {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  min-width: 260px;
+}
+.custom-faqs-heading {
+  font-family: Newake, Arial, sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: #111;
+  margin: 0;
+  line-height: 1.1;
+}
+.custom-faqs-right {
+  width: 100%;
+}
+.custom-faqs-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.custom-faqs-item {
+  background: #fff;
+  border: 2px solid #001828;
+  border-radius: 50px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+}
+.custom-faqs-question {
+  width: 100%;
+  background: none;
+  border: none;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: inherit;
+  font-size: 20px;
+  font-weight: 700;
+  color: #111;
+  padding: 20px;
+  cursor: pointer;
+  transition: background 0.2s;
+  gap: 15px;
+}
+.custom-faqs-plus-btn-wrap {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+.custom-faqs-plus-btn {
+  margin: 0;
+}
+.custom-faqs-question:hover {
+  background: #f7f7f7;
+}
+.custom-faqs-icon {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+}
+.custom-faqs-answer {
+  padding: 0 15px 11px 15px;
+  font-size: 16px;
+  color: #222;
+}
+.custom-faqs-cta {
+  background: #FAF4E7;
+  display: flex;
+}
+.custom-faqs-cta-text {
+  font-weight: 700;
+  color: #111;
+  padding: 20px;
+}
+
+.custom-faqs-cta-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 15px;
+}
+.custom-faqs-cta-text {
+  font-weight: 700;
+  color: #111;
+  padding: 20px;
+  white-space: nowrap;
+}
+.custom-faqs-cta-btn {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  background: #fff;
+  border: 2px solid #111;
+  border-radius: 20px;
+  padding: 7px 15px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #111;
+  text-decoration: none;
+  margin: 20px;
+  transition: background 0.2s;
+  white-space: nowrap;
+}
+.custom-faqs-cta-btn:hover {
+  background: #f7f7f7;
+}
+@media (max-width: 900px) {
+  .custom-faqs-item{
+    border-radius: 20px;
+  }
+  .custom-faqs-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  .custom-faqs-left {
+    justify-content: flex-start;
+    min-width: auto;
+  }
+  .custom-faqs-question {
+    font-size: 20px;
+    padding: 15px;
+    gap: 10px;
+    text-align: left;
+  }
+  .custom-faqs-answer {
+    padding: 0 15px 15px 15px;
+    font-size: 14px;
+  }
+  .custom-faqs-cta {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .custom-faqs-cta-text {
+    padding: 15px;
+    white-space: normal;
+    text-align: left;
+  }
+  .custom-faqs-cta-btn {
+    margin: 0 15px 15px 15px;
+    justify-content: center;
+  }
+}
+</style>
+
+{% schema %}
+{
+  "name": "Custom FAQs",
+  "settings": [
+    {
+      "type": "textarea",
+      "id": "faq_heading",
+      "label": "FAQ Heading",
+      "default": "Got questions? We've already answered them."
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "CTA Text",
+      "default": "Still Not Sure? Check out the full FAQs list here."
+    },
+    {
+      "type": "url",
+      "id": "cta_url",
+      "label": "CTA Button Link"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "faq",
+      "name": "FAQ Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "question",
+          "label": "Question"
+        },
+        {
+          "type": "richtext",
+          "id": "answer",
+          "label": "Answer"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom FAQs",
+      "blocks": [
+        { "type": "faq" },
+        { "type": "faq" },
+        { "type": "faq" }
+      ]
+    }
+  ]
+}
+{% endschema %}
