@@ -113,9 +113,9 @@
       ],
       "name": "Banner Slider",
       "settings": {
-        "transition_style": "fade",
-        "autoplay_enabled": false,
-        "autoplay_interval": 10
+        "transition_style": "slide",
+        "autoplay_enabled": true,
+        "autoplay_interval": 5
       }
     },
     "image_with_header_4wEEJL": {
