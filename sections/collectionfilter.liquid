@@ -119,19 +119,19 @@
           <div class="promotion-card desktop-promo">
             <div class="promo-content">
               <div class="promo-header">
-                <h3>WEEKLY SPECIALS</h3>
+                <h3>{{ section.settings.promo_header }}</h3>
               </div>
               <div class="promo-discount">
                 <div class="promo-percentage-container">
-                  <div class="promo-text">ENJOY UP TO</div>
-                  <div class="promo-percentage">50<span class="percent">% OFF</span></div>
+                  <div class="promo-text">{{ section.settings.promo_text }}</div>
+                  <div class="promo-percentage">{{ section.settings.promo_percentage }}<span class="percent">{{ section.settings.promo_percent_text }}</span></div>
                 </div>
               </div>
               <div class="promo-description">
-                <div class="promo-subheader">Take advantage of this week's specials!</div>
-                <div class="promo-subtext">SPECIALS CHANGE EVERY WEEK</div>
+                <div class="promo-subheader">{{ section.settings.promo_subheader }}</div>
+                <div class="promo-subtext">{{ section.settings.promo_subtext }}</div>
               </div>
-              <a href="{{ routes.collections_url }}/weekly-specials" class="button w-inline-block is-default is-secondary">SHOP ALL SPECIALS</a>
+              <a href="{{ section.settings.promo_button_url }}" class="button w-inline-block is-default is-secondary">{{ section.settings.promo_button_text }}</a>
             </div>
           </div>
         {% endif %}
@@ -140,19 +140,19 @@
           <div class="promotion-card mobile-promo">
             <div class="promo-content">
               <div class="promo-header">
-                <h3>WEEKLY SPECIALS</h3>
+                <h3>{{ section.settings.promo_header }}</h3>
               </div>
               <div class="promo-discount">
                 <div class="promo-percentage-container">
-                  <div class="promo-text">ENJOY UP TO</div>
-                  <div class="promo-percentage">50<span class="percent">% OFF</span></div>
+                  <div class="promo-text">{{ section.settings.promo_text }}</div>
+                  <div class="promo-percentage">{{ section.settings.promo_percentage }}<span class="percent">{{ section.settings.promo_percent_text }}</span></div>
                 </div>
               </div>
               <div class="promo-description">
-                <div class="promo-subheader">Take advantage of this week's specials!</div>
-                <div class="promo-subtext">SPECIALS CHANGE EVERY WEEK</div>
+                <div class="promo-subheader">{{ section.settings.promo_subheader }}</div>
+                <div class="promo-subtext">{{ section.settings.promo_subtext }}</div>
               </div>
-              <a href="{{ routes.collections_url }}/weekly-specials" class="promo-button">SHOP ALL SPECIALS</a>
+              <a href="{{ section.settings.promo_button_url }}" class="promo-button">{{ section.settings.promo_button_text }}</a>
             </div>
           </div>
         {% endif %}
@@ -1121,4 +1121,70 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 
-{% schema %} {"tag":"section","name":"CollectionFilter","class":"section_filters5","presets":[{"name":"CollectionFilter","category":"Liquify","blocks":[]}]} {% endschema %}
+{% schema %}
+{
+  "tag": "section",
+  "name": "CollectionFilter",
+  "class": "section_filters5",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Promotional Card Settings"
+    },
+    {
+      "type": "text",
+      "id": "promo_header",
+      "label": "Promo Header",
+      "default": "WEEKLY SPECIALS"
+    },
+    {
+      "type": "text",
+      "id": "promo_text",
+      "label": "Promo Text",
+      "default": "ENJOY UP TO"
+    },
+    {
+      "type": "text",
+      "id": "promo_percentage",
+      "label": "Promo Percentage",
+      "default": "50"
+    },
+    {
+      "type": "text",
+      "id": "promo_percent_text",
+      "label": "Percent Text",
+      "default": "% OFF"
+    },
+    {
+      "type": "text",
+      "id": "promo_subheader",
+      "label": "Promo Subheader",
+      "default": "Take advantage of this week's specials!"
+    },
+    {
+      "type": "text",
+      "id": "promo_subtext",
+      "label": "Promo Subtext",
+      "default": "SPECIALS CHANGE EVERY WEEK"
+    },
+    {
+      "type": "text",
+      "id": "promo_button_text",
+      "label": "Button Text",
+      "default": "SHOP ALL SPECIALS"
+    },
+    {
+      "type": "url",
+      "id": "promo_button_url",
+      "label": "Button URL"
+    }
+  ],
+  "presets": [
+    {
+      "name": "CollectionFilter",
+      "category": "Liquify",
+      "blocks": []
+    }
+  ]
+}
+{% endschema %}
