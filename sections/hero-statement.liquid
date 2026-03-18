@@ -1,0 +1,366 @@
+<div class="hero-statement_component">
+   <div class="hero-statement_wrapper">
+      <!-- Background Image -->
+      <div class="hero-statement_background">
+         <img li-object:src="section.settings.hero_image_1 | image_url: width: 1920" 
+              loading="eager" 
+              alt="" 
+              width="1920"
+              height="800"
+              src="{{ section.settings.hero_image_1 | image_url: width: 1920 }}" 
+              class="hero-statement_bg-image">
+         <div class="hero-statement_overlay"></div>
+      </div>
+      
+      <!-- Content Overlay -->
+      <div class="hero-statement_content">
+         <div class="hero-statement_content-wrapper">
+            <h1 li-object="section.settings.hero_heading_text" class="hero-statement_heading">
+               {{ section.settings.hero_heading_text }}
+            </h1>
+            <div class="hero-statement_paragraph">
+               <div li-object="section.settings.hero_paragraph_text">
+                  {{ section.settings.hero_paragraph_text }}
+               </div>
+            </div>
+            <div class="hero-statement_button-wrapper button-group">
+               {% render 'button' %}
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+
+{% style %}
+.hero-statement_component {
+   width: 100%;
+   position: relative;
+}
+
+.hero-statement_wrapper {
+   position: relative;
+   width: 100%;
+   min-height: 600px;
+   height: 100vh;
+   max-height: 800px;
+   overflow: hidden;
+}
+
+.hero-statement_background {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   z-index: 1;
+}
+
+.hero-statement_bg-image {
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+   display: block;
+   background-color: transparent;
+}
+
+.hero-statement_overlay {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   /* background: rgba(0, 0, 0, 0.4); */
+   z-index: 2;
+}
+
+.hero-statement_content {
+   position: relative;
+   z-index: 3;
+   width: 100%;
+   height: 100%;
+   display: flex;
+   align-items: end;
+   justify-content: center;
+   padding: 60px 20px;
+}
+
+.hero-statement_content-wrapper {
+   max-width: 1100px;
+   text-align: center;
+   color: white;
+}
+
+.hero-statement_heading {
+   font-size: clamp(3rem, 8vw, 8rem);
+   font-weight: 700;
+   color: white;
+   line-height: 0.95;
+   margin-bottom: 30px;
+   text-transform: uppercase;
+   letter-spacing: -0.02em;
+}
+
+.hero-statement_paragraph {
+   font-size: clamp(1rem, 1.5vw, 1.25rem);
+   line-height: 1.6;
+   color: white;
+   margin: 0 auto 40px;
+   max-width: 900px;
+   font-weight: 400;
+}
+
+.hero-statement_paragraph p {
+   margin-bottom: 15px;
+}
+
+.hero-statement_button-wrapper {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+/* Tablet and Mobile */
+@media (max-width: 991px) {
+   .hero-statement_wrapper {
+      min-height: 500px;
+      max-height: 700px;
+   }
+   
+   .hero-statement_content {
+      padding: 40px 20px;
+   }
+   
+   .hero-statement_heading {
+      margin-bottom: 25px;
+   }
+   
+   .hero-statement_paragraph {
+      margin-bottom: 35px;
+   }
+}
+
+@media (max-width: 767px) {
+   .hero-statement_wrapper {
+      min-height: 450px;
+      max-height: 600px;
+   }
+   
+   .hero-statement_content {
+      padding: 30px 15px;
+   }
+   
+   .hero-statement_heading {
+      margin-bottom: 20px;
+   }
+   
+   .hero-statement_paragraph {
+      font-size: 1rem;
+      margin-bottom: 30px;
+   }
+}
+
+@media (max-width: 479px) {
+   .hero-statement_wrapper {
+      min-height: 400px;
+      height: 90vh;
+      max-height: 550px;
+   }
+   
+   .hero-statement_content {
+      padding: 25px 15px;
+   }
+   
+   .hero-statement_paragraph {
+      margin-bottom: 25px;
+   }
+}
+{% endstyle %}
+
+{% schema %} 
+{
+  "tag": "header",
+  "name": "Hero Statement",
+  "class": "section_hero-statement z-index-2",
+  "blocks": [
+    {
+      "name": "Button",
+      "type": "button",
+      "settings": [
+        {
+          "type": "header",
+          "content": "Button Settings"
+        },
+        {
+          "type": "select",
+          "id": "btn_layout",
+          "label": "Button Layout",
+          "options": [
+            {
+              "value": "btn_layout_text",
+              "label": "Text Only"
+            },
+            {
+              "value": "btn_layout_icon",
+              "label": "Icon Only"
+            },
+            {
+              "value": "btn_layout_both",
+              "label": "Both"
+            }
+          ],
+          "default": "btn_layout_text"
+        },
+        {
+          "type": "select",
+          "id": "btn_style",
+          "label": "Button Style",
+          "options": [
+            {
+              "value": "is-primary",
+              "label": "Primary"
+            },
+            {
+              "value": "is-secondary",
+              "label": "Secondary"
+            },
+            {
+              "value": "is-tertiary",
+              "label": "Tertiary"
+            },
+            {
+              "value": "is-alternate",
+              "label": "Alternate"
+            },
+            {
+              "value": "is-link",
+              "label": "Link"
+            }
+          ],
+          "default": "is-primary"
+        },
+        {
+          "type": "select",
+          "id": "btn_size",
+          "label": "Button Size",
+          "options": [
+            {
+              "value": "is-xsmall",
+              "label": "xSmall"
+            },
+            {
+              "value": "is-small",
+              "label": "Small"
+            },
+            {
+              "value": "is-default",
+              "label": "Default"
+            },
+            {
+              "value": "is-large",
+              "label": "Large"
+            }
+          ],
+          "default": "is-large"
+        },
+        {
+          "type": "select",
+          "id": "btn_icon_size",
+          "label": "Button Icon Size",
+          "options": [
+            {
+              "value": "icon-1x1-xsmall",
+              "label": "xSmall"
+            },
+            {
+              "value": "icon-1x1-small",
+              "label": "Small"
+            },
+            {
+              "value": "icon-1x1-medium",
+              "label": "Medium"
+            },
+            {
+              "value": "icon-1x1-large",
+              "label": "Large"
+            }
+          ],
+          "default": "icon-1x1-small"
+        },
+        {
+          "type": "url",
+          "id": "btn_url",
+          "label": "Button Link"
+        },
+        {
+          "type": "text",
+          "id": "btn_text",
+          "label": "Button Text",
+          "placeholder": "Button Text",
+          "default": "Chat Your Idea With Us"
+        },
+        {
+          "type": "text",
+          "id": "btn_icon_viewbox",
+          "label": "Button Icon SVG viewBox",
+          "placeholder": "0 0 384 512"
+        },
+        {
+          "type": "textarea",
+          "id": "btn_icon_path",
+          "label": "Button Icon SVG Path",
+          "placeholder": "M328 96c13.3 0 24 10.7 24 24l0 240c0 13.3-10.7 24-24 24s-24-10.7-24-24l0-182.1L73 409c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l231-231L88 144c-13.3 0-24-10.7-24-24s10.7-24 24-24l240 0z"
+        }
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "type": "header",
+      "content": "Hero Content Settings"
+    },
+    {
+      "type": "textarea",
+      "id": "hero_heading_text",
+      "label": "Hero Heading Text",
+      "default": "STATEMENTS"
+    },
+    {
+      "type": "richtext",
+      "id": "hero_paragraph_text",
+      "label": "Hero Paragraph Text",
+      "default": "<p>The Print Garage makes premium merch with streetwear style and studio-level quality. We work with brands and creators who care about doing things properly. We're not a tech startup trying out tees. We're print experts with our own facility, machines, and crew – so we handle production from start to finish.</p>"
+    },
+    {
+      "type": "image_picker",
+      "id": "hero_image_1",
+      "label": "Background Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "hero_image_2",
+      "label": "Hero Image 2 (Optional)"
+    },
+    {
+      "type": "image_picker",
+      "id": "hero_image_3",
+      "label": "Hero Image 3 (Optional)"
+    },
+    {
+      "type": "image_picker",
+      "id": "hero_image_4",
+      "label": "Hero Image 4 (Optional)"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero Statement",
+      "category": "Liquify",
+      "blocks": [
+        {
+          "type": "button"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,334 @@
+<div class="padding-global">
+   <div class="container-large">
+      <div class="padding-section-large">
+         <div class="target-audience_component">
+            
+            <!-- Section Heading -->
+            {% if section.settings.section_heading != blank %}
+            <div class="target-audience_heading-wrapper">
+               <h2 li-object="section.settings.section_heading" class="target-audience_heading">
+                  {{ section.settings.section_heading }}
+               </h2>
+            </div>
+            {% endif %}
+            
+            <!-- Cards Grid -->
+            <div class="target-audience_grid">
+               {% for block in section.blocks %}
+                  <div class="target-audience_card" {{ block.shopify_attributes }}>
+                     <!-- Card Image -->
+                     <div class="target-audience_card-image">
+                        {% if block.settings.card_image != blank %}
+                           <img li-object:src="block.settings.card_image | image_url: width: 400" 
+                                src="{{ block.settings.card_image | image_url: width: 400 }}" 
+                                alt="{{ block.settings.card_title }}"
+                                width="400"
+                                height="500"
+                                loading="lazy"
+                                class="target-audience_image">
+                        {% endif %}
+                     </div>
+                     
+                     <!-- Card Content -->
+                     <div class="target-audience_card-content">
+                        <!-- List Items with Checkmarks -->
+                        <div class="target-audience_list">
+                           {% if block.settings.list_item_1 != blank %}
+                              <div class="target-audience_list-item">
+                                 <svg class="target-audience_check-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="12" cy="12" r="10" fill="#7C3AED"/>
+                                    <path d="M8 12L11 15L16 9" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                 </svg>
+                                 <span li-object="block.settings.list_item_1">{{ block.settings.list_item_1 }}</span>
+                              </div>
+                           {% endif %}
+                           
+                           {% if block.settings.list_item_2 != blank %}
+                              <div class="target-audience_list-item">
+                                 <svg class="target-audience_check-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="12" cy="12" r="10" fill="#7C3AED"/>
+                                    <path d="M8 12L11 15L16 9" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                 </svg>
+                                 <span li-object="block.settings.list_item_2">{{ block.settings.list_item_2 }}</span>
+                              </div>
+                           {% endif %}
+                           
+                           {% if block.settings.list_item_3 != blank %}
+                              <div class="target-audience_list-item">
+                                 <svg class="target-audience_check-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="12" cy="12" r="10" fill="#7C3AED"/>
+                                    <path d="M8 12L11 15L16 9" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                 </svg>
+                                 <span li-object="block.settings.list_item_3">{{ block.settings.list_item_3 }}</span>
+                              </div>
+                           {% endif %}
+                        </div>
+                        
+                        <!-- Description -->
+                        {% if block.settings.card_description != blank %}
+                           <p li-object="block.settings.card_description" class="target-audience_description">
+                              {{ block.settings.card_description }}
+                           </p>
+                        {% endif %}
+                     </div>
+                  </div>
+               {% endfor %}
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+
+{% style %}
+.target-audience_component {
+   width: 100%;
+}
+
+.target-audience_heading-wrapper {
+   text-align: center;
+   margin-bottom: 60px;
+}
+
+.target-audience_heading {
+   font-size: 3rem;
+   font-weight: 400;
+   color: #1a1a1a;
+   line-height: 1.2;
+   margin: 0;
+   text-transform: initial;
+}
+
+.target-audience_grid {
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   gap: 30px;
+}
+
+.target-audience_card {
+   background: #F5F5F0;
+   border-radius: 16px;
+   overflow: hidden;
+   display: flex;
+   flex-direction: row;
+   transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.target-audience_card:hover {
+   transform: translateY(-5px);
+   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.target-audience_card-image {
+   width: 45%;
+   flex-shrink: 0;
+   overflow: hidden;
+   position: relative;
+}
+
+.target-audience_image {
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+   display: block;
+}
+
+.target-audience_card-content {
+   padding: 30px;
+   flex: 1;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+}
+
+.target-audience_list {
+   margin-bottom: 20px;
+}
+
+.target-audience_list-item {
+   display: flex;
+   align-items: center;
+   gap: 12px;
+   margin-bottom: 12px;
+   font-size: 1.25rem;
+   font-weight: 600;
+   color: #1a1a1a;
+}
+
+.target-audience_list-item:last-child {
+   margin-bottom: 0;
+}
+
+.target-audience_check-icon {
+   width: 24px;
+   height: 24px;
+   flex-shrink: 0;
+}
+
+.target-audience_description {
+   font-size: 1rem;
+   line-height: 1.5;
+   color: #555;
+   margin: 0;
+}
+
+/* Tablet */
+@media (max-width: 991px) {
+   .target-audience_grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+   }
+   
+   .target-audience_heading-wrapper {
+      margin-bottom: 50px;
+   }
+   
+   .target-audience_card-content {
+      padding: 25px;
+   }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+   .target-audience_grid {
+      grid-template-columns: 1fr;
+      gap: 20px;
+   }
+   
+   .target-audience_heading-wrapper {
+      margin-bottom: 40px;
+   }
+   
+   .target-audience_heading {
+      font-size: 2rem;
+   }
+   
+   .target-audience_card {
+      flex-direction: column;
+   }
+   
+   .target-audience_card-image {
+      width: 100%;
+      aspect-ratio: 4/5;
+   }
+   
+   .target-audience_card-content {
+      padding: 20px;
+   }
+   
+   .target-audience_list-item {
+      font-size: 1.1rem;
+      gap: 10px;
+   }
+   
+   .target-audience_check-icon {
+      width: 20px;
+      height: 20px;
+   }
+}
+
+@media (max-width: 479px) {
+   .target-audience_card-content {
+      padding: 18px;
+   }
+   
+   .target-audience_list-item {
+      font-size: 1rem;
+      margin-bottom: 10px;
+   }
+   
+   .target-audience_description {
+      font-size: 0.95rem;
+   }
+}
+{% endstyle %}
+
+{% schema %} 
+{
+  "name": "Target Audience Cards",
+  "class": "section_target-audience",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section Settings"
+    },
+    {
+      "type": "textarea",
+      "id": "section_heading",
+      "label": "Section Heading",
+      "default": "If this is you, you're in the right garage."
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Audience Card",
+      "type": "card",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "card_image",
+          "label": "Card Image"
+        },
+        {
+          "type": "text",
+          "id": "list_item_1",
+          "label": "List Item 1",
+          "default": "Creators"
+        },
+        {
+          "type": "text",
+          "id": "list_item_2",
+          "label": "List Item 2",
+          "default": "Influencers"
+        },
+        {
+          "type": "text",
+          "id": "list_item_3",
+          "label": "List Item 3",
+          "default": "Trend-Setters."
+        },
+        {
+          "type": "textarea",
+          "id": "card_description",
+          "label": "Card Description",
+          "default": "Got ideas in your notes app and DMs full of \"when's the drop?\""
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Target Audience Cards",
+      "category": "Liquify",
+      "blocks": [
+        {
+          "type": "card",
+          "settings": {
+            "list_item_1": "Creators",
+            "list_item_2": "Influencers",
+            "list_item_3": "Trend-Setters.",
+            "card_description": "Got ideas in your notes app and DMs full of \"when's the drop?\""
+          }
+        },
+        {
+          "type": "card",
+          "settings": {
+            "list_item_1": "Brands",
+            "list_item_2": "Businesses",
+            "list_item_3": "Events Teams.",
+            "card_description": "Need merch that doesn't scream \"freebie tee\"?"
+          }
+        },
+        {
+          "type": "card",
+          "settings": {
+            "list_item_1": "Distributors",
+            "list_item_2": "Agencies",
+            "list_item_3": "Trade Pros.",
+            "card_description": "You've already got the clients."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

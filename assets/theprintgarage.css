@@ -865,6 +865,7 @@ figcaption {
   transition: all .3s;
   display: flex;
   position: relative;
+  letter-spacing: 0.9px;
 }
 
 .button:hover {
