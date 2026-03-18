@@ -9,6 +9,33 @@
  */
 {
   "sections": {
+    "hero_statement_YWkxMH": {
+      "type": "hero-statement",
+      "blocks": {
+        "button_BdrWkm": {
+          "type": "button",
+          "settings": {
+            "btn_layout": "btn_layout_text",
+            "btn_style": "is-primary",
+            "btn_size": "is-default",
+            "btn_icon_size": "icon-1x1-small",
+            "btn_url": "",
+            "btn_text": "Chat Your Idea With Us",
+            "btn_icon_viewbox": "",
+            "btn_icon_path": ""
+          }
+        }
+      },
+      "block_order": [
+        "button_BdrWkm"
+      ],
+      "name": "Hero Statement",
+      "settings": {
+        "hero_heading_text": "",
+        "hero_paragraph_text": "<p><strong>The Print Garage makes premium merch with streetwear style and studio-level quality. </strong><br/>We work with brands and creators who care about doing things properly. We're not a tech startup trying out tees. We're print experts with our own facility, machines, and crew – so we handle production from start to finish.</p>",
+        "hero_image_1": "shopify://shop_images/Frame_18355.png"
+      }
+    },
     "abouthero_dKdnbM": {
       "type": "abouthero",
       "blocks": {
@@ -29,6 +56,7 @@
       "block_order": [
         "button_wQHhmk"
       ],
+      "disabled": true,
       "settings": {
         "hero_heading_text": "Most POD's Make stuff. We make statements.",
         "hero_paragraph_text": "<p><strong>The Print Garage is where streetwear energy meets studio-grade finesse. A creative merch house made for cool brands, ambitious creators, and trade legends who give a damn about quality and want a true partner in production. </strong></p><p>We’re not a tech startup dabbling in tees. Our crew are print people, through and through. With our own facility, our own machines, and our own crew, we don’t just manage production. <em>We own it.</em></p>",
@@ -44,6 +72,50 @@
       "settings": {
         "pageheader_heading_text": "A little retro, a little rebellious – and 100% committed to making your goals, dreams and ideas roar to life.",
         "pageheader_paragraph_text": "<p>At The Print Garage, we don’t just \"print stuff\". We <em>create things people actually want to wear, keep, and show off.</em> Merch that sparks convo. That turns heads. That really <strong>says</strong> something.<br/><br/>Our roots? They’re gritty and grounded. Vintage signage, tattoo flash, garage nostalgia, surf ‘n skate culture. Our aesthetic is ‘90s band tee meets creative studio: lived-in, punchy, and proudly imperfect.<br/><br/>We work with creatives with big ideas, brands chasing a team that feels like their own, and the trade pros who need serious production power.</p><p><br/>And though we love a retro vibe, we're also at the forefront of innovation in the print space. Our team is always experimenting, testing new print tech, and dreaming up new ways to turn your ideas into wearable magic. </p>"
+      }
+    },
+    "target_audience_cards_p3y7Y8": {
+      "type": "target-audience-cards",
+      "blocks": {
+        "card_HeNwzi": {
+          "type": "card",
+          "settings": {
+            "card_image": "shopify://shop_images/cbed3b15-d7a6-4ab4-a526-7b609c0d3744.png_2x_ac072071-dbc4-4682-8419-b65379e16771.png",
+            "list_item_1": "Creators",
+            "list_item_2": "Influencers",
+            "list_item_3": "Trend-Setters.",
+            "card_description": "Got ideas in your notes app and DMs full of \"when's the drop?\""
+          }
+        },
+        "card_UmziFz": {
+          "type": "card",
+          "settings": {
+            "card_image": "shopify://shop_images/cbed3b15-d7a6-4ab4-a526-7b609c0d3744_png.png",
+            "list_item_1": "Brands",
+            "list_item_2": "Businesses",
+            "list_item_3": "Events Teams.",
+            "card_description": "Need merch that doesn't scream \"freebie tee\"?"
+          }
+        },
+        "card_8hqTtt": {
+          "type": "card",
+          "settings": {
+            "card_image": "shopify://shop_images/image_44.png",
+            "list_item_1": "Distributors",
+            "list_item_2": "Agencies",
+            "list_item_3": "Trade Pros.",
+            "card_description": "You've already got the clients."
+          }
+        }
+      },
+      "block_order": [
+        "card_HeNwzi",
+        "card_UmziFz",
+        "card_8hqTtt"
+      ],
+      "name": "Target Audience Cards",
+      "settings": {
+        "section_heading": "If this is you, you're in the right garage."
       }
     },
     "featurecards_iPVhrW": {
@@ -349,8 +421,10 @@
   "layout": "theme",
   "wrapper": "main.main-wrapper",
   "order": [
+    "hero_statement_YWkxMH",
     "abouthero_dKdnbM",
     "pageheadersplit_zGNq7a",
+    "target_audience_cards_p3y7Y8",
     "featurecards_iPVhrW",
     "bentobox_3LxRdk",
     "what_we_bring_g9zGJL",
