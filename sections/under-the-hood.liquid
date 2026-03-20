@@ -70,8 +70,9 @@
                   <h3 li-object="section.settings.cta_heading" class="heading-style-h3 under-hood_cta-heading">
                      {{ section.settings.cta_heading }}
                   </h3>
-                  <div class="under-hood_cta-line"></div>
                   {% endif %}
+                  
+                  <div class="under-hood_animated-text" data-texts="We're authentic.|We're creative.|We're bold.|We're reliable AF."><span class="under-hood_cursor">|</span></div>
                   
                   {% if section.settings.cta_text != blank %}
                   <p li-object="section.settings.cta_text" class="under-hood_cta-text">
@@ -90,6 +91,53 @@
       </div>
    </div>
 </div>
+
+<script>
+(function() {
+  const animatedText = document.querySelector('.under-hood_animated-text');
+  if (!animatedText) return;
+  
+  const cursor = animatedText.querySelector('.under-hood_cursor');
+  const texts = animatedText.dataset.texts.split('|');
+  let currentIndex = 0;
+  let charIndex = 0;
+  let isDeleting = false;
+  
+  function typeWriter() {
+    const currentText = texts[currentIndex];
+    
+    if (!isDeleting) {
+      // Typing
+      const displayText = currentText.substring(0, charIndex + 1);
+      animatedText.innerHTML = displayText + cursor.outerHTML;
+      charIndex++;
+      
+      if (charIndex === currentText.length) {
+        // Pause at end of text
+        setTimeout(() => { isDeleting = true; typeWriter(); }, 2000);
+        return;
+      }
+    } else {
+      // Deleting
+      const displayText = currentText.substring(0, charIndex - 1);
+      animatedText.innerHTML = displayText + cursor.outerHTML;
+      charIndex--;
+      
+      if (charIndex === 0) {
+        isDeleting = false;
+        currentIndex = (currentIndex + 1) % texts.length;
+        setTimeout(typeWriter, 500);
+        return;
+      }
+    }
+    
+    setTimeout(typeWriter, isDeleting ? 50 : 100);
+  }
+  
+  // Start animation
+  typeWriter();
+})();
+</script>
 
 {% style %}
 .under-hood_bg-wrapper {
@@ -249,11 +297,26 @@
    color: #000;
 }
 
-.under-hood_cta-line {
-   width: 4px;
-   height: 60px;
-   background-color: #000;
+.under-hood_animated-text {
+   font-size: 2.5rem;
+   font-weight: 700;
+   line-height: 1.2;
+   color: #000;
+   min-height: 60px;
+   display: flex;
+   align-items: center;
    margin-bottom: 24px;
+}
+
+.under-hood_cursor {
+   font-weight: 400;
+   animation: blink 1s infinite;
+   margin-left: 2px;
+}
+
+@keyframes blink {
+   0%, 50% { opacity: 1; }
+   51%, 100% { opacity: 0; }
 }
 
 .under-hood_cta-text {
