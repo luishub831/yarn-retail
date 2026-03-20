@@ -71,7 +71,7 @@
       "name": "PageHeaderSplit",
       "settings": {
         "pageheader_heading_text": "A little retro, a little rebellious – and 100% committed to making your goals, dreams and ideas roar to life.",
-        "pageheader_paragraph_text": "<p>At The Print Garage, we don’t just \"print stuff\". We <em>create things people actually want to wear, keep, and show off.</em> Merch that sparks convo. That turns heads. That really <strong>says</strong> something.<br/><br/>Our roots? They’re gritty and grounded. Vintage signage, tattoo flash, garage nostalgia, surf ‘n skate culture. Our aesthetic is ‘90s band tee meets creative studio: lived-in, punchy, and proudly imperfect.<br/><br/>We work with creatives with big ideas, brands chasing a team that feels like their own, and the trade pros who need serious production power.</p><p><br/>And though we love a retro vibe, we're also at the forefront of innovation in the print space. Our team is always experimenting, testing new print tech, and dreaming up new ways to turn your ideas into wearable magic. </p>"
+        "pageheader_paragraph_text": "<p><strong>At The Print Garage, we don’t just \"print stuff\". We </strong><em><strong>create things people actually want to wear, keep, and show off.</strong></em><strong> Merch that sparks convo. That turns heads. That really says something.</strong><br/><br/>Our roots? They’re gritty and grounded. Vintage signage, tattoo flash, garage nostalgia, surf ‘n skate culture. Our aesthetic is ‘90s band tee meets creative studio: lived-in, punchy, and proudly imperfect.<br/><br/>We work with creatives with big ideas, brands chasing a team that feels like their own, and the trade pros who need serious production power.</p><p><br/>And though we love a retro vibe, we're also at the forefront of innovation in the print space. Our team is always experimenting, testing new print tech, and dreaming up new ways to turn your ideas into wearable magic. </p>"
       }
     },
     "target_audience_cards_p3y7Y8": {
@@ -118,6 +118,112 @@
         "section_heading": "If this is you, you're in the right garage."
       }
     },
+    "under_the_hood_GPWM6B": {
+      "type": "under-the-hood",
+      "blocks": {
+        "button_iLWUb6": {
+          "type": "button",
+          "settings": {
+            "btn_layout": "btn_layout_text",
+            "btn_style": "is-primary",
+            "btn_size": "is-default",
+            "btn_icon_size": "icon-1x1-small",
+            "btn_url": "",
+            "btn_text": "Chat Your Idea With Us",
+            "btn_icon_viewbox": "",
+            "btn_icon_path": ""
+          }
+        },
+        "card_fY844k": {
+          "type": "card",
+          "settings": {
+            "card_title": "Designed for shelves, not showrooms.",
+            "card_description": "We don't do throwaway merch.",
+            "card_bg_color": "#1e3a5f",
+            "text_color": "#ffffff",
+            "card_image": "shopify://shop_images/DSC01094_jpg.png",
+            "card_width": 2,
+            "card_height": 1
+          }
+        },
+        "card_7RmNqe": {
+          "type": "card",
+          "settings": {
+            "card_title": "Built to back you.",
+            "card_description": "We didn't start in a garage. We built one.",
+            "card_bg_color": "#d0244c",
+            "text_color": "#ffffff",
+            "card_width": 1,
+            "card_height": 1
+          }
+        },
+        "card_zXDPyN": {
+          "type": "card",
+          "settings": {
+            "card_title": "For brands, instead of demands.",
+            "card_description": "We're not a print shop with a checkout tile to fill. We're a long-game partner.",
+            "card_bg_color": "#753d9e",
+            "text_color": "#ffffff",
+            "card_image": "shopify://shop_images/freepik__background__23947_1.png",
+            "card_width": 1,
+            "card_height": 1
+          }
+        },
+        "card_GJDWVk": {
+          "type": "card",
+          "settings": {
+            "card_title": "No tech-bro energy.",
+            "card_description": "Throwing buzzwords around to look cool? Snooze. You want sleeves rolled up, not PowerPoints.",
+            "card_bg_color": "#f66718",
+            "text_color": "#ffffff",
+            "card_width": 1,
+            "card_height": 1
+          }
+        },
+        "card_fPc8pg": {
+          "type": "card",
+          "settings": {
+            "card_title": "Fulfillment that grows with you.",
+            "card_description": "Our operation is built for scale.",
+            "card_bg_color": "#753d9e",
+            "text_color": "#ffffff",
+            "card_width": 1,
+            "card_height": 1
+          }
+        },
+        "card_qqz8gY": {
+          "type": "card",
+          "settings": {
+            "card_title": "Creative-first crew.",
+            "card_description": "You won't find any cookie-cutters here.",
+            "card_bg_color": "#4b5563",
+            "text_color": "#ffffff",
+            "card_image": "shopify://shop_images/Background.png",
+            "card_width": 2,
+            "card_height": 1
+          }
+        }
+      },
+      "block_order": [
+        "button_iLWUb6",
+        "card_fY844k",
+        "card_7RmNqe",
+        "card_zXDPyN",
+        "card_GJDWVk",
+        "card_fPc8pg",
+        "card_qqz8gY"
+      ],
+      "name": "Under the Hood",
+      "settings": {
+        "badge_text": "2667",
+        "section_heading": "Take a peek under the hood.",
+        "section_subtitle": "With us, you got a crew who know their stuff, production systems built for scale and retail-ready quality that speaks for itself. Here's why teaming up with us just makes sense.",
+        "show_bottom_cta": true,
+        "cta_heading": "What we bring to the (print) table.",
+        "cta_text": "No fluff. No empty promises. We share the process, own our mistakes, and treat your brand like our own. You bring the idea—we'll handle the rest. And we make sure it looks good and shows up on time.",
+        "cta_image": "shopify://shop_images/image_40.png"
+      }
+    },
     "featurecards_iPVhrW": {
       "type": "featurecards",
       "blocks": {
@@ -154,6 +260,7 @@
         "feature_card_ET7xbg",
         "feature_card_GHLkhK"
       ],
+      "disabled": true,
       "name": "FeatureCards",
       "settings": {
         "featurecards_heading_text": "If this is you, you're in the right garage."
@@ -298,6 +405,7 @@
         "bento_card_NxyxxP",
         "bento_card_qfCHK3"
       ],
+      "disabled": true,
       "name": "BentoBox",
       "settings": {
         "bento_heading_text": "Take a peek under the hood.",
@@ -351,6 +459,7 @@
         "attribute_card_MtmBri",
         "attribute_card_biQcRA"
       ],
+      "disabled": true,
       "name": "What We Bring",
       "settings": {
         "main_heading": "What we bring to the (print) table.",
@@ -376,30 +485,41 @@
         "team_paragraph_text": "<p>These are the humans turning your ideas into reality – tweaking, testing, and tuning every detail behind the scenes so you don’t have to lift a finger (unless it’s to high-five yourself for choosing us). <br/><br/>From the first mockup to final dispatch, your merch is in the hands expert designers, screen printers, embroidery experts, DTF daredevils (that’s <em>direct-to-film</em>, not the other thing), and logistics legends – all groovin’ under one roof, and movin’ towards one shared goal: making you (and your merch) look damn good.</p>"
       }
     },
-    "faqs_7iEMdP": {
-      "type": "faqs",
+    "custom_faqs_i46Uwf": {
+      "type": "custom-faqs",
       "blocks": {
-        "button_8fJBia": {
-          "type": "button",
+        "faq_DRwqFr": {
+          "type": "faq",
           "settings": {
-            "btn_layout": "btn_layout_both",
-            "btn_style": "is-primary",
-            "btn_size": "is-default",
-            "btn_icon_size": "icon-1x1-small",
-            "btn_url": "shopify://pages/frequently-asked-questions",
-            "btn_text": "Full FAQs",
-            "btn_icon_viewbox": "",
-            "btn_icon_path": ""
+            "question": "",
+            "answer": ""
+          }
+        },
+        "faq_7V9acz": {
+          "type": "faq",
+          "settings": {
+            "question": "",
+            "answer": ""
+          }
+        },
+        "faq_eMnm7b": {
+          "type": "faq",
+          "settings": {
+            "question": "",
+            "answer": ""
           }
         }
       },
       "block_order": [
-        "button_8fJBia"
+        "faq_DRwqFr",
+        "faq_7V9acz",
+        "faq_eMnm7b"
       ],
+      "name": "Custom FAQs",
       "settings": {
-        "faq_heading_text": "Got questions? We’ve already answered them.",
-        "faq_cta_heading_text": "Still Not Sure?",
-        "faq_cta_paragraph_text": "<p>Check out the full FAQs list here.</p>"
+        "faq_heading": "Got questions? We've already answered them.",
+        "cta_text": "Still Not Sure? Check out the full FAQs list here.",
+        "cta_url": "shopify://pages/contact"
       }
     },
     "contactcta_zVK3tN": {
@@ -407,14 +527,6 @@
       "settings": {
         "contact_heading_text": "If you’re ready to roll, we’re ready to ride.",
         "contact_paragraph_text": "<p>Shoot us your brief and timeline (or any questions you have), and we'll help you kick things into gear.</p>"
-      }
-    },
-    "contactcta_GkXWz3": {
-      "type": "contactcta",
-      "name": "ContactCTA",
-      "settings": {
-        "contact_heading_text": "Big idea?\nWe’re all ears.",
-        "contact_paragraph_text": "<p>Drop us a note, shoot through a sketch,or call to say hey – our crew’s in the garage, ready to bring it to life.</p>"
       }
     }
   },
@@ -425,13 +537,13 @@
     "abouthero_dKdnbM",
     "pageheadersplit_zGNq7a",
     "target_audience_cards_p3y7Y8",
+    "under_the_hood_GPWM6B",
     "featurecards_iPVhrW",
     "bentobox_3LxRdk",
     "what_we_bring_g9zGJL",
     "pageheadersplit_UTjgmR",
     "team_dniVtq",
-    "faqs_7iEMdP",
-    "contactcta_zVK3tN",
-    "contactcta_GkXWz3"
+    "custom_faqs_i46Uwf",
+    "contactcta_zVK3tN"
   ]
 }
